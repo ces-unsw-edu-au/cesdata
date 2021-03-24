@@ -17,28 +17,22 @@ But no documentation or metadata is provided.
 This dataset is **HUGE**, each *compressed* file is 16G. Download and uncompressing is slow.
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 mkdir -p $GISDATA/water/ModisDailyWater/
 cd $GISDATA/water/ModisDailyWater/
 
-curl -C - -O http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/[2001-2016].rar
-
-## or
 for YEAR in $(seq 2001 2016)
 do
- wget --continue  http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/${YEAR}.rar
+ wget -b -o wget-log-$YEAR --continue  http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/${YEAR}.rar
 done
+
+# alternative:
+# curl -C - -O http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/[2001-2016].rar
+
 # unrar -x 2001.rar # and wait for hours...
 
 ```
-
-After download, I had to move part of this to another hard drive
-
-```sh
- mkdir -p /opt/gisdb/extra-gisdata/sensores/ModisDailyWater
-mv /opt/gisdata/sensores/ModisDailyWater/201* /opt/gisdb/extra-gisdata/sensores/ModisDailyWater
-
-```
-
 
 #### Notes
 * Here some code for exploring in grass
