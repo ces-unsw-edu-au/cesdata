@@ -30,6 +30,12 @@ done
 # alternative:
 # curl -C - -O http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/[2001-2016].rar
 
+```
+
+Extract data (using a PBS job?)
+
+```sh
+
 # unrar -x 2001.rar # and wait for hours...
 
 ```
