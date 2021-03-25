@@ -14,7 +14,7 @@ But no documentation or metadata is provided.
 
 #### Data download and preparation
 
-This dataset is **HUGE**, each *compressed* file is 16G. Download and uncompressing is slow.
+This dataset is **HUGE**, each *compressed* file is 16G.
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -27,19 +27,40 @@ do
  wget -b -o wget-log-$YEAR --continue  http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/${YEAR}.rar
 done
 
+# Check that all finished without problem:
+ tail wget-log*
+
 # alternative:
 # curl -C - -O http://data.ess.tsinghua.edu.cn/data/water/MODISWater-500-2001-2015/[2001-2016].rar
 
 ```
 
-Extract data (using a PBS job?)
+Extract data (using a PBS job: `qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00`)
 
 ```sh
-lsar -l 2016.rar ## 242623 directories/files
-unar 2016.rar
-tree -a 2016-v3/
-du -sch 2016-v3/
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+cd $GISDATA/water/ModisDailyWater/
 
+lsar -l 2016.rar ## 242623 directories/files
+unar 2016.rar ## ca. 2 hours to finish - successful extraction
+tree -a 2016-v3/ ## 331 directories, 242292 files
+du -sch 2016-v3/ ## 39G
+```
+
+Now repeat this for all the others, using a longer PBS job...
+
+```sh
+for YEAR in $(seq 2001 2005)
+do
+   unar ${YEAR}.rar
+done
+```
+
+... or an array of jobs to finish earlier:
+
+```sh
+qsub -J 2006-2015 $SCRIPTDIR/inc/pbs/extract-water-Global-daily-surface-water.pbs
 ```
 
 #### Notes
