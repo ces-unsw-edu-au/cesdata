@@ -1,4 +1,6 @@
 
+
+
 ```r
 tst <- read.table("~/tmp/T1.2-tropical-dry-forest/GlobalCrowd.tab",skip=33,header=T,sep="\t")
 head(tst)

@@ -35,8 +35,10 @@ done
 Extract data (using a PBS job?)
 
 ```sh
-
-# unrar -x 2001.rar # and wait for hours...
+lsar -l 2016.rar ## 242623 directories/files
+unar 2016.rar
+tree -a 2016-v3/
+du -sch 2016-v3/
 
 ```
 

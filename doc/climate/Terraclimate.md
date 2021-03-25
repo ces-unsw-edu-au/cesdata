@@ -1,21 +1,18 @@
 # Terraclimate
 
+TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution.
 
 ## Citation
 
->
+>Abatzoglou, J.T., S.Z. Dobrowski, S.A. Parks, K.C. Hegewisch, 2018, Terraclimate, a high-resolution global dataset of monthly climate and climatic water balance from 1958-2015, Scientific Data, 5, 170191 . DOI:10.1038/sdata.2017.191
 
 ## Data access
 
-Data is available at:
->
-Documentation:
-
-Metadata:
+Data and documentation is available at:
+>	http://www.climatologylab.org/terraclimate.html
 
 
 ## Data download and preparation
-
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -23,6 +20,15 @@ source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
 mkdir -p $GISDATA/climate/Terraclimate
 cd $GISDATA/climate/Terraclimate
+```
+
+### Climatologies (1961-1990 and 1981-2010; and +2C and +4C future scenarios)​
+
+Using the data catalogs to extract all links:
+
+```sh
+mkdir -p $GISDATA/climate/Terraclimate/summaries
+cd $GISDATA/climate/Terraclimate/summaries
 
 wget http://thredds.northwestknowledge.net:8080/thredds/catalog/TERRACLIMATE_ALL/summaries/catalog.html
 
@@ -30,8 +36,6 @@ wget http://thredds.northwestknowledge.net:8080/thredds/catalog/TERRACLIMATE_ALL
 
 sed -n "s/.*href='\([^']*\).*/\1/p" catalog.html > enlaces
 
-mkdir -p $GISDATA/climate/Terraclimate/summaries
-cd $GISDATA/climate/Terraclimate/summaries
 for GRP in TerraClimate4C TerraClimate2C TerraClimate19812010 TerraClimate19611990
 do
   for VAR in ws vpd vap tmin tmax swe srad soil q ppt pet def aet
@@ -40,6 +44,27 @@ do
   done
 done
 ```
+
+
+### Variables per year
+
+Use [wget script](http://www.climatologylab.org/wget-terraclimate.html) to download individual netCDF files for individual variables and years :
+
+```sh
+mkdir -p $GISDATA/climate/Terraclimate/per-year
+cd $GISDATA/climate/Terraclimate/per-year
+
+for VAR in PDSI ws vpd vap tmin tmax swe srad soil q ppt pet def aet
+do
+   mkdir -p $GISDATA/climate/Terraclimate/per-year/$VAR
+   cd $GISDATA/climate/Terraclimate/per-year/$VAR
+   for YEAR in $(seq 1958 2018)
+   do
+    wget -nc -c -nd https://climate.northwestknowledge.net/TERRACLIMATE-DATA/TerraClimate_${VAR}_${YEAR}.nc
+  done
+done
+```
+
 
 
 

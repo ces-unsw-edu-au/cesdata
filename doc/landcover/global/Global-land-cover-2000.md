@@ -1,10 +1,20 @@
 
-### Global Land Cover 2000 - [GLC 2000](https://forobs.jrc.ec.europa.eu/products/glc2000/products.php)
+# Global Land Cover 2000 - GLC 2000
+
+[GLC 2000](https://forobs.jrc.ec.europa.eu/products/glc2000/products.php)
+
+## Citation
+> E. Bartholomé Corresponding author & A. S. Belward (2005) GLC2000: a new approach to global land cover mapping from Earth observation data, International Journal of Remote Sensing, 26:9, 1959-1977, DOI: 10.1080/01431160412331291297
+
+> The Global Land Cover Map for the Year 2000, 2003. GLC2000 database, European Commision Joint Research Centre. [GLC 2000](https://forobs.jrc.ec.europa.eu/products/glc2000/products.php).
 
 
 ```sh
-mkdir -p $GISDATA/landcover/GLC2000
-cd $GISDATA/landcover/GLC2000
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/landcover/global/GLC2000
+cd $GISDATA/landcover/global/GLC2000
 
 wget https://forobs.jrc.ec.europa.eu/products/glc2000/products.php
 grep href products.php | grep Tiff.zip > enlaces

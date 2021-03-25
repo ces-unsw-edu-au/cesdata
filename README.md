@@ -15,8 +15,8 @@ GIS data for analysis at the Centre for Ecosystem Science
 
 |Dataset|source|local|progress|
 |---|---|---|---|
-| Terraclimate | | $GISDATA/climate/Terraclimate |downloading|
-| CRU TS | [10.1002/joc.3711](http://dx.doi.org/10.1002/joc.3711) | $GISDATA/climate/ |not yet|
+| Terraclimate | [10.1038/sdata.2017.191](http://dx.doi.org/10.1038/sdata.2017.191) | $GISDATA/climate/Terraclimate |downloading|
+| CRU TS | [10.1002/joc.3711](http://dx.doi.org/10.1002/joc.3711) | $GISDATA/climate/CRU_TS |done|
 
 
 ### Ecoregions
@@ -35,6 +35,7 @@ GIS data for analysis at the Centre for Ecosystem Science
 
 |Dataset|source|local|progress|
 |---|---|---|---|
+| GLC 2000 | [10.1080/01431160412331291297](https://doi.org/10.1080/01431160412331291297) | $GISDATA/landcover/global/GLC2000/ |done|
 | Geowiki
 | Globcover
 | Copernicus

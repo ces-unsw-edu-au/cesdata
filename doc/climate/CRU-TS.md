@@ -22,21 +22,24 @@ Metadata:
 mkdir -p $GISDATA/climate/CRU_TS
 cd $GISDATA/climate/CRU_TS
 wget https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/Release_Notes_CRU_TS4.03.txt
-wget --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/pet/ -O PET.list
 
-for ARCH in $(grep nc.gz PET.list | sed -n 's/.*href="\([^"]*\).*/\1/p')
+
+for VAR in cld dtr frs pet pre tmn tmp tmx vap wet
 do
- wget --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/pet/${ARCH}
-done
+   mkdir -p $GISDATA/climate/CRU_TS/$VAR
+   cd $GISDATA/climate/CRU_TS/$VAR
+   wget --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/${VAR}/ -O ${VAR}.list
 
-wget --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/pre/ -O PRE.list
-
-for ARCH in $(grep nc.gz PRE.list | sed -n 's/.*href="\([^"]*\).*/\1/p')
-do
- wget --background --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/pre/${ARCH}
+   for ARCH in $(grep nc.gz ${VAR}.list | sed -n 's/.*href="\([^"]*\).*/\1/p')
+   do
+      wget --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/${VAR}/${ARCH}
+   done
 done
 
 ```
+
+
+
 
 ```sh
 cd $WORKDIR
