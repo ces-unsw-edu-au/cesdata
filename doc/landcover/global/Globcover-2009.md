@@ -4,8 +4,8 @@
 ### [GLOBCOVER 2009](http://due.esrin.esa.int/page_globcover.php)
 
 ```sh
-mkdir -p $GISDATA/landcover/GlobCover
-cd $GISDATA/landcover/GlobCover
+mkdir -p $GISDATA/landcover/global/GlobCover
+cd $GISDATA/landcover/global/GlobCover
 wget --continue http://due.esrin.esa.int/files/Globcover2009_V2.3_Global_.zip
 
 ```

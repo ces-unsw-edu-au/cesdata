@@ -19,8 +19,8 @@ For version 6:
 
 
 ```sh
-mkdir -p $GISDATA/sensores/Modis/MCD12Q1.006
-cd  $GISDATA/sensores/Modis/MCD12Q1.006
+mkdir -p $GISDATA/landcover/global/Modis/MCD12Q1.006
+cd  $GISDATA/landcover/global/Modis/MCD12Q1.006
 export MFTP=https://e4ftl01.cr.usgs.gov/
 export VAR=MCD12Q1
 export VRS=006
