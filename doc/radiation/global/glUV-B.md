@@ -14,8 +14,11 @@ Data available on-line at https://www.ufz.de/gluv/index.php?en=32435
 
 
 ```sh
-mkdir -p $GISDATA/sensores/glUV
-cd $GISDATA/sensores/glUV
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/radiation/global/glUV
+cd $GISDATA/radiation/global/glUV
 
 export BASEURL=https://www.ufz.de/export/data/443
 

@@ -8,9 +8,14 @@ Reference to data package:	Moreno-Martínez, Á., Camps-Valls, G., Kattge, J., R
 DOI:	10.17871/TRY.60
 
 ```sh
-mkdir -p $GISDATA/species-traits/TRY-leaf-trait-maps/
-cd $GISDATA/species-traits/TRY-leaf-trait-maps/
-wget --continue https://www.try-db.org/tmpdnld/Try2021343953Global_trait_maps_vs2_3km_res.zip
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/plant-traits/global/TRY-leaf-trait-maps/
+cd $GISDATA/plant-traits/global/TRY-leaf-trait-maps/
+
+## need to update request to get correct link
+wget -b --continue https://www.try-db.org/tmpdnld/Try2021343953Global_trait_maps_vs2_3km_res.zip
 
 wget --continue https://www.try-db.org/tmpdnld/Try20213431213Global_trait_maps_vs2_1km_res.zip
 

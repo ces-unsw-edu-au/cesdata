@@ -8,46 +8,29 @@
 
 http://www.earthenginepartners.appspot.com/science-2013-global-forest/download.html
 
-```sh
-export GISDATA=/opt/gisdb/extra-gisdata/
-export SRC="https://storage.googleapis.com/earthenginepartners-hansen"
-```
 
 ## Data download:
 
-For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script:
+For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script to download the whole set:
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+export SRC="https://storage.googleapis.com/earthenginepartners-hansen"
 
 for VRS in GFC-2019-v1.7 ## GFC-2018-v1.6 GFC-2017-v1.5 GFC-2016-v1.4 GFC-2015-v1.3 GFC2015 GFC2014 GFC2013
 do
-    mkdir -p $GISDATA/sensores/Landsat/$VRS
-    cd $GISDATA/sensores/Landsat/$VRS
     for VAR in gain lossyear treecover2000
     do
-	     ##Venezuela
-       ## curl -O -C - $SRC/$VRS/Hansen_${VRS}_${VAR}_[1-2]0N_0[6-8]0W.tif
-       ## Americas
-       curl -O -C - $SRC/$VRS/Hansen_${VRS}_${VAR}_[0-5]0[NS]_0[4-9]0W.tif
-       ##NorteAmerica
-       curl -O -C - $SRC/$VRS/Hansen_${VRS}_${VAR}_[0-6]0[N]_[06-16]0W.tif
+      mkdir -p $GISDATA/forest/GFC/$VRS/$VAR
+      cd $GISDATA/forest/GFC/$VRS/$VAR
+        wget $SRC/$VRS/$VAR.txt
+      wget -b --continue -i $VAR.txt
     done
 done
 ```
 
-Or download whole set with wget:
-
-```sh
-export VRS=GFC-2019-v1.7
-mkdir -p $GISDATA/sensores/Landsat/$VRS
-cd $GISDATA/sensores/Landsat/$VRS
-for VAR in gain lossyear treecover2000
-do
-  wget $SRC/$VRS/$VAR.txt
-  wget -b --continue -i $VAR.txt
-done
-
-```
 
 Builds VRT (Virtual Dataset) as a mosaic of the list of input files
 ```sh

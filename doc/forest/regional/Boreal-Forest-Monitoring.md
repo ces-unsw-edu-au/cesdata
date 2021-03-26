@@ -13,14 +13,15 @@ https://glad.umd.edu/gfw/boreal/lmodis-derived-data-download
 
 #### Data download and preparation
 
-```sh
-mkdir -p $GISDATA/ecosystems/Boreal-Forest-Monitoring
-cd $GISDATA/ecosystems/Boreal-Forest-Monitoring
-```
 
 Download the sampling frame boundary for the boreal biome. This consists of the WWF boreal biome, ecoregions of temperate coniferous and mixed forests characterized by similar seasonality and presence of winter snow cover, and forested areas of forest-steppe ecoregions within continental parts of North America and Asia, along with forest-tundra transitional ecoregions, but excluding Iceland and areas greater than 70° latitude in Siberia. Partitioned in square blocks 18.5 km per side.
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/forest/regional/Boreal-Forest-Monitoring
+cd $GISDATA/forest/regional/Boreal-Forest-Monitoring
 wget --continue  https://glad.umd.edu/projects/gfm/boreal/borealbiome.zip
 
 ```

@@ -8,28 +8,33 @@ https://lpdaac.usgs.gov/products/mod44bv006/
 
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
 
 export MFTP=https://e4ftl01.cr.usgs.gov/
 export VAR=MOD44B
 export VRS=006
 export REPO=MOLT
+mkdir -p $GISDATA/vegcover/global/Modis-${VAR}.${VRS}
+cd  $GISDATA/vegcover/global/Modis-${VAR}.${VRS}
 
-mkdir -p $GISDATA/sensores/Modis/$VAR/$VRS
-cd $GISDATA/sensores/Modis/$VAR/$VRS
 wget --continue ${MFTP}/${REPO}/${VAR}.${VRS} --output-document=fechas
 grep 20 fechas | sed -n 's/.*href="\([^"]*\).*/\1/p' > links
 
 for FECHA in $(cat links)
 do
-  mkdir -p $GISDATA/sensores/$VAR/$VRS/$FECHA
-  cd $GISDATA/sensores/$VAR/$VRS/$FECHA
+  mkdir -p $GISDATA/vegcover/global/Modis-${VAR}.${VRS}/$FECHA
+  cd $GISDATA/vegcover/global/Modis-${VAR}.${VRS}/$FECHA
   wget --continue ${MFTP}/${REPO}/${VAR}.${VRS}/${FECHA}
   grep hdf index.html | sed -n 's/.*href="\([^"]*\).*/\1/p' > links
+  wget -b --user=$EARTHDATAUSR --password=$EARTHDATAPWD --continue -i links --base=${MFTP}${REPO}/${VAR}.${VRS}/${FECHA}/
+
 done
 ```
 
-For Venezuela we need tiles: h10 h11 h12 v07 v08
+
+If we want a subset, for example, for Venezuela we need tiles: h10 h11 h12 v07 v08
 
 ```sh
 cd $GISDATA/sensores/Modis/$VAR/$VRS
