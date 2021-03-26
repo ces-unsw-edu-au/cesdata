@@ -19,6 +19,9 @@ For version 6:
 
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/landcover/global/Modis/MCD12Q1.006
 cd  $GISDATA/landcover/global/Modis/MCD12Q1.006
 export MFTP=https://e4ftl01.cr.usgs.gov/
@@ -29,12 +32,18 @@ export REPO=MOTA
 for YEAR in $(seq 2001 2019)
 do
   export FECHA=${YEAR}.01.01
-  mkdir -p $GISDATA/sensores/Modis/MCD12Q1.006/$FECHA
-  cd $GISDATA/sensores/Modis/MCD12Q1.006/$FECHA
-  wget --continue ${SRC}/${FECHA}
+  mkdir -p $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA
+  cd $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA
+  wget --user=$EARTHDATAUSR --password=$EARTHDATAPWD --continue ${MFTP}${REPO}/${VAR}.${VRS}/${FECHA}
   grep hdf $FECHA | sed -n 's/.*href="\([^"]*\).*/\1/p' > links
   wget -b --user=$EARTHDATAUSR --password=$EARTHDATAPWD --continue -i links --base=${MFTP}${REPO}/${VAR}.${VRS}/${FECHA}/
 done
+
+#check:
+ cd  $GISDATA/landcover/global/Modis/MCD12Q1.006
+grep FINISHED */wget-log
+# or check last three lines if not finished yet:
+tail -n 3 */wget-log
 
 ```
 
@@ -43,7 +52,12 @@ done
 For Subdataset 1: LC type 1 (IGBP)
 
 ```sh
-cd $GISDATA/sensores/Modis/MCD12Q1.006/
+
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+cd  $GISDATA/landcover/global/Modis/MCD12Q1.006
 export VAR=MCD12Q1
 export VRS=006
 
@@ -51,11 +65,20 @@ gdalinfo 2019.01.01/MCD12Q1.A2019001.h01v08.006.2020212125329.hdf
 
 gdalinfo HDF4_EOS:EOS_GRID:"2019.01.01/MCD12Q1.A2019001.h01v08.006.2020212125329.hdf":MCD12Q1:LC_Type1
 
+## all subdatasets in one vrt?
+ export FECHA=${YEAR}.01.01
+  gdalbuildvrt index_${VAR}_${VRS}_${FECHA}.vrt $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA/*hdf
+
 for YEAR in $(seq 2001 2019)
 do
   export FECHA=${YEAR}.01.01
-  gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_LC_Type1.vrt $GISDATA/sensores/Modis/MCD12Q1.006/$FECHA/*hdf -sd 1
+  gdalbuildvrt index_${VAR}_${VRS}_${FECHA}.vrt $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA/*hdf
+
 done
+
+# if we want to separate them, then need to match names with number:
+# for VAR in LC_Type1 LC_Type2 LC_Type3 LC_Type4 LC_Type5 LC_Prop1_Assessment LC_Prop2_Assessment LC_Prop3_Assessment LC_Prop1 LC_Prop2 LC_Prop3 QC LW
+# gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_${VAR}.vrt $GISDATA/sensores/Modis/MCD12Q1.006/$FECHA/*hdf -sd 1
 
 
 ```

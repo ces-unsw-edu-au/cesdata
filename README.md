@@ -37,8 +37,8 @@ GIS data for analysis at the Centre for Ecosystem Science
 |---|---|---|---|
 | GLC 2000 | [10.1080/01431160412331291297](https://doi.org/10.1080/01431160412331291297) | $GISDATA/landcover/global/GLC2000/ |done|
 | Globcover| [GLOBCOVER 2009](http://due.esrin.esa.int/page_globcover.php) |  $GISDATA/landcover/global/GlobCover |done|
-| Geowiki
-| Copernicus
-| Modis
+| Modis MCD12Q1.006 | [10.5067/MODIS/MCD12Q1.006](https://doi.org/10.5067/MODIS/MCD12Q1.006) | $GISDATA/landcover/global/Modis/MCD12Q1.006 | downloading |
 | FROMGLC
 | USGS EROS
+| Geowiki
+| Copernicus
