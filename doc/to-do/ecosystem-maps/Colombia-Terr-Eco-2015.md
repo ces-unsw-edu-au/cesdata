@@ -1,0 +1,75 @@
+## Ecosistemas terrestres de Colombia
+
+> Etter A., Andrade A., Saavedra K., Amaya P. y P. Arévalo 2017. Risk assessment of Colombian continental ecosystems: An application of the Red List of Ecosystems methodology (v. 2.0). Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. [Report](https://www.researchgate.net/publication/325498072_Risk_assessment_of_Colombian_continental_ecosystems_An_application_of_the_Red_List_of_Ecosystems_methodology_v_20). [Summary](https://iucnrle.org/static/media/uploads/references/published-assessments/Brochures/brochure_lre_colombia_v_2.0.pdf)
+
+Files provided by Andrés Etter -()- Alaska to Patagonia project
+
+
+```sh
+
+mkdir -p $GISDATA/ecosistemas/RLEDB/Colombia
+cd $GISDATA/ecosistemas/RLEDB/Colombia
+##  mv -v  /opt/gisout/respaldos/gisdata/respaldoAmericasDataFiles/EcoOri_12052015_2014_TodosCriterios.* $GISDATA/ecosistemas/RLEDB/Colombia
+
+```
+
+Original projection in WGS_1984_UTM_Zone_18N, o EPSG 32618
+
+```sh
+ogrinfo -al -geom=NO $GISDATA/ecosistemas/RLEDB/Colombia/EcoOri_12052015_2014_TodosCriterios.shp | less
+
+
+```
+This gets the data in the original projection and promoted to multi-geometry
+
+```sh
+
+ psql gisdata  jferrer -c "CREATE SCHEMA ecocolombia"
+ ## exclude shape_area column to avoid column precision error
+ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PROMOTE_TO_MULTI -lco SCHEMA=ecocolombia $GISDATA/ecosistemas/RLEDB/Colombia/EcoOri_12052015_2014_TodosCriterios.shp -sql "SELECT COD, A1P, A1E, A2aP, A2aE, A2bP, A2bE, A3P, A3E, C2,  D2, B1ai, B1aiiV1, B1aiiV2, B1aiii, B2ai, B2aiiV1, B2aiiV2, B2aiii, C2Precp, EvFinal FROM EcoOri_12052015_2014_TodosCriterios"
+
+
+```
+
+#### Crosswalk
+
+We checked the file `GETcrosswalk_Colombia_AEtter.xlsx`
+
+```sh
+cp ~/proyectos/UNSW/ecosphere-db/input/xwalks/GETcrosswalk_Colombia_AEtter.xlsx $GISDATA/ecosistemas/RLEDB/Colombia
+```
+
+Run `R --vanilla`:
+
+```R
+require(gdata)
+require(dplyr)
+require(readxl)
+require(tidyr)
+require("RPostgreSQL")
+
+gis.data <- Sys.getenv("GISDATA")
+
+XW <- read_excel(sprintf("%s/ecosistemas/RLEDB/Colombia/GETcrosswalk_Colombia_AEtter.xlsx",gis.data),sheet=3) %>% select(1:51)
+colnames(XW)[2] <- "fullcode"
+
+XW %>% pivot_longer(cols=3:51, names_to = "EFG name", values_to = "membership") %>% filter(!is.na(membership)) %>% mutate(code=gsub("^[A-Za-z_]+-","",fullcode),EFG=gsub(" ","",gsub("(^[A-Za-z 0-9]+.[0-9]+)[A-Za-z -,/-]+","\\1",`EFG name`))) -> rslt
+
+drv <- dbDriver("PostgreSQL") ## remember to update .pgpass file
+con <- dbConnect(drv, dbname = "gisdata", port = 5432,user = "jferrer",
+                 host = ifelse( system("hostname -s",intern=T)=="terra","localhost","terra.ad.unsw.edu.au"))
+
+rslts <- dbWriteTable(con,c("ecocolombia","iucnget_xwalk"),rslt)
+dbDisconnect(con)
+```
+
+Now we can make some queries in `psql`:
+
+```sql
+select cod,evfinal,ST_Area(wkb_geometry),ST_Centroid(wkb_geometry) from ecocolombia.ecoori_12052015_2014_todoscriterios m left join ecocolombia.iucnget_xwalk x on m.cod=x.code where "EFG" IN ('T1.3');
+select cod,evfinal,ST_Centroid(wkb_geometry) from ecocolombia.ecoori_12052015_2014_todoscriterios m left join ecocolombia.iucnget_xwalk x on m.cod=x.code where "EFG" IN ('T6.1');
+select cod,evfinal,ST_Centroid(wkb_geometry) from ecocolombia.ecoori_12052015_2014_todoscriterios m left join ecocolombia.iucnget_xwalk x on m.cod=x.code where "EFG" IN ('T6.5');
+
+select fullcode,cod,EFG from ecocolombia.ecoori_12052015_2014_todoscriterios m left join ecocolombia.iucnget_xwalk x on m.cod=x.code where "EFG" IN ('T6.5');
+
+```
