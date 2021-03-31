@@ -12,8 +12,12 @@
 
 #### data access
 ```sh
-mkdir -p $GISDATA/ecosystems/WCMC-coral-reefs
-cd $GISDATA/ecosystems/WCMC-coral-reefs
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/ecosystems/global/WCMC-coral-reefs
+cd $GISDATA/ecosystems/global/WCMC-coral-reefs
+
 wget --continue http://wcmc.io/WCMC_008 --output-document=WCMC_008.zip
 
 ```

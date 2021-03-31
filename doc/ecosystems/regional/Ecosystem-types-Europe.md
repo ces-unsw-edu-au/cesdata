@@ -11,12 +11,23 @@ http://cmshare.eea.europa.eu/s/KscZR3EcKrGmPbK/download
 
 
 ```sh
-mkdir -p $GISDATA/ecosystems/MAES
-cd $GISDATA/ecosystems/MAES
-mv '/home/jferrer/Downloads/Ecosystem types of Europe - version 3.1 Full map.zip' $GISDATA/ecosystems/MAES
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/ecosystems/regional/MAES
+cd $GISDATA/ecosystems/regional/MAES
+
+## scp from terra.ad.unsw.edu.au:
+##scp /opt/gisdata/ecosystems/MAES/Ecosystem\ types\ of\ Europe\ -\ version\ 3.1\ Full\ map.zip $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/ecosystems/regional/MAES
+
+```
+
+
+
+```sh
 
 cd $WORKDIR
-unzip $GISDATA/ecosystems/MAES/Ecosystem\ types\ of\ Europe\ -\ version\ 3.1\ Full\ map.zip
+unzip $GISDATA/ecosystems/regional/MAES/Ecosystem\ types\ of\ Europe\ -\ version\ 3.1\ Full\ map.zip
 dbfdump Ecosystem\ types\ of\ Europe\ -\ version\ 3.1\ Full\ map/eea_r_3035_100_m_etm-full_2012_v3-1_r00.tif.vat.dbf
 
 

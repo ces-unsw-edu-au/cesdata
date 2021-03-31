@@ -17,7 +17,8 @@ source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 mkdir -p $GISDATA/ecological/global/EcologicalMarineUnits
 cd  $GISDATA/ecological/global/EcologicalMarineUnits
 
-wget --continue https://rmgsc.cr.usgs.gov/outgoing/ecosystems/Global/EMUGlobalOcean.mpk
+wget --continue https://rmgsc.cr.usgs.gov/outgoing/ecosystems/Global/GlobalEcologicalMarineUnits.mpk
+
 
 cd $WORKDIR
 7z x $GISDATA/stratification/EcologicalMarineUnits/EMUGlobalOcean.mpk

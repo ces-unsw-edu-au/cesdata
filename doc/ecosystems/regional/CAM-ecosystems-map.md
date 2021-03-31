@@ -1,4 +1,4 @@
-MAP OF THE ECOSYSTEMS OF CENTRAL AMERICA
+# MAP OF THE ECOSYSTEMS OF CENTRAL AMERICA
 
 Full map and GIS title and authors:
 
@@ -24,14 +24,17 @@ http://documents.worldbank.org/curated/en/386971468223450848/Descripcion-de-los-
 
 
 ```sh
-mkdir -p $GISDATA/ecosystems/worldbank-Central-America/
-cd $GISDATA/ecosystems/worldbank-Central-America/
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+mkdir -p $GISDATA/ecosystems/regional/worldbank-Central-America/
+cd $GISDATA/ecosystems/regional/worldbank-Central-America/
 
 wget --continue https://www.birdlist.org/cam/themes/map_download_page.htm
-grep href map_download_page.htm | grep zip > enlaces
-wget --continue --force-html --base=https://www.birdlist.org/cam/themes/ -i enlaces
-grep href map_download_page.htm | grep pdf > enlaces
-wget --continue --force-html --base=https://www.birdlist.org/cam/themes/ -i enlaces
+grep href map_download_page.htm | grep zip > enlaces1
+wget -b --continue --force-html --base=https://www.birdlist.org/cam/themes/ -i enlaces1
+grep href map_download_page.htm | grep pdf > enlaces2
+wget --continue --force-html --base=https://www.birdlist.org/cam/themes/ -i enlaces2
 
 
 ls *utm*
