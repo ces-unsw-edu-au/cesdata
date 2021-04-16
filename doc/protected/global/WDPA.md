@@ -13,6 +13,7 @@ The World Database on Protected Areas (WDPA) is the most comprehensive global da
 
 Data downloaded in gdb format from https://www.protectedplanet.net
 
+Regular updates:
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -20,8 +21,10 @@ source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
 mkdir -p $GISDATA/protected/global/WDPA
 cd $GISDATA/protected/global/WDPA
-wget -b --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_Apr2021_Public.zip
 
+# April 2021
+wget -b --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_Apr2021_Public.zip
+# March 2021
 ## wget -b --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_Mar2021_Public.zip
 
 ```
