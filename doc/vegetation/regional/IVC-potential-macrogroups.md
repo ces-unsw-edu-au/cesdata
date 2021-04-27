@@ -42,28 +42,40 @@ http://hub.arcgis.com/datasets/Natureserve::southamerica-ivc-macrogroups-potenti
  The original files of the potential distribution of the Macrogroups in geotiff format were delivered by NatureServe, files were encoded in .lpk format, I extracted them using the 7z extraction command.
 
 ```sh
-cd $WORKDIR
-cp $GISDATA/ecosistemas/NatureServe/*potential*tif.lpk $WORKDIR
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/SAM
+mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/NAC
+cd $GISDATA/vegetation/regional/IVC-EcoVeg/
+## scp from local copies of data in terra:
+# scp /opt/gisdata/ecosistemas/Natureserve/IUCN/*/*potential*tif.lpk $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/vegetation/regional/IVC-EcoVeg/...
+
+cd $GISDATA/vegetation/regional/IVC-EcoVeg/SAM
 7z x SouthAmerica_IVC_MacroGroups_potential_NatureServe_v7_270m_tif.lpk
+
+cd $GISDATA/vegetation/regional/IVC-EcoVeg/NAC
 7z x NorthAmerica_Caribbean_IVC_MacroGroups_potential_NatureServe_v5_270m_tif.lpk
 
-rm *lpk
 ```
 The layer package contains different files, raster are located in folder `commondata/raster_data/`. Original projections: files differed in the original projection, the South America file also includes a table with raster attributes
 
-```sh
-gdalinfo commondata/raster_data/NorthAmerica_Caribbean_IVC_MacroGroups_potential_NatureServe_v5_270m.tif
-
-gdalinfo commondata/raster_data/SouthAmerica_IVC_MacroGroups_potential_NatureServe_v7_270m.tif | less
-```
 Reprojection: In order to combine both layers in one file with a common projection, I used gdalwarp create option COMPRESS=LZW allows for lossless data compression   I chose the robin projection for the whole continent. output file is IVC_NS_v7_270m_robin.tif
 
 ```sh
+qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
 
-gdalwarp -co "COMPRESS=LZW" -t_srs '+proj=robin +lon_0=-80 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0' commondata/raster_data/NorthAmerica_Caribbean_IVC_MacroGroups_potential_NatureServe_v5_270m.tif commondata/raster_data/SouthAmerica_IVC_MacroGroups_potential_NatureServe_v7_270m.tif IVC_NS_v7_270m_robin.tif
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
-rm -r commondata/ esriinfo/ v10 v103/
+gdalinfo $GISDATA/vegetation/regional/IVC-EcoVeg/NAC/commondata/raster_data/NorthAmerica_Caribbean_IVC_MacroGroups_potential_NatureServe_v5_270m.tif
+
+gdalinfo $GISDATA/vegetation/regional/IVC-EcoVeg/SAM/commondata/raster_data/SouthAmerica_IVC_MacroGroups_potential_NatureServe_v7_270m.tif | less
+
+cd $GISDATA/vegetation/regional/IVC-EcoVeg/Americas
+gdalwarp -co "COMPRESS=LZW" -t_srs '+proj=robin +lon_0=-80 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0' $GISDATA/vegetation/regional/IVC-EcoVeg/NAC/commondata/raster_data/NorthAmerica_Caribbean_IVC_MacroGroups_potential_NatureServe_v5_270m.tif $GISDATA/vegetation/regional/IVC-EcoVeg/SAM/commondata/raster_data/SouthAmerica_IVC_MacroGroups_potential_NatureServe_v7_270m.tif $GISDATA/vegetation/regional/IVC-EcoVeg/Americas/IVC_NS_v7_270m_robin.tif
+
 
 ## generate shapefile version...
 ##gdal_polygonize.py IVC_NS_v7_270m_robin.tif IVC_NS_v7_270m_robin_polygons.shp
