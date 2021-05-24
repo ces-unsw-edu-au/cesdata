@@ -19,15 +19,15 @@ Metadata:
 ## Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/climate/CRU_TS
-cd $GISDATA/climate/CRU_TS
+mkdir -p $GISDATA/climate/global/CRU_TS
+cd $GISDATA/climate/global/CRU_TS
 wget https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/Release_Notes_CRU_TS4.03.txt
 
 
 for VAR in cld dtr frs pet pre tmn tmp tmx vap wet
 do
-   mkdir -p $GISDATA/climate/CRU_TS/$VAR
-   cd $GISDATA/climate/CRU_TS/$VAR
+   mkdir -p $GISDATA/climate/global/CRU_TS/$VAR
+   cd $GISDATA/climate/global/CRU_TS/$VAR
    wget --continue https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/${VAR}/ -O ${VAR}.list
 
    for ARCH in $(grep nc.gz ${VAR}.list | sed -n 's/.*href="\([^"]*\).*/\1/p')
@@ -43,12 +43,12 @@ done
 
 ```sh
 cd $WORKDIR
-ls $GISDATA/climate/CRU_TS
+ls $GISDATA/climate/global/CRU_TS
 
-cp $GISDATA/climate/CRU_TS/cru_ts4.03.1901.2018.pre.dat.nc.gz .
+cp $GISDATA/climate/global/CRU_TS/cru_ts4.03.1901.2018.pre.dat.nc.gz .
 gunzip cru_ts4.03.1901.2018.pre.dat.nc.gz
 
-cp $GISDATA/climate/CRU_TS/cru_ts4.03.1901.2018.pet.dat.nc.gz .
+cp $GISDATA/climate/global/CRU_TS/cru_ts4.03.1901.2018.pet.dat.nc.gz .
 gunzip cru_ts4.03.1901.2018.pet.dat.nc.gz
 
 gdalinfo NETCDF:"cru_ts4.03.1901.2018.pre.dat.nc" -sd 1 | less

@@ -19,8 +19,8 @@ This dataset is **HUGE**, each *compressed* file is 16G.
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 source ~/proyectos/UNSW/cesdata/env/katana-env.sh
-mkdir -p $GISDATA/water/ModisDailyWater/
-cd $GISDATA/water/ModisDailyWater/
+mkdir -p $GISDATA/water/global/ModisDailyWater/
+cd $GISDATA/water/global/ModisDailyWater/
 
 for YEAR in $(seq 2001 2016)
 do

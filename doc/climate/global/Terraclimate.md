@@ -18,8 +18,8 @@ Data and documentation is available at:
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
-mkdir -p $GISDATA/climate/Terraclimate
-cd $GISDATA/climate/Terraclimate
+mkdir -p $GISDATA/climate/global/Terraclimate
+cd $GISDATA/climate/global/Terraclimate
 ```
 
 ### Climatologies (1961-1990 and 1981-2010; and +2C and +4C future scenarios)​
@@ -27,8 +27,8 @@ cd $GISDATA/climate/Terraclimate
 Using the data catalogs to extract all links:
 
 ```sh
-mkdir -p $GISDATA/climate/Terraclimate/summaries
-cd $GISDATA/climate/Terraclimate/summaries
+mkdir -p $GISDATA/climate/global/Terraclimate/summaries
+cd $GISDATA/climate/global/Terraclimate/summaries
 
 wget http://thredds.northwestknowledge.net:8080/thredds/catalog/TERRACLIMATE_ALL/summaries/catalog.html
 
@@ -51,8 +51,8 @@ done
 Use [wget script](http://www.climatologylab.org/wget-terraclimate.html) to download individual netCDF files for individual variables and years :
 
 ```sh
-mkdir -p $GISDATA/climate/Terraclimate/per-year
-cd $GISDATA/climate/Terraclimate/per-year
+mkdir -p $GISDATA/climate/global/Terraclimate/per-year
+cd $GISDATA/climate/global/Terraclimate/per-year
 
 for VAR in PDSI ws vpd vap tmin tmax swe srad soil q ppt pet def aet
 do
