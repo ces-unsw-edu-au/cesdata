@@ -5,10 +5,6 @@
 
 https://www.clw.csiro.au/aclep/soilandlandscapegrid/GetData-DAP.html
 
-```sh
-
-```
-
 ## Data download:
 
 
