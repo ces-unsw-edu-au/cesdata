@@ -21,8 +21,24 @@ There is an option for a using a download script in python.
 #### Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/sensores/Modis_SeaIce
-cd $GISDATA/sensores/Modis_SeaIce
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+DPATH=cryosphere/global
+DNAME=Modis-MOD10C2
+
+mkdir -p $GISDATA/$DPATH/$DNAME/
+cd $GISDATA/$DPATH/$DNAME/
+
 mv ~/Downloads/nsidc-download_MOD29P1D.006_2020-02-22.py $GISDATA/sensores/Modis_SeaIce
 
+```
+
+```sh
+
+mkdir -p $GISDATA/cryosphere/global/Modis-MOD10C2/
+cd $GISDATA/cryosphere/global/Modis-MOD10C2/
+## scp nsidc-download_MOD10C2.006_2021-03-29.py $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/cryosphere/global/Modis-MOD10C2/
+
+python nsidc-download_MOD10C2.006_2021-03-29.py
 ```

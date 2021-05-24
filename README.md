@@ -108,22 +108,20 @@ tree -L 3 $GISDATA
 ```
 
 
-### Anthroposphere
+## Overview of datasets
 
-
-### Fire
-### Forest
-### Forest
-
-
-### Cryosphere
-
-### Water datasets
+### Admin
 
 |Dataset|source|local|progress|
 |---|---|---|---|
-| Daily surface water |  [10.1029/2018wr023060](http://dx.doi.org/10.1029/2018wr023060) | $GISDATA/water/ModisDailyWater/ |decompressing|
+| World Bank political boundaries | ... | $GISDATA/ | done |
 
+### Anthroposphere
+
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
 
 ### Climatic datasets
 
@@ -131,6 +129,19 @@ tree -L 3 $GISDATA
 |---|---|---|---|
 | Terraclimate | [10.1038/sdata.2017.191](http://dx.doi.org/10.1038/sdata.2017.191) | $GISDATA/climate/Terraclimate | done |
 | CRU TS | [10.1002/joc.3711](http://dx.doi.org/10.1002/joc.3711) | $GISDATA/climate/CRU_TS | done |
+
+
+### Cryosphere
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
+
+### Ecological classifications
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
 
 
 ### Ecoregions
@@ -145,14 +156,55 @@ tree -L 3 $GISDATA
 | Canada|  | $GISDATA/ecoregions/regional/Canada |done|
 | IBRA v7|  | $GISDATA/ecoregions/regional/IBRAv7/ |done|
 
+### Ecosystem maps
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
+
+### Fire
+
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
+
+### Forest
+
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
+
+### Hydrology
+
+
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
+
+
 ### Landcover
 
 |Dataset|source|local|progress|
 |---|---|---|---|
 | GLC 2000 | [10.1080/01431160412331291297](https://doi.org/10.1080/01431160412331291297) | $GISDATA/landcover/global/GLC2000/ |done|
 | Globcover| [GLOBCOVER 2009](http://due.esrin.esa.int/page_globcover.php) |  $GISDATA/landcover/global/GlobCover |done|
-| Modis MCD12Q1.006 | [10.5067/MODIS/MCD12Q1.006](https://doi.org/10.5067/MODIS/MCD12Q1.006) | $GISDATA/landcover/global/Modis/MCD12Q1.006 | downloading |
+| Modis MCD12Q1.006 | [10.5067/MODIS/MCD12Q1.006](https://doi.org/10.5067/MODIS/MCD12Q1.006) | $GISDATA/landcover/global/Modis/MCD12Q1.006 | done |
 | FROMGLC
 | USGS EROS
 | Geowiki
 | Copernicus
+
+### Other datasets...
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| ... | ... | $GISDATA/ | ... |
+
+### Water datasets
+
+|Dataset|source|local|progress|
+|---|---|---|---|
+| Daily surface water |  [10.1029/2018wr023060](http://dx.doi.org/10.1029/2018wr023060) | $GISDATA/water/ModisDailyWater/ |done|

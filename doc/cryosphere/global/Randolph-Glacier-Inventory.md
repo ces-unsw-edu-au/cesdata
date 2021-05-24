@@ -1,34 +1,57 @@
 # Randolph Glacier Inventory, version 6.0
 
-Global inventory of glacier outlines. It is supplemental to the Global Land Ice Measurements from Space initiative (GLIMS). RGI Version 6.0: released July 28, 2017.
+
+> The Randolph Glacier Inventory (RGI 6.0) is a global inventory of glacier outlines. It is supplemental to the Global Land Ice Measurements from Space initiative (GLIMS). Production of the RGI was motivated by the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC AR5). Future updates will be made to the RGI and the GLIMS Glacier Database in parallel during a transition period. As all these data are incorporated into the GLIMS Glacier Database and as download tools are developed to obtain GLIMS data in the RGI data format, the RGI will evolve into a downloadable subset of GLIMS, offering complete one-time coverage, version control, and a standard set of attributes.
+
+> For more details, and for a complete list of contributors, please see the RGI 6.0 Technical Report (PDF format). For the glacier regions used see the GTN-G Glacier Regions.
+
+> Global inventory of glacier outlines. It is supplemental to the Global Land Ice Measurements from Space initiative (GLIMS). RGI Version 6.0: released July 28, 2017.
 
 [Website](https://www.glims.org/RGI/) /
 [user guidelines](http://www.glims.org/RGI/00_rgi60_TechnicalNote.pdf)
 
-#### Citation
-> RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60
+## Citation
+>RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60
 
-#### Data access
+## Data access
+
+To download data from the [Randolph Glacier Inventory 6.0](https://www.glims.org/RGI/), check the [user guidelines](http://www.glims.org/RGI/00_rgi60_TechnicalNote.pdf)
 
 http://www.glims.org/RGI/rgi60_dl.html
 
-#### Data download and preparation
+## Data download and preparation
 
+RGI Version 6.0: released July 28, 2017.
 
 ```sh
-mkdir -p $GISDATA/inventories/RGI_6.0
-cd $GISDATA/inventories/RGI_6.0
+DPATH=cryosphere/global
+DNAME=RGI_6.0
+
+mkdir -p $GISDATA/$DPATH/$DNAME/
+cd $GISDATA/$DPATH/$DNAME/
+
 wget --continue https://www.glims.org/RGI/rgi60_files/00_rgi60.zip
 ##Additionally download the geotiff
-wget--continue  http://www.glims.org/RGI/rgi60_files/00_rgi60_30-30grid.tif
+wget --continue  http://www.glims.org/RGI/rgi60_files/00_rgi60_30-30grid.tif
+
 ```
+
+```sh
+cd $WORKDIR
+cp $GISDATA/$DPATH/$DNAME/00_rgi60.zip  $WORKDIR
+ unzip 00_rgi60.zip
+  unzip 00_rgi60_attribs.zip
+ unzip 16_rgi60_LowLatitudes.zip
+
+grep RGI60-16.013[8-9] 16_rgi60_LowLatitudes.csv
+```
+
 
 We import this dataset in postgis for further data preparation and selection
 
 ```sh
 mkdir -p $WORKDIR/RGI60
 cd $WORKDIR/RGI60
-unzip $GISDATA/inventories/RGI_6.0/00_rgi60.zip
 for ZIPFILE in $(ls *zip)
 do
   unzip -u $ZIPFILE

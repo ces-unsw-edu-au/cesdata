@@ -22,8 +22,12 @@ http://www.glims.org/download/
 #### Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/inventories/GLIMS_2019
-cd $GISDATA/inventories/GLIMS_2019
+DPATH=cryosphere/global
+DNAME=GLIMS_2019
+
+mkdir -p $GISDATA/$DPATH/$DNAME/
+cd $GISDATA/$DPATH/$DNAME/
+
 wget --continue http://www.glims.org/download/glims_db_20191217.zip
 ```
 
@@ -33,7 +37,7 @@ We import this dataset in postgis for further data preparation and selection
 ```sh
 mkdir -p $WORKDIR/GLIMS
 cd $WORKDIR/GLIMS
-unzip $GISDATA/inventories/GLIMS_2019/glims_db_20191217.zip
+unzip $GISDATA/$DPATH/$DNAME/glims_db_20191217.zip
  cd $WORKDIR/GLIMS/glims_download*
 
 psql gisdata jferrer -c "CREATE SCHEMA glims"

@@ -29,13 +29,17 @@ The zipfiles were provided directly by D. Keith (pers. comm.).
 
 
 ```sh
-mkdir -p $GISDATA/inventories/subglacial_lakes
-cd $GISDATA/inventories/subglacial_lakes
- mv ~/Downloads/S095410201200048Xsup001.xls  .
- mv ~/Downloads/SubGlacial_Lakes_NS.zip .
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
-cd $WORKDIR
-unzip $GISDATA/inventories/subglacial_lakes/SubGlacial_Lakes_NS.zip
+DPATH=cryosphere/global
+DNAME=subglacial-lakes
+
+mkdir -p $GISDATA/$DPATH/$DNAME/
+cd $GISDATA/$DPATH/$DNAME/
+
+## scp /opt/gisdata/inventories/subglacial_lakes/* $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/cryosphere/global/subglacial-lakes
+
 
 ```
 

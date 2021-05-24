@@ -10,11 +10,19 @@ Available at: ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G01130/
 
 #### Data download and preparation
 
+
 ```sh
-mkdir -p $GISDATA/inventories/WGI_2012
-cd $GISDATA/inventories/WGI_2012
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+DPATH=cryosphere/global
+DNAME=WGI_2012
+
+mkdir -p $GISDATA/$DPATH/$DNAME/
+cd $GISDATA/$DPATH/$DNAME/
+
 wget --continue ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G01130/wgi_shapefile_feb2012.zip
-unzip wgi_shapefile_feb2012.zip
+
 ```
 
 We import this dataset in postgis for further data preparation and selection

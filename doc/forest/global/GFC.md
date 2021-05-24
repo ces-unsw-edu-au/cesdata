@@ -23,8 +23,8 @@ for VRS in GFC-2019-v1.7 ## GFC-2018-v1.6 GFC-2017-v1.5 GFC-2016-v1.4 GFC-2015-v
 do
     for VAR in gain lossyear treecover2000
     do
-      mkdir -p $GISDATA/forest/GFC/$VRS/$VAR
-      cd $GISDATA/forest/GFC/$VRS/$VAR
+      mkdir -p $GISDATA/forest/global/GFC/$VRS/$VAR
+      cd $GISDATA/forest/global/GFC/$VRS/$VAR
         wget $SRC/$VRS/$VAR.txt
       wget -b --continue -i $VAR.txt
     done
@@ -37,7 +37,7 @@ Builds VRT (Virtual Dataset) as a mosaic of the list of input files
 export VRS=GFC-2019-v1.7
 export VAR=treecover2000
 
-cd $GISDATA/sensores/Landsat/
+cd $GISDATA/forest/global/GFC/
 for VRS in GFC-2019-v1.7
 do
   for VAR in gain lossyear treecover2000

@@ -15,8 +15,15 @@ There are at least two alternative pages for data access
 #### Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/monitoring/LIAG_Ice
-cd $GISDATA/monitoring/LIAG_Ice
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+DPATH=cryosphere/global
+DNAME=LIAG_Ice
+
+mkdir -p $GISDATA/$DPATH/$DNAME/
+cd $GISDATA/$DPATH/$DNAME/
+
 
 ## download complete table:
 wget ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G01377/liag_freeze_thaw_table.csv
