@@ -7,7 +7,7 @@ Maintained by [@jrfep](https://github.com/jrfep)
 
 ```sh
 tree -L 3 $GISDATA
-```
+
 /srv/scratch/cesdata/gisdata
 ├── admin
 │   └── global
@@ -105,6 +105,8 @@ tree -L 3 $GISDATA
         └── ModisDailyWater
 
 94 directories, 0 files
+```
+
 
 ### Anthroposphere
 
