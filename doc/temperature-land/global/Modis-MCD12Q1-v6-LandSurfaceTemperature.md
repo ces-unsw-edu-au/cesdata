@@ -48,30 +48,39 @@ tail -n 3 */wget-log*
 
 ## Virtual raster datasets
 
-For Subdataset 1: LC type 1 (IGBP)
-
 ```sh
 
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 source ~/proyectos/UNSW/cesdata/env/katana-env.sh
-cd  $GISDATA/landcover/global/Modis/MCD12Q1.006
-export VAR=MCD12Q1
+cd $GISDATA/land-surface-temperature/global/Modis-MOD11A2.006/
+export VAR=MOD11A2
 export VRS=006
 
-gdalinfo 2019.01.01/MCD12Q1.A2019001.h01v08.006.2020212125329.hdf
+# gdalinfo 2019.01.01/MOD11A2.A2019001.h01v08.006.2019010204437.hdf
 
-gdalinfo HDF4_EOS:EOS_GRID:"2019.01.01/MCD12Q1.A2019001.h01v08.006.2020212125329.hdf":MCD12Q1:LC_Type1
+# gdalinfo HDF4_EOS:EOS_GRID:"2019.01.01/MCD12Q1.A2019001.h01v08.006.2020212125329.hdf":MODIS_Grid_8Day_1km_LST:LST_Day_1km
 
-## all subdatasets in one vrt?
- export FECHA=${YEAR}.01.01
-  gdalbuildvrt index_${VAR}_${VRS}_${FECHA}.vrt $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA/*hdf
+#This will include two variables (LST_Day_1km and LST_Night_1km)
+SVAR=LST_Day_1km ## number 1
+SVAR=QC_Day ## number 2
+Day_view_time ## number 3
+SVAR=LST_Night_1km ## number 5
+SVAR=QC_Night ## number 6
 
 for YEAR in $(seq 2001 2019)
 do
-  export FECHA=${YEAR}.01.01
-  gdalbuildvrt index_${VAR}_${VRS}_${FECHA}.vrt $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA/*hdf
+   mkdir -p $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/index/${YEAR}
+   cd $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/index/${YEAR}
+   for FECHA in $(grep $YEAR $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/links | sed -e s:/::g)
+   do
+      echo $FECHA
+      [ -e index_${VAR}_${VRS}_${FECHA}_LST_Day_1km.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_LST_Day_1km.vrt -sd 1 $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/$FECHA/*hdf
+      [ -e index_${VAR}_${VRS}_${FECHA}_QC_Day.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_QC_Day.vrt -sd 2 $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/$FECHA/*hdf
+      [ -e index_${VAR}_${VRS}_${FECHA}_LST_Night_1km.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_LST_Night_1km.vrt -sd 5 $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/$FECHA/*hdf
+      [ -e index_${VAR}_${VRS}_${FECHA}_QC_Night.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_QC_Night.vrt -sd 6 $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/$FECHA/*hdf
+   done
 
 done
 

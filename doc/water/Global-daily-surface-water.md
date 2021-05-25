@@ -63,6 +63,54 @@ done
 qsub -J 2006-2015 $SCRIPTDIR/inc/pbs/extract-water-Global-daily-surface-water.pbs
 ```
 
+#### VRT datasets
+
+Builds VRT (Virtual Dataset) as a mosaic of the list of input files
+```sh
+ssh -Y $zID@katana.restech.unsw.edu.au
+qsub -I -X -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
+##module avail geos
+module add python/2.7.15 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+module add grass/7.6.1
+module add R/4.0.2  proj4/5.1.0
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+mkdir -p $GISDATA/water/global/ModisDailyWater/index
+cd $GISDATA/water/global/ModisDailyWater/index
+
+for YEAR in $(seq 2001 2015)  
+do
+   mkdir -p $GISDATA/water/global/ModisDailyWater/index/${YEAR}
+   cd $GISDATA/water/global/ModisDailyWater/index/${YEAR}
+   for VAR in water flag
+   do
+      for DOY in {001..366}
+      do
+         ##ls $GISDATA/water/global/ModisDailyWater/${YEAR}/*/${YEAR}*${DOY}_${VAR}.tiff
+         if [ -e index_${VAR}_${YEAR}_${DOY}.vrt ]
+         then
+            echo "listo"
+         else
+            gdalbuildvrt index_${VAR}_${YEAR}_${DOY}.vrt $GISDATA/water/global/ModisDailyWater/${YEAR}/*/${YEAR}*${DOY}_${VAR}.tiff
+         fi
+      done
+   done
+done
+
+
+cd $GISDATA/water/global/ModisDailyWater/index
+
+for i in $(seq 2001 2015);
+do
+   ls $i/* | wc
+done
+
+
+```
+
+There are four discrete values as 0-Land, 61-Water (unfrozen), 62-Water (frozen), and 255-Fill (areas of no value).
+
+
 #### Notes
 * Here some code for exploring in grass
 
