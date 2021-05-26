@@ -23,3 +23,5 @@ done
 wget --continue -i enlaces --force-html
 
 ```
+
+File name conventions: https://www.clw.csiro.au/aclep/soilandlandscapegrid/MetaData/ASLG_File_Naming_Conventions.html 
