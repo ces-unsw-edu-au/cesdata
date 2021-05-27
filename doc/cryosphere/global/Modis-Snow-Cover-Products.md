@@ -50,6 +50,7 @@ do
   mv *${k}*.xml $k
 done
 
+
 ls -1 | grep ^A > links
 
 
@@ -59,6 +60,15 @@ Bounding box example
 
 Bounding box tropical glaciers
 -100,-25,138,20
+
+```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
+cd $WORKDIR
+qsub -l select=1:ncpus=2:mem=16gb,walltime=12:00:00 -J 2010-2014 $SCRIPTDIR/inc/pbs/download-cryosphere-modis-products.pbs
+
+```
 
 ## Virtual raster datasets
 
