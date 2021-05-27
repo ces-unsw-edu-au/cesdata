@@ -39,19 +39,21 @@ mkdir -p $GISDATA/cryosphere/global/Modis-MOD10A2/
 cd $GISDATA/cryosphere/global/Modis-MOD10A2/
 ## scp nsidc-download_MOD10A2.006_2021-03-30.py $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/cryosphere/global/Modis-MOD10A2/
 
-## manual edit to start and end dates...
-python nsidc-download_MOD10A2.006_2021-03-30.py
+## manual edit to add bounding box, start and end dates, filename match, etc...
+less nsidc-download_MOD10A2.006_2021-03-30.py
 
-for k in $(ls | cut -d. -f2 | uniq | grep ^A)
+for YEAR in $(seq 2010 2020)
 do
-  echo $k
-  mkdir -p $GISDATA/cryosphere/global/Modis-MOD10A2/$k
-  mv *${k}*.hdf $k
-  mv *${k}*.xml $k
+  cd $GISDATA/cryosphere/global/Modis-MOD10A2/$YEAR
+  for k in $(ls | cut -d. -f2 | uniq | grep ^A)
+  do
+    echo $k
+    mkdir -p $k
+    mv *${k}*.hdf $k
+    mv *${k}*.xml $k
+  done
 done
 
-
-ls -1 | grep ^A > links
 
 
 ```
@@ -66,7 +68,8 @@ source ~/proyectos/UNSW/cesdata/env/project-env.sh
 source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 
 cd $WORKDIR
-qsub -l select=1:ncpus=2:mem=16gb,walltime=12:00:00 -J 2010-2014 $SCRIPTDIR/inc/pbs/download-cryosphere-modis-products.pbs
+qsub -l select=1:ncpus=2:mem=16gb,walltime=12:00:00 -J 2019-2021 $SCRIPTDIR/inc/pbs/download-cryosphere-modis-products.pbs
+qsub -l select=1:ncpus=2:mem=16gb,walltime=12:00:00 -J 2000-2018 $SCRIPTDIR/inc/pbs/download-cryosphere-modis-products.pbs
 
 ```
 

@@ -20,8 +20,8 @@ Download from Dryad:
 ## Data download and preparation
 
 ```bash
-mkdir -p $GISDATA/clima/CHELSA
-cd $GISDATA/clima/CHELSA
+mkdir -p $GISDATA/climate/global/CHELSA
+cd $GISDATA/climate/global/CHELSA
 
 ```
 
@@ -30,10 +30,8 @@ On February 2021 the recommended method is to use the [download server](https://
 Once in the server, is easy to select the files needed, and download a list of files paths for download with several tools. Here I use wget
 
 ```bash
-mkdir -p $GISDATA/clima/CHELSA/GDD0
-mv ~/Downloads/envidatS3paths.txt  $GISDATA/clima/CHELSA/GDD0
-cd $GISDATA/clima/CHELSA/GDD0
-wget --continue -i envidatS3paths.txt
+##mv ~/Downloads/envidatS3paths.txt  $GISDATA/climate/global/CHELSA/GDD0
+wget -b -nH -x --cut-dirs=3 --continue -i envidatS3paths.txt
 ```
 
 
