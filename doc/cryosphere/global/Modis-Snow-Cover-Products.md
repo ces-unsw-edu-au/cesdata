@@ -54,7 +54,11 @@ ls -1 | grep ^A > links
 
 
 ```
+Bounding box example
+137,-5,138,-4
 
+Bounding box tropical glaciers
+-100,-25,138,20
 
 ## Virtual raster datasets
 

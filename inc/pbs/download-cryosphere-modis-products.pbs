@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+
+#PBS -l select=1:ncpus=1:mem=120gb
+#PBS -l walltime=12:00:00
+#PBS -N unrar-global-water
+#PBS -k eod
+#PBS -j oe
+#PBS -M j.ferrer@unsw.edu.au
+#PBS -m ae
+#PBS -J 2001-2021
+
+## set up bash environment variables
+source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
+source $HOME/proyectos/UNSW/cesdata/env/katana-env.sh
+
+#Bounding box example
+##export BBOX=137,-5,138,-4
+##Bounding box tropical glaciers
+export BBOX=-100,-25,138,20
+
+export VAR=MOD10A2
+export VRS=006
+
+export YEAR=${PBS_ARRAY_INDEX}
+
+mkdir -p $GISDATA/cryosphere/global/Modis-${VAR}/$YEAR
+cd $GISDATA/cryosphere/global/Modis-${VAR}/$YEAR
+
+sed -e "s/MI_BBOX/"${BBOX}"/g" -e "s/MI_YEAR/"${YEAR}"/g" $GISDATA/cryosphere/global/Modis-${VAR}/nsidc-download_MOD10A2.006_2021-03-30.py > $GISDATA/cryosphere/global/Modis-${VAR}/$YEAR/nsidc-download-script-custom.py
+python nsidc-download-script-custom.py
+
+
+for k in $(ls | cut -d. -f2 | uniq | grep ^A)
+do
+  echo $k
+  mkdir -p $GISDATA/cryosphere/global/Modis-${VAR}/${YEAR}/$k
+  mv *${k}*.hdf $k
+  mv *${k}*.xml $k
+done
