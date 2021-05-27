@@ -39,10 +39,63 @@ mkdir -p $GISDATA/cryosphere/global/Modis-MOD10A2/
 cd $GISDATA/cryosphere/global/Modis-MOD10A2/
 ## scp nsidc-download_MOD10A2.006_2021-03-30.py $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/cryosphere/global/Modis-MOD10A2/
 
+## manual edit to start and end dates...
 python nsidc-download_MOD10A2.006_2021-03-30.py
+
+for k in $(ls | cut -d. -f2 | uniq | grep ^A)
+do
+  echo $k
+  mkdir -p $GISDATA/cryosphere/global/Modis-MOD10A2/$k
+  mv *${k}*.hdf $k
+  mv *${k}*.xml $k
+done
+
+ls -1 | grep ^A > links
+
+
 ```
 
-This downloads 1932 files
+
+## Virtual raster datasets
+
+```sh
+ssh $zID@katana.restech.unsw.edu.au
+qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
+
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+cd $GISDATA/cryosphere/global/Modis-MOD10A2/
+export VAR=MOD10A2
+export VRS=006
+
+# gdalinfo 2019.01.01/MOD11A2.A2019001.h01v08.006.2019010204437.hdf
+
+# gdalinfo HDF4_EOS:EOS_GRID:"2019.01.01/MCD12Q1.A2019001.h01v08.006.2020212125329.hdf":MODIS_Grid_8Day_1km_LST:LST_Day_1km
+
+for YEAR in $(seq 2000 2010)
+do
+   mkdir -p $GISDATA/cryosphere/global/Modis-${VAR}/index/${YEAR}
+   cd $GISDATA/cryosphere/global/Modis-${VAR}/index/${YEAR}
+   for FECHA in $(grep ^A$YEAR $GISDATA/cryosphere/global/Modis-${VAR}/links)
+   do
+      echo $FECHA
+      [ -e index_${VAR}_${VRS}_${FECHA}_Maximum_Snow_Extent.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_Maximum_Snow_Extent.vrt -sd 1 $GISDATA/cryosphere/global/Modis-${VAR}/$FECHA/*hdf
+      [ -e index_${VAR}_${VRS}_${FECHA}_Eight_Day_Snow_Cover.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${FECHA}_Eight_Day_Snow_Cover.vrt -sd 2 $GISDATA/cryosphere/global/Modis-${VAR}/$FECHA/*hdf
+
+   done
+
+done
+
+export VAR=MOD11A2
+export VRS=006
+
+cd $GISDATA/land-surface-temperature/global/Modis-${VAR}.${VRS}/index/
+
+
+```
+
 
 ## example for Myanmar
 ```sh

@@ -78,7 +78,7 @@ source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 mkdir -p $GISDATA/water/global/ModisDailyWater/index
 cd $GISDATA/water/global/ModisDailyWater/index
 
-for YEAR in $(seq 2001 2016)  
+for YEAR in $(seq 2001 2016)
 do
    mkdir -p $GISDATA/water/global/ModisDailyWater/index/${YEAR}
    cd $GISDATA/water/global/ModisDailyWater/index/${YEAR}
@@ -100,8 +100,9 @@ done
 
 cd $GISDATA/water/global/ModisDailyWater/index
 
-for i in $(seq 2001 2015);
+for i in $(seq 2001 2016);
 do
+  echo $i
    ls $i/* | wc
 done
 
