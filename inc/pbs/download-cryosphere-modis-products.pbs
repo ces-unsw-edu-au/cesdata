@@ -23,23 +23,25 @@ export BBOX=-100,-25,138,20
 
 export VAR=MOD10A2
 export VRS=006
-
+export SNSR=Modis
 export YEAR=${PBS_ARRAY_INDEX}
+export DIRPATH=cryosphere/global
 
 
 for NR in $(seq 1 8 366 )
 do
-  WEEK=$(printf %03d $NR)
+  WEEK=A${YEAR}$(printf %03d $NR)
   echo $WEEK
-  mkdir -p $GISDATA/cryosphere/global/Modis-${VAR}/${YEAR}/A${YEAR}${WEEK}
-  cd $GISDATA/cryosphere/global/Modis-${VAR}/$YEAR/A${YEAR}${WEEK}
-  sed -e "s/MI_BBOX/"${BBOX}"/g" -e "s/MI_YEAR/"${YEAR}"/g" -e "s/MI_PERIOD/"${WEEK}"/g" $GISDATA/cryosphere/global/Modis-${VAR}/nsidc-download_MOD10A2.006_2021-03-30.py > $GISDATA/cryosphere/global/Modis-${VAR}/$YEAR/A${YEAR}${WEEK}/nsidc-download-script-custom.py
+  mkdir -p $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}
+  cd $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}
+  sed -e "s/MI_BBOX/"${BBOX}"/g" -e "s/MI_WEEK/"${WEEK}"/g" $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/nsidc-download_${VAR}.${VRS}*.py > $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/nsidc-download-script-custom.py
   python nsidc-download-script-custom.py
 
-  mkdir -p $GISDATA/cryosphere/global/Modis-${VAR}/index/${YEAR}
-  cd $GISDATA/cryosphere/global/Modis-${VAR}/index/${YEAR}
- [ -e index_${VAR}_${VRS}_A${YEAR}${WEEK}_Maximum_Snow_Extent.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_A${YEAR}${WEEK}_Maximum_Snow_Extent.vrt -sd 1 $GISDATA/cryosphere/global/Modis-${VAR}/A${YEAR}${WEEK}/*hdf
- [ -e index_${VAR}_${VRS}_A${YEAR}${WEEK}_Eight_Day_Snow_Cover.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_A${YEAR}${WEEK}_Eight_Day_Snow_Cover.vrt -sd 2 $GISDATA/cryosphere/global/Modis-${VAR}/A${YEAR}${WEEK}/*hdf
+  mkdir -p $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/index/${YEAR}
+  cd $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/index/${YEAR}
+
+ [ -e index_${VAR}_${VRS}_${WEEK}_Maximum_Snow_Extent.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${WEEK}_Maximum_Snow_Extent.vrt -sd 1 $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
+ [ -e index_${VAR}_${VRS}_${WEEK}_Eight_Day_Snow_Cover.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${WEEK}_Eight_Day_Snow_Cover.vrt -sd 2 $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
 
   done
 

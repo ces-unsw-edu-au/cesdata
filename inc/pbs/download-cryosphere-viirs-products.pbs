@@ -1,0 +1,46 @@
+#!/usr/bin/bash
+
+#PBS -l select=1:ncpus=1:mem=120gb
+#PBS -l walltime=12:00:00
+#PBS -N dwnldVNP10AF
+#PBS -k eod
+#PBS -j oe
+#PBS -M j.ferrer@unsw.edu.au
+#PBS -m ae
+#PBS -J 2012-2021
+
+## set up bash environment variables
+source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
+source $HOME/proyectos/UNSW/cesdata/env/katana-env.sh
+
+## load modules for gdal functions
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+#Bounding box example
+export BBOX=137,-5,138,-4
+##Bounding box tropical glaciers
+##export BBOX=-100,-25,138,20
+
+export VAR=VNP10A1F
+export VRS=001
+
+export YEAR=${PBS_ARRAY_INDEX}
+
+
+for NR in $(seq 1 366 )
+do
+  WEEK=A${YEAR}$(printf %03d $NR)
+  echo $WEEK
+  mkdir -p $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/${YEAR}/${WEEK}
+  cd $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/$YEAR/${WEEK}
+  sed -e "s/MI_BBOX/"${BBOX}"/g" -e "s/MI_WEEK/"${WEEK}"/g" $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/nsidc-download_VNP10A1F.001_2021-05-28.py > $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/$YEAR/${WEEK}/nsidc-download-script-custom.py
+  python $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/$YEAR/${WEEK}/nsidc-download-script-custom.py
+
+  mkdir -p $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/index/${YEAR}
+  cd $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/index/${YEAR}
+ [ -e index_${VAR}_${VRS}_${WEEK}_Maximum_Snow_Extent.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${WEEK}_Maximum_Snow_Extent.vrt -sd 1 $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
+ [ -e index_${VAR}_${VRS}_A${YEAR}${WEEK}_Eight_Day_Snow_Cover.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_A${YEAR}${WEEK}_Eight_Day_Snow_Cover.vrt -sd 2 $GISDATA/cryosphere/global/VIIRS-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
+
+  done
+
+done
