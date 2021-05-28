@@ -13,6 +13,9 @@
 source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
 source $HOME/proyectos/UNSW/cesdata/env/katana-env.sh
 
+## load modules for gdal functions
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
 #Bounding box example
 ##export BBOX=137,-5,138,-4
 ##Bounding box tropical glaciers
