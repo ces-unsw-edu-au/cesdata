@@ -34,15 +34,33 @@ do
   echo $WEEK
   mkdir -p $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}
   cd $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}
-  sed -e "s/MI_BBOX/"${BBOX}"/g" -e "s/MI_WEEK/"${WEEK}"/g" $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/nsidc-download_${VAR}.${VRS}*.py > $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/nsidc-download-script-custom.py
-  python nsidc-download-script-custom.py
+
+  ## retrieve list of files first
+  wget "https://cmr.earthdata.nasa.gov/search/granules.csv?provider=NSIDC_ECS&sort_key[]=start_date&sort_key[]=producer_granule_id&scroll=true&page_size=2000&short_name=MOD10A2&version="${VRS}"&version="$(printf %02d $VRS)"&version="$(printf %01d $VRS)"&temporal[]=,&bounding_box="${BBOX}"&options[producer_granule_id][pattern]=true&producer_granule_id[]=*"${WEEK}"*" --output-document=listlinks
+
+  ## now download if not exists in directory
+  for ARCH in $(cut listlinks -d, -f2 | tail -n +2)
+  do
+    if [ -e $ARCH ]
+    then
+      echo "listo" # skip the ones already downloaded
+    else
+       sed -e "s/MI_BBOX//g" -e "s/MI_WEEK/"${ARCH}"/g" $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/nsidc-download_${VAR}.${VRS}*.py > $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/nsidc-download-script-custom.py
+       python nsidc-download-script-custom.py
+
+    fi
+  done
+
 
   mkdir -p $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/index/${YEAR}
   cd $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/index/${YEAR}
 
- [ -e index_${VAR}_${VRS}_${WEEK}_Maximum_Snow_Extent.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${WEEK}_Maximum_Snow_Extent.vrt -sd 1 $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
- [ -e index_${VAR}_${VRS}_${WEEK}_Eight_Day_Snow_Cover.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${WEEK}_Eight_Day_Snow_Cover.vrt -sd 2 $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
-
+  i=1
+  for SVAR in Maximum_Snow_Extent Eight_Day_Snow_Cover
+  do
+     echo $i
+     [ -e index_${VAR}_${VRS}_${WEEK}_${SVAR}.vrt ] && echo "listo" || gdalbuildvrt index_${VAR}_${VRS}_${WEEK}_${SVAR}.vrt -sd $i $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}/*hdf
+     let "i++"
   done
 
 done
