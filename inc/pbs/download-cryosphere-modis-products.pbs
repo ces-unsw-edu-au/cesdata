@@ -36,7 +36,7 @@ do
   cd $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/${YEAR}/${WEEK}
 
   ## retrieve list of files first
-  wget "https://cmr.earthdata.nasa.gov/search/granules.csv?provider=NSIDC_ECS&sort_key[]=start_date&sort_key[]=producer_granule_id&scroll=true&page_size=2000&short_name=MOD10A2&version="${VRS}"&version="$(printf %02d $VRS)"&version="$(printf %01d $VRS)"&temporal[]=,&bounding_box="${BBOX}"&options[producer_granule_id][pattern]=true&producer_granule_id[]=*"${WEEK}"*" --output-document=listlinks
+  wget "https://cmr.earthdata.nasa.gov/search/granules.csv?provider=NSIDC_ECS&sort_key[]=start_date&sort_key[]=producer_granule_id&scroll=true&page_size=2000&short_name="${VAR}"&version="${VRS}"&version="$(printf %02d $VRS)"&version="$(printf %01d $VRS)"&temporal[]=,&bounding_box="${BBOX}"&options[producer_granule_id][pattern]=true&producer_granule_id[]=*"${WEEK}"*" --output-document=listlinks
 
   ## now download if not exists in directory
   for ARCH in $(cut listlinks -d, -f2 | tail -n +2)
@@ -51,7 +51,7 @@ do
     fi
   done
 
-
+  # Create virtual rasters
   mkdir -p $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/index/${YEAR}
   cd $GISDATA/${DIRPATH}/${SNSR}-${VAR}-V${VRS}/index/${YEAR}
 
