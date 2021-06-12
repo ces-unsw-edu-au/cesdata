@@ -23,7 +23,7 @@ wget --continue https://wcmc.io/TNC-006 --output-document=WCMC-mangrove-types.zi
 
 ```
 
-
+Check download
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 source ~/proyectos/UNSW/cesdata/env/katana-env.sh
@@ -31,5 +31,7 @@ source ~/proyectos/UNSW/cesdata/env/katana-env.sh
 cd $WORKDIR
 
 unzip $GISDATA/ecosystems/global/WCMC-mangrove-types/WCMC-mangrove-types.zip
+tree TNC-006_BiophysicalTypologyMangroves/
+
 
 ```
