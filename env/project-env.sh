@@ -23,7 +23,7 @@ roraima)
       export GISDATA=$SHAREDSCRATCH/gisdata
       export GISDB=$SHAREDSCRATCH/gisdb
       source $HOME/.secrets
-      export WORKDIR=/srv/scratch/$USER/tmp/
+      export WORKDIR=/srv/scratch/$USER/tmp/$PROJECTNAME
    else
       echo "I DON'T KNOW WHERE I AM, please customize project-env.sh file"
    fi

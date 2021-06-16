@@ -19,7 +19,7 @@ http://data.unep-wcmc.org/datasets/45
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-mangroves-GMW
 cd $GISDATA/ecosystems/global/WCMC-mangroves-GMW

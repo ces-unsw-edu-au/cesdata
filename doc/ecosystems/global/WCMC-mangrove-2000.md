@@ -22,7 +22,7 @@ https://sedac.ciesin.columbia.edu/data/set/lulc-global-mangrove-forests-distribu
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-mangroves-2000
 cd $GISDATA/ecosystems/global/WCMC-mangroves-2000
@@ -34,7 +34,7 @@ wget --continue http://wcmc.io/WCMC_010 --output-document=WCMC-mangroves-2000.zi
 Check download
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 cd $WORKDIR
 

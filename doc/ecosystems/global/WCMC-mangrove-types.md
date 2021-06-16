@@ -14,7 +14,7 @@ https://data.unep-wcmc.org/datasets/48
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-mangrove-types
 cd $GISDATA/ecosystems/global/WCMC-mangrove-types
@@ -26,7 +26,7 @@ wget --continue https://wcmc.io/TNC-006 --output-document=WCMC-mangrove-types.zi
 Check download
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 cd $WORKDIR
 
