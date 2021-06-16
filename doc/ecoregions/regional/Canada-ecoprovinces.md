@@ -14,7 +14,7 @@ https://open.canada.ca/data/en/dataset/98fa7335-fbfe-4289-9a0e-d6bf3874b424
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/ecoregions/regional/Canada
 cd $GISDATA/ecoregions/regional/Canada
 

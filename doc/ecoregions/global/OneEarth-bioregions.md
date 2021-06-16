@@ -7,7 +7,7 @@ https://www.oneearth.org/bioregions/
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/ecoregions/global/
 cd $GISDATA/ecoregions/global/
 

@@ -7,7 +7,7 @@ http://www.geo.uzh.ch/microsite/cryodata/pf_global/
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/soil/global/permafrost
 cd $GISDATA/soil/global/permafrost

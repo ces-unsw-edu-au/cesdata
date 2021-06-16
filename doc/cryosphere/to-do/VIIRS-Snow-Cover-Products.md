@@ -24,7 +24,7 @@ So we do a manual edit to add bounding box, start and end dates, filename match,
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/cryosphere/global/VIIRS-VNP10A1F/
 cd $GISDATA/cryosphere/global/VIIRS-VNP10A1F/

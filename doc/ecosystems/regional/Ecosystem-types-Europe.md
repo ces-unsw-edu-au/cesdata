@@ -12,7 +12,7 @@ http://cmshare.eea.europa.eu/s/KscZR3EcKrGmPbK/download
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecosystems/regional/MAES
 cd $GISDATA/ecosystems/regional/MAES

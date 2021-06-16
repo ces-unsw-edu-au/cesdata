@@ -19,7 +19,7 @@ Spatial data must be requested at  http://datazone.birdlife.org/species/requestd
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 
 mkdir -p $GISDATA/species-dist/global/BOTW

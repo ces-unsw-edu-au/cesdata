@@ -13,7 +13,7 @@ Data is available at https://rmgsc.cr.usgs.gov/outgoing/ecosystems/Global/ and h
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/ecological/global/EcologicalMarineUnits
 cd  $GISDATA/ecological/global/EcologicalMarineUnits
 

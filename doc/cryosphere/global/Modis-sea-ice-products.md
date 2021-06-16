@@ -22,7 +22,7 @@ There is an option for a using a download script in python.
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=cryosphere/global
 DNAME=Modis-MOD10C2

@@ -30,7 +30,7 @@ The zipfiles were provided directly by D. Keith (pers. comm.).
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=cryosphere/global
 DNAME=subglacial-lakes

@@ -17,7 +17,7 @@ Regular updates:
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/protected/global/WDPA
 cd $GISDATA/protected/global/WDPA

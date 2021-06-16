@@ -9,7 +9,7 @@ The Global Forest Resources Assessment (FRA) of the Food and Agriculture Organiz
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecological/global/FAO-GEZ
 cd $GISDATA/ecological/global/FAO-GEZ

@@ -16,7 +16,7 @@ Data and documentation is available at:
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/climate/global/Terraclimate
 cd $GISDATA/climate/global/Terraclimate

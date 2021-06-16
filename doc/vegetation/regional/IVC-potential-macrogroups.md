@@ -11,7 +11,7 @@ https://rmgsc.cr.usgs.gov/outgoing/ecosystems/AfricaData/
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/Africa
 cd $GISDATA/vegetation/regional/IVC-EcoVeg/Africa
 
@@ -43,7 +43,7 @@ http://hub.arcgis.com/datasets/Natureserve::southamerica-ivc-macrogroups-potenti
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/SAM
 mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/NAC
 cd $GISDATA/vegetation/regional/IVC-EcoVeg/
@@ -65,7 +65,7 @@ Reprojection: In order to combine both layers in one file with a common projecti
 qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 

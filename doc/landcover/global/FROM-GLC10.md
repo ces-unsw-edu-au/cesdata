@@ -15,7 +15,7 @@ FROM GLC 2017 V0.1.3 with minor improvements.
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/landcover/global/FROM-GLC10/2017-V0.1.3
 cd $GISDATA/landcover/global/FROM-GLC10/2017-V0.1.3

@@ -15,7 +15,7 @@ Through the HydroSHED portal at: https://www.hydrosheds.org/page/hydrolakes
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/hydrology/global/HydroLAKES
 cd $GISDATA/hydrology/global/HydroLAKES
 wget --continue https://97dc600d3ccc765f840c-d5a4231de41cd7a15e06ac00b0bcc552.ssl.cf5.rackcdn.com/HydroLAKES_polys_v10.gdb.zip

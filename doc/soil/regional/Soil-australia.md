@@ -10,7 +10,7 @@ https://www.clw.csiro.au/aclep/soilandlandscapegrid/GetData-DAP.html
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/soil/regional/soil-landscape-grid-australia
 cd $GISDATA/soil/regional/soil-landscape-grid-australia

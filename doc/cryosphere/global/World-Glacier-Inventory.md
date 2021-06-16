@@ -13,7 +13,7 @@ Available at: ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G01130/
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=cryosphere/global
 DNAME=WGI_2012

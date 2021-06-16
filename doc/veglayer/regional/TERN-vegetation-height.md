@@ -12,7 +12,7 @@ http://data.auscover.org.au/xwiki/bin/view/Product+pages/ICESat+Vegetation+Struc
 ```sh
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/veglayer/regional/TERN-Vegetation-height
 cd $GISDATA/veglayer/regional/TERN-Vegetation-height

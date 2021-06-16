@@ -16,7 +16,7 @@ Use Earth-data login details
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/cryosphere/global/SeaIceIndex
 cd $GISDATA/cryosphere/global/SeaIceIndex

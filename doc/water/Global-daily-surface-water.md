@@ -18,7 +18,7 @@ This dataset is **HUGE**, each *compressed* file is 16G.
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/water/global/ModisDailyWater/
 cd $GISDATA/water/global/ModisDailyWater/
 
@@ -39,7 +39,7 @@ Extract data (using a PBS job: `qsub -I -l select=1:ncpus=1:mem=120gb,walltime=1
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 cd $GISDATA/water/ModisDailyWater/
 
 lsar -l 2016.rar ## 242623 directories/files
@@ -74,7 +74,7 @@ module add python/2.7.15 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 module add grass/7.6.1
 module add R/4.0.2  proj4/5.1.0
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/water/global/ModisDailyWater/index
 cd $GISDATA/water/global/ModisDailyWater/index
 

@@ -11,7 +11,7 @@ http://www.earthenv.org//topography
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=topography/global
 DNAME=EarthEnv-topography

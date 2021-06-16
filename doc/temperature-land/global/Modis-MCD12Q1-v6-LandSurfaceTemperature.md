@@ -16,7 +16,7 @@ Authentication via ~/.netrc file
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 export MFTP=https://e4ftl01.cr.usgs.gov/
 export VAR=MOD11A2
@@ -55,7 +55,7 @@ qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 cd $GISDATA/land-surface-temperature/global/Modis-MOD11A2.006/
 export VAR=MOD11A2
 export VRS=006

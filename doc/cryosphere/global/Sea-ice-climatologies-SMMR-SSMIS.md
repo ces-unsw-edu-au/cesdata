@@ -19,7 +19,7 @@ Use Earth-data login details
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/cryosphere/global/SMMR_SeaIceTrends
 cd $GISDATA/cryosphere/global/SMMR_SeaIceTrends

@@ -8,7 +8,7 @@ https://www.agriculture.gov.au/abares/forestsaustralia/sofr/sofr-2018
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/fire/regional/australia-forest-fire-2011-16
 cd $GISDATA/fire/regional/australia-forest-fire-2011-16

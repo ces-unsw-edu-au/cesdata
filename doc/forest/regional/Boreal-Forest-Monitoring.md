@@ -18,7 +18,7 @@ Download the sampling frame boundary for the boreal biome. This consists of the 
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/forest/regional/Boreal-Forest-Monitoring
 cd $GISDATA/forest/regional/Boreal-Forest-Monitoring

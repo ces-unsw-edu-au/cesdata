@@ -21,7 +21,7 @@ Australia - Present Major Vegetation Groups - NVIS Version 6.0 (Albers 100m anal
 ```sh
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/vegetation/regional/NVIS-Australia/
 cd $GISDATA/vegetation/regional/NVIS-Australia/

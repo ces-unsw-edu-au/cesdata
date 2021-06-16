@@ -9,7 +9,7 @@ https://lpdaac.usgs.gov/products/mod44bv006/
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 
 export MFTP=https://e4ftl01.cr.usgs.gov/

@@ -25,7 +25,7 @@ Download from webpage into downloads folder, then move to gisdata folder:
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 
 mkdir -p $GISDATA/species-dist/global/IUCN_RLTS

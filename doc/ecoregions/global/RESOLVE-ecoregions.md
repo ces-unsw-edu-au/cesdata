@@ -10,7 +10,7 @@
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/ecoregions/global/TEOW/
 cd $GISDATA/ecoregions/global/TEOW/
 

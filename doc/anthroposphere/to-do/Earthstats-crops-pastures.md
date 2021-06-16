@@ -4,7 +4,7 @@ http://www.earthstat.org/cropland-pasture-area-2000/
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/antroposphere/global/Earthstats
 cd $GISDATA/antroposphere/global/Earthstats
 

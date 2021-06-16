@@ -21,7 +21,7 @@ Direct download from https://rmgsc.cr.usgs.gov/outgoing/ecosystems/Global
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=topography/global
 DNAME=GME-Mountain-Inventory

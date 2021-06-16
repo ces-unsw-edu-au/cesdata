@@ -7,7 +7,7 @@ https://datacatalog.worldbank.org/dataset/world-bank-official-boundaries
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 
 mkdir -p $GISDATA/admin/global/World-Bank/

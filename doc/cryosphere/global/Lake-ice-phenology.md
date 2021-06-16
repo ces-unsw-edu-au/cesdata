@@ -16,7 +16,7 @@ There are at least two alternative pages for data access
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=cryosphere/global
 DNAME=LIAG_Ice

@@ -11,7 +11,7 @@ https://www.dropbox.com/sh/rv1ftdpvp3lhtxn/AADXGYDYXEGmG8FBLQVlAGQ8a?dl=0
 ```sh
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/veglayer/global/WHRC-tropics/
 cd $GISDATA/veglayer/global/WHRC-tropics/

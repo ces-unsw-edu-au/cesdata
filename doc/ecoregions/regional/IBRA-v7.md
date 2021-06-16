@@ -7,7 +7,7 @@ https://www.environment.gov.au/fed/catalog/search/resource/details.page?uuid=%7B
 ```sh
 
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/ecoregions/regional/IBRAv7
 cd $GISDATA/ecoregions/regional/IBRAv7
 

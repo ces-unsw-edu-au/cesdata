@@ -12,7 +12,7 @@ https://www.worldwildlife.org/publications/marine-ecoregions-of-the-world-a-bior
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/ecoregions/global/MEOW/
 cd $GISDATA/ecoregions/global/MEOW/
 

@@ -9,7 +9,7 @@ DOI:	10.17871/TRY.60
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/plant-traits/global/TRY-leaf-trait-maps/
 cd $GISDATA/plant-traits/global/TRY-leaf-trait-maps/

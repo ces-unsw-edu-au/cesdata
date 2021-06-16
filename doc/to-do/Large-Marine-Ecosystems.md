@@ -18,7 +18,7 @@ https://datashare.ed.ac.uk/handle/10283/2552
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecoregions/global/LME/
 cd $GISDATA/ecoregions/global/LME/

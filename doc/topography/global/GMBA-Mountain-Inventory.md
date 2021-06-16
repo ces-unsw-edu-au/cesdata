@@ -30,7 +30,7 @@ Download data from ilias and then:
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 DPATH=topography/global
 DNAME=GMBA-Mountain-Inventory

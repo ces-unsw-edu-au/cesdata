@@ -17,7 +17,7 @@ Choose from different products , times and resolutions
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/antroposphere/global/GHSL
 cd $GISDATA/antroposphere/global/GHSL
 

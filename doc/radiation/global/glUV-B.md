@@ -15,7 +15,7 @@ Data available on-line at https://www.ufz.de/gluv/index.php?en=32435
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/radiation/global/glUV
 cd $GISDATA/radiation/global/glUV

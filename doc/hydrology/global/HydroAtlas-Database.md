@@ -14,7 +14,7 @@ Figshare data repository at https://doi.org/10.6084/m9.figshare.9890531
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 mkdir -p $GISDATA/hydrology/global/HydroATLAS
 cd $GISDATA/hydrology/global/HydroATLAS
 

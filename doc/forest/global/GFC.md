@@ -15,7 +15,7 @@ For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script to do
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 export SRC="https://storage.googleapis.com/earthenginepartners-hansen"
 

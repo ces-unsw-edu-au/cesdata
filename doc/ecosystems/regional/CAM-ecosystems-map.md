@@ -25,7 +25,7 @@ http://documents.worldbank.org/curated/en/386971468223450848/Descripcion-de-los-
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/ecosystems/regional/worldbank-Central-America/
 cd $GISDATA/ecosystems/regional/worldbank-Central-America/

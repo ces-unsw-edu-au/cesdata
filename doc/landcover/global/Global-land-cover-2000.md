@@ -11,7 +11,7 @@
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-source ~/proyectos/UNSW/cesdata/env/katana-env.sh
+
 
 mkdir -p $GISDATA/landcover/global/GLC2000
 cd $GISDATA/landcover/global/GLC2000
