@@ -24,6 +24,7 @@ mkdir -p $GISDATA/ecoregions/global/LME/
 cd $GISDATA/ecoregions/global/LME/
 
 wget --continue 'https://datashare.ed.ac.uk/bitstream/handle/10283/2552/lmes_64.zip?sequence=1&isAllowed=y' --output-document=lmes_64.zip
+## use --no-check-certificate if necessary
 
 
 ```

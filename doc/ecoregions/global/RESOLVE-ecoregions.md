@@ -15,6 +15,45 @@ mkdir -p $GISDATA/ecoregions/global/TEOW/
 cd $GISDATA/ecoregions/global/TEOW/
 
 wget -b --continue https://storage.googleapis.com/teow2016/Ecoregions2017.zip
+
+```
+
+
+
+
+```sh
+qsub -I -l select=1:ncpus=12:mem=120gb,walltime=24:00:00
+
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+export WD=$GISDATA/ecoregions/global/TEOW/
+export OUTPUT=$WD/teow2017-valid-output
+cd  $WD
+unzip -u $WD/Ecoregions2017.zip
+
+ogr2ogr -f "CSV" $OUTPUT Ecoregions2017.shp -sql "SELECT ECO_BIOME_,ECO_ID,ECO_NAME FROM Ecoregions2017"
+
+cd $OUTPUT
+
+for BIOME in $(cut ${OUTPUT}/Ecoregions2017.csv -d, -f1 | tail -n+2 | sort | uniq)
+do
+   mkdir -p $OUTPUT/$BIOME
+   cd $OUTPUT/$BIOME
+   grep $BIOME $OUTPUT/Ecoregions2017.csv > list
+   for ECOID in $(cut list -d, -f2 | sed -s s/'"'//g)
+   do
+      if [ $(ogrinfo --version | grep "GDAL 3.2" -c) -eq 1 ]
+      then
+         ogr2ogr -f "GPKG" teow_${ECOID}_valid.gpkg $WD/Ecoregions2017.shp Ecoregions2017 -where "ECO_ID='${ECOID}'" -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84" -makevalid
+      else
+         ogr2ogr -f "GPKG" teow_${ECOID}.gpkg $WD/Ecoregions2017.shp Ecoregions2017 -where "ECO_ID='${ECOID}'" -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84"      
+      fi      
+    echo $BIOME $ECOID done! $(date)
+   done
+done
+
 ```
 
 

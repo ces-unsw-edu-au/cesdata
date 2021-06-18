@@ -27,3 +27,70 @@ cd $GISDATA/ecosystems/global/WCMC-mangroves-GMW
 wget --continue http://wcmc.io/GMW_001 --output-document=WCMC-mangroves-GMW.zip
 
 ```
+
+```sh
+qsub -I -l select=1:ncpus=12:mem=120gb,walltime=24:00:00
+
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+export WD=$GISDATA/ecosystems/global/WCMC-mangroves-GMW
+
+cd  $WD
+unzip -u $WD/WCMC-mangroves-GMW.zip
+export OUTPUT=$WD/GMW-valid-output
+mkdir -p $OUTPUT
+cd $OUTPUT
+for YEAR in 2016 1996 2007 2008 2009 2010 2015
+do
+   echo $YEAR
+   if [ $(ogrinfo --version | grep "GDAL 3.2" -c) -eq 1 ]
+   then
+      ogr2ogr -f "GPKG" GMW_${YEAR}_valid.gpkg $WD/01_Data/GMW_${YEAR}_v2.shp GMW_${YEAR}_v2 -nlt PROMOTE_TO_MULTI -makevalid
+   else
+      echo " ogr version does not support -makevalid flag"
+      ##ogr2ogr -f "GPKG" GMW_${YEAR}_valid.gpkg $WD/01_Data/GMW_${YEAR}_v2.shp GMW_${YEAR}_v2 -nlt PROMOTE_TO_MULTI
+   fi      
+
+    echo GMW $YEAR done! $(date)
+
+done
+```
+
+
+Alternative approach using PostGIS (in localhost)
+
+```sh
+export WD=$GISDATA/ecosystems/global/WCMC-mangroves-GMW
+
+cd  $WD
+unzip -u $WD/WCMC-mangroves-GMW.zip
+
+psql gisdata -c "CREATE SCHEMA wcmc"
+
+for YEAR in 2016 1996 2007 2008 2009 2010 2015
+do
+   echo $YEAR
+   ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata"  $WD/01_Data/GMW_${YEAR}_v2.shp -lco SCHEMA=wcmc -nlt PROMOTE_TO_MULTI -nln gmw_${YEAR}
+
+    echo GMW $YEAR done! $(date)
+
+done
+
+```
+
+
+```sql
+
+\dt wcmc.
+
+SELECT ogc_fid,ST_AREA(wkb_geometry),ST_AsText(ST_CENTROID(wkb_geometry))  FROM  wcmc.gmw_2016 where ST_IsValid(wkb_geometry) LIMIT 10;
+
+-- SELECT ST_IsValid(wkb_geometry) as valid,count(*) FROM  wcmc.gmw_2016 GROUP BY valid;
+-- SELECT ogc_fid,ST_AREA(ST_MakeValid(wkb_geometry)),ST_AsText(ST_CENTROID(wkb_geometry)),ST_IsValid(wkb_geometry) FROM  wcmc.gmw_2016 where NOT ST_IsValid(wkb_geometry) LIMIT 10;
+
+-- this throws many lines of warnings 
+UPDATE wcmc.gmw_2016 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry);
+
+```
