@@ -90,7 +90,17 @@ SELECT ogc_fid,ST_AREA(wkb_geometry),ST_AsText(ST_CENTROID(wkb_geometry))  FROM 
 -- SELECT ST_IsValid(wkb_geometry) as valid,count(*) FROM  wcmc.gmw_2016 GROUP BY valid;
 -- SELECT ogc_fid,ST_AREA(ST_MakeValid(wkb_geometry)),ST_AsText(ST_CENTROID(wkb_geometry)),ST_IsValid(wkb_geometry) FROM  wcmc.gmw_2016 where NOT ST_IsValid(wkb_geometry) LIMIT 10;
 
--- this throws many lines of warnings 
-UPDATE wcmc.gmw_2016 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry);
+-- this throws many lines of warnings
+UPDATE wcmc.gmw_2016 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); -- UPDATE 63099
+
+UPDATE wcmc.gmw_2015 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); --
+
+UPDATE wcmc.gmw_1996 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); --
+
+UPDATE wcmc.gmw_2007 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); --
+UPDATE wcmc.gmw_2008 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); --
+UPDATE wcmc.gmw_2009 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); --
+UPDATE wcmc.gmw_2010 set wkb_geometry=ST_MakeValid(wkb_geometry) WHERE NOT ST_IsValid(wkb_geometry); --
+
 
 ```

@@ -6,6 +6,7 @@ Maintained by [@jrfep](https://github.com/jrfep)
 ## Folder contents
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
 tree -L 3 $GISDATA
 
 /srv/scratch/cesdata/gisdata
@@ -17,14 +18,21 @@ tree -L 3 $GISDATA
 │       └── Earthstats
 ├── climate
 │   └── global
+│       ├── CHELSA
 │       ├── CRU_TS
 │       └── Terraclimate
 ├── cryosphere
 │   └── global
-│       ├── Modis-MOD10A2
+│       ├── GLIMS_2019
+│       ├── LIAG_Ice
+│       ├── Modis-MOD10A2-V006
 │       ├── Modis-MOD10C2
+│       ├── RGI_6.0
 │       ├── SeaIceIndex
-│       └── SMMR_SeaIceTrends
+│       ├── SMMR_SeaIceTrends
+│       ├── subglacial-lakes
+│       ├── VIIRS-VNP10A1F-V001
+│       └── WGI_2012
 ├── ecological
 │   └── global
 │       ├── EcologicalMarineUnits
@@ -41,7 +49,10 @@ tree -L 3 $GISDATA
 │       └── IBRAv7
 ├── ecosystems
 │   ├── global
-│   │   └── WCMC-coral-reefs
+│   │   ├── WCMC-coral-reefs
+│   │   ├── WCMC-mangroves-2000
+│   │   ├── WCMC-mangroves-GMW
+│   │   └── WCMC-mangrove-types
 │   └── regional
 │       ├── MAES
 │       └── worldbank-Central-America
@@ -49,15 +60,15 @@ tree -L 3 $GISDATA
 │   └── regional
 │       └── australia-forest-fire-2011-16
 ├── forest
-│   ├── GFC
-│   │   └── GFC-2019-v1.7
 │   ├── global
-│   │   └── 3d-forest-JPL
+│   │   ├── 3d-forest-JPL
+│   │   └── GFC
 │   └── regional
 │       ├── Boreal-Forest-Monitoring
 │       └── China
 ├── hydrology
 │   └── global
+│       ├── GIRES
 │       ├── HydroATLAS
 │       └── HydroLAKES
 ├── landcover
@@ -68,6 +79,7 @@ tree -L 3 $GISDATA
 │       └── Modis
 ├── land-surface-temperature
 │   └── global
+│       ├── Modis-.
 │       └── Modis-MOD11A2.006
 ├── plant-traits
 │   └── global
@@ -88,6 +100,12 @@ tree -L 3 $GISDATA
 │   └── global
 │       ├── BOTW
 │       └── IUCN_RLTS
+├── topography
+│   └── global
+│       ├── EarthEnv-topography
+│       ├── GMBA-Mountain-Inventory
+│       ├── GME-Mountain-Inventory
+│       └── SRTM30-plus
 ├── vegcover
 │   └── global
 │       └── Modis-MOD44B.006
@@ -104,7 +122,8 @@ tree -L 3 $GISDATA
     └── global
         └── ModisDailyWater
 
-94 directories, 0 files
+111 directories, 0 files
+
 ```
 
 
