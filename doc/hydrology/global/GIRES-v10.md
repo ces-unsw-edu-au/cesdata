@@ -25,7 +25,8 @@ unzip -u GIRESv10.zip
 unzip -u GIRES_v10_gdb.zip
 # rm GIRESv10.zip
 
-
+module add python/2.7.15 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+ogrinfo GIRES_v10.gdb/
 
 ```
 

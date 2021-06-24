@@ -48,12 +48,18 @@ do
       then
          ogr2ogr -f "GPKG" teow_${ECOID}_valid.gpkg $WD/Ecoregions2017.shp Ecoregions2017 -where "ECO_ID='${ECOID}'" -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84" -makevalid
       else
-         ogr2ogr -f "GPKG" teow_${ECOID}.gpkg $WD/Ecoregions2017.shp Ecoregions2017 -where "ECO_ID='${ECOID}'" -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84"      
-      fi      
+         ogr2ogr -f "GPKG" teow_${ECOID}.gpkg $WD/Ecoregions2017.shp Ecoregions2017 -where "ECO_ID='${ECOID}'" -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84"
+      fi
     echo $BIOME $ECOID done! $(date)
    done
 done
 
+if [ $(ogrinfo --version | grep "GDAL 3.2" -c) -eq 1 ]
+then
+  ogr2ogr -f "GPKG" teow_2017_valid.gpkg $WD/Ecoregions2017.shp Ecoregions2017  -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84" -makevalid
+else
+   echo " update GDAL version"
+fi
 ```
 
 
