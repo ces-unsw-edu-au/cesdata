@@ -29,10 +29,27 @@ wget --continue https://www.feow.org/files/downloads/GIS_hs_snapped.zip
 
 ```
 
+Create a new geopackage file with valid topology and assign the (implied) projection information:
+```sh
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+unzip -u GIS_hs_snapped.zip
+unzip -u Freshwater_Ecoregions_Of_the_World_\(FEOW\)-fgdb.zip
+
+ogrinfo c4be086f842b4fbbab544a047bc90dcb.gdb Freshwater_Ecoregions |less
+
+
+if [ $(ogrinfo --version | grep "GDAL 3.2" -c) -eq 1 ]
+then
+     ## ogr2ogr -f "GPKG" feow_hs_valid.gpkg GIS_hs_snapped feow_hydrosheds -nlt PROMOTE_TO_MULTI -a_srs "+proj=longlat +datum=WGS84" -makevalid
+
+     ogr2ogr -f "GPKG" feow_all_valid.gpkg c4be086f842b4fbbab544a047bc90dcb.gdb Freshwater_Ecoregions -nlt PROMOTE_TO_MULTI -t_srs "+proj=longlat +datum=WGS84" -makevalid
+
+fi
+
+```
+
 
 ```sh
-unzip GIS_hs_snapped
-unzip Freshwater_Ecoregions_Of_the_World_\(FEOW\)-fgdb.zip
 
 
 psql gisdata -c "CREATE SCHEMA FEOW"

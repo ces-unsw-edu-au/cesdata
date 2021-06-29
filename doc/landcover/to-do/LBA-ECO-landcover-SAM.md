@@ -2,9 +2,9 @@
 
 https://daac.ornl.gov/LBA/guides/LC08_EOS_Maps.html
 
-This data set provides (1) soil maps for Brazil that are digital versions of the MAPA DE SOLOS DO BRASIL (EMBRAPA, 1981) classified at three levels of detail, 19-class, 70-class and 249-class; (2) vegetation maps for Brazil that are digital versions of the MAPA DE VEGETACAO DO BRASIL (IBGE, 1988) classified at three levels of detail, 13-class, 59-class, and an overprint (combination) class; and (3) a land cover map for all of South America that was derived from National Oceanic and Atmospheric Administration (NOAA) Advanced Very High Resolution Radiometer (AVHRR) data over the time period 1987 through 1991 (Stone et al., 1994).
+> This data set provides (1) soil maps for Brazil that are digital versions of the MAPA DE SOLOS DO BRASIL (EMBRAPA, 1981) classified at three levels of detail, 19-class, 70-class and 249-class; (2) vegetation maps for Brazil that are digital versions of the MAPA DE VEGETACAO DO BRASIL (IBGE, 1988) classified at three levels of detail, 13-class, 59-class, and an overprint (combination) class; and (3) a land cover map for all of South America that was derived from National Oceanic and Atmospheric Administration (NOAA) Advanced Very High Resolution Radiometer (AVHRR) data over the time period 1987 through 1991 (Stone et al., 1994).
 
-The seven soil, vegetation, and general land cover classification maps are provided as GeoTIFF files (.tif) files. There are also three companion files (.pdf), one each, for the soil, vegetation, and land cover maps, with information on  map units, class values, codes, and descriptions.
+> The seven soil, vegetation, and general land cover classification maps are provided as GeoTIFF files (.tif) files. There are also three companion files (.pdf), one each, for the soil, vegetation, and land cover maps, with information on  map units, class values, codes, and descriptions.
 
 Cite this data set as follows:
 
@@ -33,4 +33,5 @@ Land cover map:
 The land cover map of South America  was produced from 1-15 km National Oceanic and Atmospheric Administration (NOAA) Advanced Very High Resolution Radiometer (AVHRR) data over the time period 1987 through 1991. The data were acquired from Woods Hole Research Center.
 
 The file was processed with ArcInfo and resulted in a 1-km resolution, 41-class, land cover map of South America. Refer to the companion file SA_lc_Map_41class_aux.pdf for the class values and names.
+
 > Stone, T.A., P. Schlesinger, G.M. Woodwell, and R.A. Houghton, 1994. A Map of the Vegetation of South America Based on Satellite Imagery. Photogrammetric Engineering and Remote Sensing. 60(5):541-551.
