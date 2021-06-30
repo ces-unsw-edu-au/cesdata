@@ -32,7 +32,22 @@ source ~/proyectos/UNSW/cesdata/env/project-env.sh
 mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/
 cd $GISDATA/landcover/global/ESRI-2020-LC/
 
-wget -b --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01.zip
+wget --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01.zip
+
+## example ## wget --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01/42F_20200101-20210101.tif
+
+for p in C D E F G H I J K L M N O P Q R S T U V W X Y Z
+do
+  for k in $(seq 1 60)
+  do
+    export v=$(printf %02d $k)
+    wget --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01/${v}${p}_20200101-20210101.tif
+  done
+done
+```
+
+```{r}
+source("~/proyectos/UNSW/cesdata/env/project-env.R")
 ```
 
 Earth Engine Snippet
