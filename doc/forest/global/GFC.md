@@ -15,6 +15,7 @@ For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script to do
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
+mkdir -p $GISDATA/forest/global/GFC/
 
 
 export SRC="https://storage.googleapis.com/earthenginepartners-hansen"
@@ -42,7 +43,7 @@ for VRS in GFC-2019-v1.7
 do
   for VAR in gain lossyear treecover2000
   do
-    gdalbuildvrt index_${VRS}_${VAR}.vrt $GISDATA/sensores/Landsat/$VRS/Hansen_${VRS}_${VAR}_*.tif
+    gdalbuildvrt index_${VRS}_${VAR}.vrt $GISDATA/forest/global/GFC/${VRS}/${VAR}/Hansen_${VRS}_${VAR}_*.tif
   done
 done
 ```

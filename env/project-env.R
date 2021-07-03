@@ -30,3 +30,5 @@ if (Sys.getenv("GISDATA") != "") {
          }
       })
 }
+
+setwd(work.dir)
