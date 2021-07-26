@@ -15,15 +15,20 @@ https://www.worldwildlife.org/pages/global-lakes-and-wetlands-database
 
 
 ```sh
-mkdir -p $GISDATA/inventories/GLWD
-cd $GISDATA/inventories/GLWD
-mv ~/Downloads/GLWD-level* .
-ls *zip
-cd $WORKDIR
-unzip -u $GISDATA/inventories/GLWD/GLWD-level1.zip
-unzip -u $GISDATA/inventories/GLWD/GLWD-level2.zip
-unzip -u  $GISDATA/inventories/GLWD/GLWD-level3.zip
+source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
 
+mkdir -p $GISDATA/hydrology/global/GLWD
+cd $GISDATA/hydrology/global/GLWD
+wget --continue 'https://c402277.ssl.cf1.rackcdn.com/publications/16/files/original/GLWD-level1.zip?1343838522' --output-document='GLWD-level1.zip'
+wget --continue 'https://c402277.ssl.cf1.rackcdn.com/publications/17/files/original/GLWD-level2.zip?1343838637'  --output-document='GLWD-level2.zip'
+wget --continue 'https://c402277.ssl.cf1.rackcdn.com/publications/18/files/original/GLWD-level3.zip?1343838716' --output-document='GLWD-level3.zip'
+
+##mv ~/Downloads/GLWD-level* .
+
+for k in $(ls *zip)
+do
+  unzip -u $k
+done
 ```
 
 #### Legend

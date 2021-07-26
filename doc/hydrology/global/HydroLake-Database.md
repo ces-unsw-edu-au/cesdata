@@ -20,7 +20,8 @@ mkdir -p $GISDATA/hydrology/global/HydroLAKES
 cd $GISDATA/hydrology/global/HydroLAKES
 wget --continue https://97dc600d3ccc765f840c-d5a4231de41cd7a15e06ac00b0bcc552.ssl.cf5.rackcdn.com/HydroLAKES_polys_v10.gdb.zip
 wget --continue https://97dc600d3ccc765f840c-d5a4231de41cd7a15e06ac00b0bcc552.ssl.cf5.rackcdn.com/HydroLAKES_polys_v10_shp.zip
-#unzip HydroLAKES_polys_v10.gdb.zip
+
+unzip -u HydroLAKES_polys_v10.gdb.zip
 
 ```
 
