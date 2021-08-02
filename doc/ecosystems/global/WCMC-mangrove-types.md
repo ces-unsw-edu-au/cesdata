@@ -27,11 +27,40 @@ Check download
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 
+cd $GISDATA/ecosystems/global/WCMC-mangrove-types
 
-cd $WORKDIR
 
-unzip $GISDATA/ecosystems/global/WCMC-mangrove-types/WCMC-mangrove-types.zip
+unzip -u $GISDATA/ecosystems/global/WCMC-mangrove-types/WCMC-mangrove-types.zip
 tree TNC-006_BiophysicalTypologyMangroves/
 
 
+```
+
+
+```sh
+qsub -I -l select=1:ncpus=4:mem=120gb,walltime=8:00:00
+
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+cd $GISDATA/ecosystems/global/WCMC-mangrove-types
+unzip -u $WD/WCMC-mangrove-types.zip
+
+export WD=$GISDATA/ecosystems/global/WCMC-mangrove-types/TNC-006_BiophysicalTypologyMangroves/01_Data
+export OUTPUT=$GISDATA/ecosystems/global/WCMC-mangrove-types/TNC-BioPhys-Mangrove-valid-output
+mkdir -p $OUTPUT
+cd $OUTPUT
+for YEAR in 2016 1996 2010 2007
+do
+   echo $YEAR
+   if [ $(ogrinfo --version | grep "GDAL 3.2" -c) -eq 1 ]
+   then
+      ogr2ogr -f "GPKG" Mangrove_Typology_v2_2_${YEAR}_valid.gpkg $WD/Mangrove_Typology_v2_2_${YEAR}.shp Mangrove_Typology_v2_2_${YEAR} -nlt PROMOTE_TO_MULTI -makevalid
+   else
+      echo " ogr version does not support -makevalid flag"
+      ##ogr2ogr -f "GPKG" GMW_${YEAR}_valid.gpkg $WD/01_Data/GMW_${YEAR}_v2.shp GMW_${YEAR}_v2 -nlt PROMOTE_TO_MULTI
+   fi
+    echo $YEAR done! $(date)
+done
 ```
