@@ -22,8 +22,10 @@ Through Zenodo at DOI 10.5281/zenodo.3243509
 #### Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/landcover/CGLS
-cd $GISDATA/landcover/CGLS
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+mkdir -p $GISDATA/landcover/global/CGLS
+cd $GISDATA/landcover/global/CGLS
 
 for arch in ProbaV_LC100_epoch2015_global_v2.0.2_snow-coverfraction-layer_EPSG-4326.tif LandCover_global_v2_discrete-and-FCC.png ProbaV_LC100_epoch2015_global_v2.0.2_bare-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_bare-coverfraction-StdDev_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_crops-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_crops-coverfraction-StdDev_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_DataDensityIndicator_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_discrete-classification-proba_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_discrete-classification_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_forest-type-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_grass-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_grass-coverfraction-StdDev_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_moss-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_moss-coverfraction-StdDev_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_shrub-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_shrub-coverfraction-StdDev_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_snow-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_tree-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_tree-coverfraction-StdDev_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_urban-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_water-permanent-coverfraction-layer_EPSG-4326.tif ProbaV_LC100_epoch2015_global_v2.0.2_water-seasonal-coverfraction-layer_EPSG-4326.tif
 do
@@ -41,7 +43,7 @@ library(parallel)
 
 ##output directory
 gisdata <- Sys.getenv("GISDATA")
-targetDir <- sprintf("%s/landcover/CGLS/v3.0.1",gisdata)
+targetDir <- sprintf("%s/landcover/global/CGLS/v3.0.1",gisdata)
 system(sprintf("mkdir -p %s",targetDir))
 setwd(targetDir)
 

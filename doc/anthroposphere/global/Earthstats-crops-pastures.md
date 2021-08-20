@@ -1,5 +1,11 @@
 # Cropland and Pasture Area in 2000
 
+### Citation
+
+> Ramankutty, N., A.T. Evan, C. Monfreda, and J.A. Foley (2008), Farming the planet: 1. Geographic distribution of global agricultural lands in the year 2000. Global Biogeochemical Cycles 22, GB1003, doi:10.1029/2007GB002952.
+
+### Data download and preparation
+
 http://www.earthstat.org/cropland-pasture-area-2000/
 
 ```sh
