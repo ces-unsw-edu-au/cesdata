@@ -16,4 +16,8 @@ cd $GISDATA/admin/global/EEZ/
 mv ~/Downloads/World_EEZ_v11_20191118_gpkg.zip $GISDATA/admin/global/EEZ/
 
 unzip -u World_EEZ_v11_20191118_gpkg.zip
+
+module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1 proj/7.2.0
+
+ogr2ogr -f "GPKG" eez-valid.gpkg World_EEZ_v11_20191118_gpkg/eez_v11.gpkg -nlt PROMOTE_TO_MULTI -makevalid -simplify 0.0001
 ```
