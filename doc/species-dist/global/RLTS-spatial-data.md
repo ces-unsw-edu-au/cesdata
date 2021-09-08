@@ -25,15 +25,17 @@ Download from webpage into downloads folder, then move to gisdata folder:
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-
-
-
 mkdir -p $GISDATA/species-dist/global/IUCN_RLTS
 cd $GISDATA/species-dist/global/IUCN_RLTS
-#mv ~/Downloads/TERRESTRIAL_MAMMALS.zip $GISDATA/distribucion/IUCN_RLTS
-#mv ~/Downloads/MAMMALS.zip $GISDATA/distribucion/IUCN_RLTS
-#mv ~/Downloads/AMPHIBIANS.zip $GISDATA/distribucion/IUCN_RLTS
-#mv ~/Downloads/REPTILES.zip $GISDATA/distribucion/IUCN_RLTS
+#mv ~/Downloads/TERRESTRIAL_MAMMALS.zip $GISDATA/species-dist/global/IUCN_RLTS
+#mv ~/Downloads/MAMMALS.zip $GISDATA/species-dist/global/IUCN_RLTS
+#mv ~/Downloads/AMPHIBIANS.zip $GISDATA/species-dist/global/IUCN_RLTS
+#mv ~/Downloads/REPTILES.zip $GISDATA/species-dist/global/IUCN_RLTS
+#mv ~/Downloads/MANGROVES.zip $GISDATA/species-dist/global/IUCN_RLTS
 
+for j in MAMMALS AMPHIBIANS REPTILES MANGROVES
+do
+  unzip -u $j
+done
 
 ```

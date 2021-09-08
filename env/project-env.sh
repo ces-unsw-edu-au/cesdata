@@ -31,5 +31,17 @@ roraima)
 esac
 
 
+mkdir -p $WORKDIR
+grep -A4 IUCNdb $HOME/.database.ini | tail -n +2 > tmpfile
+while IFS="=" read -r key value; do
+  case "$key" in
+    "host") export DBHOST="$value" ;;
+    "port") export DBPORT="$value" ;;
+    "database") export DBNAME="$value" ;;
+    "user") export DBUSER="$value" ;;
+  esac
+done < tmpfile
+rm tmpfile
+
 
 mkdir -p $WORKDIR
