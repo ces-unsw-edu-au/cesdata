@@ -9,8 +9,8 @@ http://www.scielo.org.za/pdf/babc/v47n1/06.pdf
 http://bgis.sanbi.org/SpatialDataset/Detail/670
 
 ```sh
-mkdir -p $GISDATA/vegetation/SouthAfrica
-cd $GISDATA/vegetation/SouthAfrica
+mkdir -p $GISDATA/vegetation/regional/SouthAfrica
+cd $GISDATA/vegetation/regional/SouthAfrica
 
 mv ~/Downloads/VEGMAP2018_AEA_07012019_beta.zip $GISDATA/vegetation/SouthAfrica
 cd $WORKDIR

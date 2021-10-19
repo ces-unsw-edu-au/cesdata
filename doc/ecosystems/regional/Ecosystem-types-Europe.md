@@ -2,10 +2,7 @@
 
 > The dataset combines the Copernicus land service portfolio and marine bathymetry and seabed information with the non-spatial EUNIS habitat classification for a better biological characterization of ecosystems across Europe. As such it represents probabilities of EUNIS habitat presence for each MAES ecosystem type.
 
-> European Commision Technical report – 2016 – 095;
-Mapping and Assessment of Ecosystems and their Services — Mapping and assessing the
-condition of Europe's ecosystems: progress and challenges — 3rd Report – Final, March 2016
-https://www.eea.europa.eu/data-and-maps/data/ecosystem-types-of-europe-1
+> European Commision Technical report – 2016 – 095; Mapping and Assessment of Ecosystems and their Services — Mapping and assessing the condition of Europe's ecosystems: progress and challenges — 3rd Report – Final, March 2016 https://www.eea.europa.eu/data-and-maps/data/ecosystem-types-of-europe-1
 
 http://cmshare.eea.europa.eu/s/KscZR3EcKrGmPbK/download
 

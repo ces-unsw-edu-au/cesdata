@@ -6,17 +6,18 @@ Files provided by Andrés Etter -()- Alaska to Patagonia project
 
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
 
-mkdir -p $GISDATA/ecosistemas/RLEDB/Colombia
-cd $GISDATA/ecosistemas/RLEDB/Colombia
-##  mv -v  /opt/gisout/respaldos/gisdata/respaldoAmericasDataFiles/EcoOri_12052015_2014_TodosCriterios.* $GISDATA/ecosistemas/RLEDB/Colombia
+mkdir -p $GISDATA/ecosystems/regional/Colombia
+cd $GISDATA/ecosystems/regional/Colombia
 
+##
 ```
 
 Original projection in WGS_1984_UTM_Zone_18N, o EPSG 32618
 
 ```sh
-ogrinfo -al -geom=NO $GISDATA/ecosistemas/RLEDB/Colombia/EcoOri_12052015_2014_TodosCriterios.shp | less
+ogrinfo -al -geom=NO EcoOri_12052015_2014_TodosCriterios.shp | less
 
 
 ```
@@ -24,7 +25,7 @@ This gets the data in the original projection and promoted to multi-geometry
 
 ```sh
 
- psql gisdata  jferrer -c "CREATE SCHEMA ecocolombia"
+ psql gisdata  jferrer -c "CREATE SCHEMA colombia_rle"
  ## exclude shape_area column to avoid column precision error
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PROMOTE_TO_MULTI -lco SCHEMA=ecocolombia $GISDATA/ecosistemas/RLEDB/Colombia/EcoOri_12052015_2014_TodosCriterios.shp -sql "SELECT COD, A1P, A1E, A2aP, A2aE, A2bP, A2bE, A3P, A3E, C2,  D2, B1ai, B1aiiV1, B1aiiV2, B1aiii, B2ai, B2aiiV1, B2aiiV2, B2aiii, C2Precp, EvFinal FROM EcoOri_12052015_2014_TodosCriterios"
 
@@ -41,7 +42,7 @@ cp ~/proyectos/UNSW/ecosphere-db/input/xwalks/GETcrosswalk_Colombia_AEtter.xlsx 
 
 Run `R --vanilla`:
 
-```R
+```{r}
 require(gdata)
 require(dplyr)
 require(readxl)
