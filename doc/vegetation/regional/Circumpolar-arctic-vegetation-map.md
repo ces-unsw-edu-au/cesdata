@@ -14,9 +14,12 @@
 #### Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/vegetation/CAVM/
-cd $GISDATA/vegetation/CAVM/
-mv ~/Downloads/*CAVM.zip $GISDATA/vegetation/CAVM/
+mkdir -p $GISDATA/vegetation/regional/CAVM/
+cd $GISDATA/vegetation/regional/CAVM/
+wget --continue https://md-datasets-cache-zipfiles-prod.s3.eu-west-1.amazonaws.com/c4xj5rv6kv-1.zip
+
+unzip -u c4xj5rv6kv-1.zip
+unzip -u Raster\ CAVM.zip
 ```
 
 Legend (matching total area with suppl info from the original publication)
