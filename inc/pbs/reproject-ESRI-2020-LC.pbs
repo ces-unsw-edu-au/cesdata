@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+#PBS -l select=1:ncpus=1:mem=120gb
+#PBS -l walltime=12:00:00
+#PBS -N ESRILC2eck4
+#PBS -k eod
+#PBS -j oe
+
+## set up bash environment variables
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+## load modules for gdal functions
+module add python/intel-3.6.8 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/eck4
+cd $GISDATA/landcover/global/ESRI-2020-LC/eck4
+
+export SRCDIR=$GISDATA/landcover/global/ESRI-2020-LC/raw
+export DSTDIR=$GISDATA/landcover/global/ESRI-2020-LC/eck4
+for l in $(ls $SRCDIR | grep tif$)
+do
+  if [ -e $DSTDIR/$l ]
+  then
+    echo "$l listo"
+  else
+  gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
+  fi
+done

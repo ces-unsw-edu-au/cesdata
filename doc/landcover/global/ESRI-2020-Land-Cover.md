@@ -21,7 +21,7 @@ Links:
 
 This dataset is based on the dataset produced for the Dynamic World Project by National Geographic Society in partnership with Google and the World Resources Institute.
 
-### data:
+## Download data
 
 
 Esri 2020 Land Cover Downloader (GeoTIFF): https://www.arcgis.com/apps/instant/media/index.html?appid=fc92d38533d440078f17678ebc20e8e2
@@ -29,11 +29,16 @@ Esri 2020 Land Cover Downloader (GeoTIFF): https://www.arcgis.com/apps/instant/m
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 
+## download zipped composite
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/composite
+cd $GISDATA/landcover/global/ESRI-2020-LC/composite
 
-mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/
-cd $GISDATA/landcover/global/ESRI-2020-LC/
+wget -b --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01.zip
 
-wget --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01.zip
+## or download all tiles
+
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/raw
+cd $GISDATA/landcover/global/ESRI-2020-LC/raw
 
 ## example ## wget --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01/42F_20200101-20210101.tif
 
@@ -48,16 +53,45 @@ done
 
 ```
 
-Virtual Raster Tileset will not work due to different projections. Not sure if the `-allow_projection_difference` option will help.
+Virtual Raster Tileset will not work due to different projections. Even with `-allow_projection_difference` option it will not produce useful resutls. So we will first reproject each tile to Eckert IV projection and then use VRT.
 
 ```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+cd $WORKDIR
+qsub $SCRIPTDIR/bin/pbs/reproject-ESRI-2020-LC.pbs
+
+
+qsub -I -l select=1:ncpus=8:mem=120gb,walltime=12:00:00
+
+
+module add python/intel-3.6.8 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/eck4
+cd $GISDATA/landcover/global/ESRI-2020-LC/eck4
+
+SRCDIR=$GISDATA/landcover/global/ESRI-2020-LC/raw
+DSTDIR=$GISDATA/landcover/global/ESRI-2020-LC/eck4
+for l in $(ls $SRCDIR | grep tif$)
+do
+  if [ -e $DSTDIR/$l ]
+  then
+    echo "$l listo"
+  else
+  gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
+  fi
+done
+
+
 
 cd $GISDATA/landcover/global/ESRI-2020-LC/
 export VRS="20200101-20210101"
-gdalbuildvrt index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/*_${VRS}.tif
+gdalbuildvrt -allow_projection_difference index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/raw/*_${VRS}.tif
 
 ```
 
+## Examples
+
+### R
 
 ```{r}
 source("~/proyectos/UNSW/cesdata/env/project-env.R")
@@ -87,7 +121,8 @@ writeRaster(r0_snow_1km_mean,filename='test_mean.tif',datatype='FLT4S',options=c
 writeRaster(r0_snow_1km_sum,filename='test_sum.tif',datatype='INT2S',options=c("COMPRESS=DEFLATE"),overwrite=T)
 ```
 
-With Gdal
+
+### Gdal
 ```sh
 cd $WORKDIR
 gdal_calc.py -A $GISDATA/landcover/global/ESRI-2020-LC/58U_20200101-20210101.tif --calc="A == 2" --outfile equals2.tif --creation-option="COMPRESS=DEFLATE" --type=UInt16 --NoDataValue=65535 --overwrite
@@ -98,7 +133,7 @@ gdalinfo equals2-averaged_1km.tif -stats
 
 ```
 
-Example code in python
+### Example code in python
 ```python
 
 from osgeo import gdal
@@ -126,12 +161,13 @@ bands = []
 
 ```
 
-Earth Engine Snippet
+### Earth Engine Snippet
 
 ```js
 var esri_lulc2020= ee.ImageCollection("projects/sat-io/open-datasets/landcover/ESRI_Global-LULC_10m")
 ```
 Sample Code: https://code.earthengine.google.com/514a294747ee5e7a136372b7e947d7bc
+
 
 ## Class definitions
 * 1 _Water_: Areas where water was predominantly present throughout the year; may not cover areas with sporadic or ephemeral water; contains little to no sparse vegetation, no rock outcrop nor built up features like docks; examples: rivers, ponds, lakes, oceans, flooded salt plains.
