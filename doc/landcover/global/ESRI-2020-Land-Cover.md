@@ -58,30 +58,7 @@ Virtual Raster Tileset will not work due to different projections. Even with `-a
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 cd $WORKDIR
-qsub $SCRIPTDIR/bin/pbs/reproject-ESRI-2020-LC.pbs
-
-
-qsub -I -l select=1:ncpus=8:mem=120gb,walltime=12:00:00
-
-
-module add python/intel-3.6.8 perl/5.28.0 gdal/3.2.1 geos/3.8.1
-
-mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/eck4
-cd $GISDATA/landcover/global/ESRI-2020-LC/eck4
-
-SRCDIR=$GISDATA/landcover/global/ESRI-2020-LC/raw
-DSTDIR=$GISDATA/landcover/global/ESRI-2020-LC/eck4
-for l in $(ls $SRCDIR | grep tif$)
-do
-  if [ -e $DSTDIR/$l ]
-  then
-    echo "$l listo"
-  else
-  gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
-  fi
-done
-
-
+qsub $SCRIPTDIR/inc/pbs/reproject-ESRI-2020-LC.pbs
 
 cd $GISDATA/landcover/global/ESRI-2020-LC/
 export VRS="20200101-20210101"
