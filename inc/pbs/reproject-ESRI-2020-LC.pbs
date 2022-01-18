@@ -25,15 +25,11 @@ ls $SRCDIR | grep tif$ > archs
 for l in $(split -n l/${PBS_ARRAY_INDEX}/20 archs)
 do
   if [ -e $DSTDIR/$l ]
-  then
-    if [ $(gdalinfo $DSTDIR/$l -noct -stats | grep -c "ERROR") -eq "0" ]
     then
-      echo "$l listo"
+      echo "$l existe"
     else
-      echo "$l tiene un error"
-      rm $DSTDIR/$l
-    fi
-  else
-  gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -srcnodata "0" -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
+      gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -srcnodata "0" -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
   fi
-done
+  gdalinfo $DSTDIR/$l -noct -stats
+  [ $(xml_grep --cond '*[@key="STATISTICS_VALID_PERCENT"]' $DSTDIR/$l.aux.xml --text) == 0 ] && rm $DSTDIR/$l $DSTDIR/$l.aux.xml || echo "fine"
+ done
