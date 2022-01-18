@@ -5,7 +5,7 @@
 #PBS -N ESRILC2eck4
 #PBS -k eod
 #PBS -j oe
-#PBS -J 1-20
+#PBS -J 1-50
 
 ## set up bash environment variables
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -22,7 +22,7 @@ export DSTDIR=$GISDATA/landcover/global/ESRI-2020-LC/eck4
 
 ls $SRCDIR | grep tif$ > archs
 
-for l in $(split -n l/${PBS_ARRAY_INDEX}/20 archs)
+for l in $(split -n l/${PBS_ARRAY_INDEX}/50 archs)
 do
   if [ -e $DSTDIR/$l ]
     then
