@@ -26,8 +26,14 @@ for l in $(split -n l/${PBS_ARRAY_INDEX}/20 archs)
 do
   if [ -e $DSTDIR/$l ]
   then
-    echo "$l listo"
+    if [ $(gdalinfo $DSTDIR/$l -noct -stats | grep -c "ERROR") -eq "0" ]
+    then
+      echo "$l listo"
+    else
+      echo "$l tiene un error"
+      rm $DSTDIR/$l
+    fi
   else
-  gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
+  gdalwarp -co "COMPRESS=DEFLATE" -t_srs '+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs' -tr 10 10 -r nearest -srcnodata "0" -dstnodata "0" $SRCDIR/$l $DSTDIR/$l
   fi
 done
