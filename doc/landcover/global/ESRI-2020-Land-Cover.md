@@ -64,7 +64,7 @@ cd $GISDATA/landcover/global/ESRI-2020-LC/
 module add python/intel-3.6.8 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
 export VRS="20200101-20210101"
-gdalbuildvrt -allow_projection_difference index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/raw/*_${VRS}.tif
+gdalbuildvrt index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/eck4/*_${VRS}.tif
 
 ```
 
