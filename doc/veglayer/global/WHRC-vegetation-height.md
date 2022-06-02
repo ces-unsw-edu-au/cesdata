@@ -17,5 +17,5 @@ mkdir -p $GISDATA/veglayer/global/WHRC-tropics/
 cd $GISDATA/veglayer/global/WHRC-tropics/
 
 ##scp $GISDATA/vegetation/WHRC-tropics/* $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/veglayer/global/WHRC-tropics
-
+ls -lah $GISDATA/veglayer/global/WHRC-tropics/WHRC_PanTropical_ForestHeight.zip
 ```
