@@ -16,7 +16,7 @@ roraima)
   export GISDB=$HOME/gisdb
   export WORKDIR=$HOME/tmp/$PROJECTNAME
   ;;
-  *)
+*)
    if [ -e /srv/scratch/cesdata ]
    then
       export SHAREDSCRATCH=/srv/scratch/cesdata
