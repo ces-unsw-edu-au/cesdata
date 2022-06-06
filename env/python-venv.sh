@@ -18,6 +18,7 @@ pip install geopandas fiona
 ##osgeo already installed
 
 ## this is for downloading zenodo packages
+## check https://github.com/dvolgyes/zenodo_get
 pip install zenodo_get --user
 
 deactivate
