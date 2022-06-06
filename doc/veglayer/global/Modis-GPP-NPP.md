@@ -24,7 +24,7 @@ export REPO=MOLT
 mkdir -p $GISDATA/veglayer/global/GPP/Modis/${VAR}/${VRS}
 cd $GISDATA/veglayer/global/GPP/Modis/${VAR}/${VRS}
 
-for YEAR in $(seq 2001 2005)
+for YEAR in $(seq 2006 2005)
 do
   export FECHA=${YEAR}.01.01
   mkdir -p $GISDATA/veglayer/global/GPP/Modis/${VAR}/${VRS}/$FECHA
@@ -68,11 +68,9 @@ gdalinfo 2021.01.01/MOD17A3HGF.A2021001.h10v02.061.2022020140837.hdf
 
 gdalinfo HDF4_EOS:EOS_GRID:"2021.01.01/MOD17A3HGF.A2021001.h10v02.061.2022020140837.hdf":MOD_Grid_MOD17A3H:Npp_500m
 
-## all subdatasets in one vrt?
- export FECHA=${YEAR}.01.01
-  gdalbuildvrt index_${VAR}_${VRS}_${FECHA}.vrt $GISDATA/landcover/global/Modis/MCD12Q1.006/$FECHA/*hdf
+## all subdatasets in one vrt
 
-for YEAR in $(seq 2001 2021)
+for YEAR in $(seq 2020 2021)
 do
   export FECHA=${YEAR}.01.01
   gdalbuildvrt index_${VAR}_${VRS}_${FECHA}.vrt $GISDATA/veglayer/global/GPP/Modis/${VAR}/${VRS}/$FECHA/*hdf

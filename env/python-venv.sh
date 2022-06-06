@@ -6,10 +6,18 @@ mkdir -p $HOME/.venvs/
 
 python3 -m venv $HOME/.venvs/GIS-python --system-site-packages
 source $HOME/.venvs/GIS-python/bin/activate
-# which python3
+# which python3 #(just checking)
+
 
 pip3 list
 pip install --upgrade pip
+## recommended command line expression to update pip from time to time:
+$(which python3) -m pip install --upgrade pip
+
 pip install geopandas fiona
 ##osgeo already installed
+
+## this is for downloading zenodo packages
+pip install zenodo_get --user
+
 deactivate
