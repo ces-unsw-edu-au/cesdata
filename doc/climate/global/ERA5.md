@@ -5,7 +5,13 @@ https://cds.climate.copernicus.eu/cdsapp
 ## Citation
 > Muñoz Sabater, J., (2019): ERA5-Land hourly data from 1981 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). (<date of access>), doi:10.24381/cds.e2161bac
 
-In google earth engine:
+
+## Data access and download
+
+https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5
+
+## Use in `earth engine`
+
 
 ```js
 ee.ImageCollection("ECMWF/ERA5_LAND/HOURLY") open_in_new
