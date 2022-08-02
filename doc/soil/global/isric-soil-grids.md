@@ -81,7 +81,7 @@ phh2o
 sand
 silt
 soc
-wrb" > varlist
+wrb" > $GISDATA/soil/global/ISRIC-SoilGrids/varlist
 
 qsub -l select=1:ncpus=2:mem=60gb,walltime=20:00:00 -J 1-3 $SCRIPTDIR/inc/pbs/download-soilgrids-from-vrt.pbs
 
