@@ -28,3 +28,25 @@ unzip -u HWSD_RASTER.zip
 
 unzip -u HWSD.zip
 ```
+
+Raster maps:
+
+sq1.asc Nutrient availability
+sq2.asc Nutrient retention capacity
+sq3.asc Rooting conditions
+sq4.asc Oxygen availability to roots
+sq5.asc Excess salts.
+sq6.asc Toxicity
+sq7.asc Workability (constraining field management)
+
+Note that the classes used in the Soil Quality evaluation are:
+
+1: No or slight limitations
+2: Moderate limitations
+3: Sever limitations
+4: Very severe limitations
+5: Mainly non-soil
+6: Permafrost area
+7: Water bodies
+
+> Remember that classes are qualitative not quantitative. Only classes 1 to 4 are corresponding to an assessment of soil limitations for plant growth. Class 1 is generally rated between 80 and 100% of the growth potential, class 2 between 60 and 80%, class 3 between 40 and 60%, and class 4 less than 40%.
