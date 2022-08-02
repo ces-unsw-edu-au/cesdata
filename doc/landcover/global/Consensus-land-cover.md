@@ -19,8 +19,8 @@ cd $GISDATA/landcover/global/CLC1km
 
 export VERSION=without_DISCover
 export PREFIX=Consensus_reduced
-mkdir -p $GISDATA/landcover/CLC1km/$VERSION
-cd $GISDATA/landcover/CLC1km/$VERSION
+mkdir -p $GISDATA/landcover/global/CLC1km/$VERSION
+cd $GISDATA/landcover/global/CLC1km/$VERSION
 for CLASS in $(seq 1 12)
 do
    wget --continue https://data.earthenv.org/consensus_landcover/${VERSION}/${PREFIX}_class_${CLASS}.tif
