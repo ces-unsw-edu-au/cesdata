@@ -13,12 +13,13 @@ Data is available at https://doi.org/10.6084/m9.figshare.6396959
 #### Data download and preparation
 
 ```sh
-mkdir -p $GISDATA/clima/koppengeiger_1km
-cd $GISDATA/clima/koppengeiger_1km
-mv ~/Downloads/Beck_KG_V1.zip .
-ls *zip
-cd $WORKDIR
-unzip -u $GISDATA/clima/koppengeiger_1km/Beck_KG_V1.zip
+mkdir -p $GISDATA//climate-classification/global/koppengeiger_1km
+cd $GISDATA//climate-classification/global/koppengeiger_1km
+wget --continue https://figshare.com/ndownloader/files/12407516 --output-document=Beck_KG_V1.zip
+
+#ls *zip
+#cd $WORKDIR
+#unzip -u $GISDATA//climate-classification/global/koppengeiger_1km/Beck_KG_V1.zip
 ```
 
 |map nr|Code|Description|color code|matching EFG|
