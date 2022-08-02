@@ -26,7 +26,7 @@ cd $GISDATA/soil/global/ISRIC-SoilGrids
 VAR=$(awk 'NR=='${PBS_ARRAY_INDEX} varlist)
 for DEPTH in 0-5cm 5-15cm
 do
-  for stats in mean uncertainty
+  for STAT in mean uncertainty
   do
     gdal_translate -of VRT -tr $CELL_SIZE -co "TILED=YES" -co "COMPRESS=DEFLATE" -co "PREDICTOR=2" -co "BIGTIFF=YES" \
     ${SG_URL}/${VAR}/${VAR}_${DEPTH}_${STAT}.vrt ${VAR}_${DEPTH}_${STAT}.vrt
