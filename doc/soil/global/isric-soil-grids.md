@@ -83,7 +83,9 @@ silt
 soc
 wrb" > $GISDATA/soil/global/ISRIC-SoilGrids/varlist
 
-qsub -l select=1:ncpus=2:mem=120gb,walltime=24:00:00 -J 4-12 $SCRIPTDIR/inc/pbs/download-soilgrids-from-vrt.pbs
+qsub -l select=1:ncpus=2:mem=60gb,walltime=20:00:00 -J 1-3 $SCRIPTDIR/inc/pbs/download-soilgrids-from-vrt.pbs
+qsub -l select=1:ncpus=2:mem=80gb,walltime=20:00:00 -J 4-7 $SCRIPTDIR/inc/pbs/download-soilgrids-from-vrt.pbs
+qsub -l select=1:ncpus=2:mem=100gb,walltime=20:00:00 -J 8-12 $SCRIPTDIR/inc/pbs/download-soilgrids-from-vrt.pbs
 
 ```
 

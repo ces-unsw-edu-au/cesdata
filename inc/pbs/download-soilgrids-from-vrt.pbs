@@ -24,14 +24,14 @@ mkdir -p $GISDATA/soil/global/ISRIC-SoilGrids
 cd $GISDATA/soil/global/ISRIC-SoilGrids
 
 VAR=$(awk 'NR=='${PBS_ARRAY_INDEX} varlist)
-for DEPTH in 0-5cm 5-15cm
+for DEPTH in 0-5cm 15-30cm  60-100cm #100-200cm
 do
   for STAT in mean uncertainty
   do
-    gdal_translate -of VRT -tr $CELL_SIZE -co "TILED=YES" -co "COMPRESS=DEFLATE" -co "PREDICTOR=2" -co "BIGTIFF=YES" \
+    [ -e ${VAR}_${DEPTH}_${STAT}.vrt ] || gdal_translate -of VRT -tr $CELL_SIZE -co "TILED=YES" -co "COMPRESS=DEFLATE" -co "PREDICTOR=2" -co "BIGTIFF=YES" \
     ${SG_URL}/${VAR}/${VAR}_${DEPTH}_${STAT}.vrt ${VAR}_${DEPTH}_${STAT}.vrt
-    gdalwarp -overwrite -t_srs EPSG:4326 -of VRT ${VAR}_${DEPTH}_${STAT}.vrt ${VAR}_${DEPTH}_${STAT}_4326.vrt
-    gdal_translate ${VAR}_${DEPTH}_${STAT}_4326.vrt ${VAR}_${DEPTH}_${STAT}_4326.tif \
+    [ -e ${VAR}_${DEPTH}_${STAT}_4326.vrt ] || gdalwarp -overwrite -t_srs EPSG:4326 -of VRT ${VAR}_${DEPTH}_${STAT}.vrt ${VAR}_${DEPTH}_${STAT}_4326.vrt
+    [ -e ${VAR}_${DEPTH}_${STAT}_4326.tif ] || gdal_translate ${VAR}_${DEPTH}_${STAT}_4326.vrt ${VAR}_${DEPTH}_${STAT}_4326.tif \
         -co "TILED=YES" -co "COMPRESS=DEFLATE" -co "PREDICTOR=2" -co "BIGTIFF=YES"
   done
 done
