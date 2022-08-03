@@ -32,11 +32,18 @@ do
    wget --continue https://zenodo.org/record/3243509/files/${arch}'?download=1' --output-document=${arch}
 done
 
+cd $GISDATA/landcover/global/CGLS/v3.0.1/
+wget -b --continue 'https://zenodo.org/record/3939050/files/PROBAV_LC100_global_v3.0.1_2019-nrt_Crops-CoverFraction-layer_EPSG-4326.tif?download=1' --output-document=PROBAV_LC100_global_v3.0.1_2019-nrt_Crops-CoverFraction-layer_EPSG-4326.tif
+
+wget -b --continue 'https://zenodo.org/record/3939050/files/PROBAV_LC100_global_v3.0.1_2019-nrt_Bare-CoverFraction-layer_EPSG-4326.tif?download=1' --output-document=PROBAV_LC100_global_v3.0.1_2019-nrt_Bare-CoverFraction-layer_EPSG-4326.tif
 ```
 
 Download from R using the *R* package **[zen4R](https://github.com/eblondel/zen4R)**. We need to retrieve the Zenodo API token from a file in the home directory or from an environment variable.
 
 ```r
+# module add  R/4.0.2
+# module add libsodium
+
 ##R --vanilla
 require(zen4R)
 library(parallel)
