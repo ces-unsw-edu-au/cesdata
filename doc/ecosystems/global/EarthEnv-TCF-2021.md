@@ -32,3 +32,7 @@ The model used locations of known cloud forests were obtained from the Tropical 
 scp Tropical_Montane_Cloud_Forest_Sites_1997.zip $zID@kdm.restech.unsw.edu.au:/srv/scratch/cesdata/gisdata/ecosystems/global/EarthEnv-TCF-2021
 
 ```
+
+Description of data here:
+
+https://www.earthenv.org/metadata/Cloud_DataDescription.pdf
