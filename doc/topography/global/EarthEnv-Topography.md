@@ -29,3 +29,5 @@ tail -n +14 list2 | cut -f4 >> enlaces
 wget -nH -x --cut-dirs=1 --continue -i enlaces
 
 ```
+
+This will download approximatedly 74G of data...

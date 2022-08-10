@@ -24,4 +24,18 @@ wget --continue -i enlaces --force-html
 
 ```
 
-File name conventions: https://www.clw.csiro.au/aclep/soilandlandscapegrid/MetaData/ASLG_File_Naming_Conventions.html 
+File name conventions: https://www.clw.csiro.au/aclep/soilandlandscapegrid/MetaData/ASLG_File_Naming_Conventions.html
+
+
+Can we compress these files?
+
+```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+
+mkdir -p $GISDATA/soil/regional/soil-landscape-grid-australia
+cd $GISDATA/soil/regional/soil-landscape-grid-australia
+gzip SOC_100_200_EV_N_P_AU_TRN_C_20140801.tif ## minimal compression because it is already using LZW
+
+
+```

@@ -33,5 +33,10 @@ do
    curl -C - -O ${BASEURL}/${VAR}
 done
 
+tar -cjvf glUV-files.tar.bz2 *asc
+
+rm *asc
+
+
 
 ```

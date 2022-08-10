@@ -25,4 +25,8 @@ cd $GISDATA/$DPATH/$DNAME/
 
 wget ftp://topex.ucsd.edu/pub/srtm30_plus/topo30/topo30.grd
 
+# 1.8G uncompressed
+bzip2 topo30.grd
+# 622M compressed
+
 ```

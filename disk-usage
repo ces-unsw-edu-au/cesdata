@@ -1,0 +1,30 @@
+#20220807
+du -sch */*
+411M	gisdata/admin
+1.1G	gisdata/antroposphere
+1.4G	gisdata/biotic-interactions
+6.1T	gisdata/climate
+6.3G	gisdata/climate-classification
+48G	gisdata/cryosphere
+9.0G	gisdata/ecological
+2.0G	gisdata/ecoregions
+41G	gisdata/ecosystems
+101M	gisdata/fire
+79G	gisdata/forest
+29G	gisdata/hydrology
+303G	gisdata/landcover
+1.1T	gisdata/land-surface-temperature
+6.0G	gisdata/plant-traits
+12G	gisdata/protected
+107M	gisdata/radiation
+774G	gisdata/soil
+5.5G	gisdata/species-dist
+1.1G	gisdata/topography
+213G	gisdata/vegcover
+12G	gisdata/vegetation
+104M	gisdata/vegetation-plots
+177G	gisdata/veglayer
+897G	gisdata/water
+50M	output/red-list-spp-eco-links
+212G	output/T6.5-tropical-alpine
+9.9T	total
