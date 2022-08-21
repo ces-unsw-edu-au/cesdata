@@ -54,9 +54,16 @@ do
   done
 done
 
-
-
 ```
+
+
+Maximum_Snow_Extent:
+> The maximum snow extent during the eight-day period plus other values. Cells with snow on any day during the period are mapped as snow. Clouds are only reported if all eight days were obscured by clouds. Cells with no snow are filled with the observation that occurred most often. Possible values are: 0: missing data 1: no decision 11: night 25: no snow 37: lake 39: ocean 50: cloud 100: lake ice 200: snow 254: detector saturated 255: fill
+
+Eight_Day_Snow_Cover:
+> Snow chronology bit flags. Each day has its own bit that is set to: on (1), if snow was observed on that day; or off (0), for no snow, cloud, or missing data. Days/bits are ordered across the byte from right to left: bit 7 bit 6 bit 5 bit 4 bit 3 bit 2 bit 1 bit 0 day 8 day 7 day 6 day 5 day 4 day 3 day 2 day 1  To retrieve the bit flags, convert the integer stored in the SDS into its binary representation. For example, if a cell contains the value 229, expressing that number in binary yields: 11100101. Read from right to left, the flags indicate that snow was observed in the cell on days 1, 3, 6, 7, and 8 of the compositing period, while no snow was observed on days 2, 4, and 5.
+
+
 Bounding box example
 137,-5,138,-4
 

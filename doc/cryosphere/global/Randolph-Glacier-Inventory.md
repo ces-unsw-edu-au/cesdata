@@ -101,3 +101,17 @@ SELECT o1region,count(*) as nr from rgi60.rgi60_total group by o1region order by
 select count(distinct rgiid),count(distinct glimsid),count(*) from rgi60.rgi60_total;
 
 ```
+
+Explore the RGI 6.0 database:
+
+```sql
+
+select ogc_fid,rgi_code,wgms_code,full_name from rgi60."00_rgi60_o2regions" where rgi_code like '16%';
+select rgiid,glimsid,bgndate,enddate,o2region,area,status,linkages,name from rgi60.rgi60_total
+ where o1region like '16%';
+
+ select o1region,o2region,count(distinct rgiid),sum(area) from rgi60.rgi60_total
+  where o1region like '16%'
+  group by o1region,o2region;
+
+```
