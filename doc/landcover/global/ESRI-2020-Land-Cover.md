@@ -23,8 +23,27 @@ This dataset is based on the dataset produced for the Dynamic World Project by N
 
 ## Download data
 
+Sentinel-2 10m Land Use/Land Cover Timeseries Downloader https://www.arcgis.com/apps/instant/media/index.html?appid=fc92d38533d440078f17678ebc20e8e2
+ provides access to individual 10-meter resolution GeoTIFF scenes for terrestrial regions, for each year from 2017-2021.
 
-Esri 2020 Land Cover Downloader (GeoTIFF): https://www.arcgis.com/apps/instant/media/index.html?appid=fc92d38533d440078f17678ebc20e8e2
+It allows downloading all scenes for each year as a zip file (approx 60 GB each).
+
+```sh
+source ~/proyectos/UNSW/cesdata/env/project-env.sh
+
+## download all year for selection of tiles:
+
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/byyear
+cd $GISDATA/landcover/global/ESRI-2020-LC/byyear
+
+for tile in  19P 18P 19N 18N
+do
+   for year in $(seq 2017 2021)
+   do
+      wget --continue https://lulctimeseries.blob.core.windows.net/lulctimeseriespublic/lc${year}/${tile}_${year}0101-$((year+1))0101.tif
+   done
+done
+```
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -50,6 +69,10 @@ do
     wget --continue https://ai4edataeuwest.blob.core.windows.net/io-lulc/io-lulc-model-001-v01-composite-v03-supercell-v02-clip-v01/${v}${p}_20200101-20210101.tif
   done
 done
+
+## download different years for each tile
+
+
 
 ```
 
