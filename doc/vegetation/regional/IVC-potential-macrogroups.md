@@ -1,6 +1,10 @@
 # International Vegetation Classification (IVC or EcoVeg)
 https://www.natureserve.org/conservation-tools/projects/international-vegetation-classification
 
+## Tropical Andes
+
+https://portal.geobon.org/ebv-detail?id=38
+https://doi.org/10.25829/c8rz53
 
 ## Africa
 https://www.natureserve.org/conservation-tools/projects/map-potential-distribution-vegetation-macrogroups-africa

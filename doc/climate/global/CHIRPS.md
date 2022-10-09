@@ -23,3 +23,14 @@ wget --continue https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_monthly/net
 
 
 ```
+
+
+Time steps are months (days since 1980-1-1 0:0:0), and they are stored as bands:
+
+```sh
+module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
+gdalinfo chirps-v2.0.monthly.nc
+
+
+gdalwarp NETCDF:$GISDATA/climate/global/CHIRPS/chirps-v2.0.monthly.nc:precip -t_srs EPSG:4326 -te -74 0 -58 13 -of 'GTiff' Test1.tif
+```
