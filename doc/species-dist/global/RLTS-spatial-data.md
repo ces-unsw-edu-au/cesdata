@@ -32,8 +32,12 @@ cd $GISDATA/species-dist/global/IUCN_RLTS
 #mv ~/Downloads/AMPHIBIANS.zip $GISDATA/species-dist/global/IUCN_RLTS
 #mv ~/Downloads/REPTILES.zip $GISDATA/species-dist/global/IUCN_RLTS
 #mv ~/Downloads/MANGROVES.zip $GISDATA/species-dist/global/IUCN_RLTS
+#mv ~/GROUPERS.zip $GISDATA/species-dist/global/IUCN_RLTS
+#mv ~/WRASSES_PARROTFISHES.zip $GISDATA/species-dist/global/IUCN_RLTS
+# mv ~/REEF_FORMING_CORALS.zip $GISDATA/species-dist/global/IUCN_RLTS
 
-for j in MAMMALS AMPHIBIANS REPTILES MANGROVES
+
+for j in MAMMALS AMPHIBIANS REPTILES MANGROVES WRASSES_PARROTFISHES GROUPERS REEF_FORMING_CORALS
 do
   unzip -u $j
 done
