@@ -16,18 +16,40 @@ source ~/proyectos/UNSW/cesdata/env/project-env.sh
 mkdir -p $GISDATA/antroposphere/global/GLAD-GLCLUC
 cd $GISDATA/antroposphere/global/GLAD-GLCLUC
 
-wget --continue https://glad.umd.edu/users/Potapov/GLCLUC2020/10d_tiles.zip
+wget -b --continue https://glad.umd.edu/users/Potapov/GLCLUC2020/10d_tiles.zip
 
-https://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_height_2000/
 https://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_height_gain_2000_2020/
-https://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_height_2020/
 http://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_height_loss_2000_2020/
-http://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_extent_2000/
-http://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_extent_2020/
-http://glad.umd.edu/users/Potapov/GLCLUC2020/Built-up_change_2000_2020/
 
-2003 2007 2011 2015 2019
-https://glad.geog.umd.edu/Potapov/Global_Crop/Data/Global_cropland_NW_2003.tif
-https://glad.geog.umd.edu/Potapov/Global_Crop/Data/Global_cropland_NW_2019.tif
+SRV=https://glad.umd.edu/users/Potapov/GLCLUC2020/
+for VAR in Forest_height_2000 Forest_extent_2000
+do 
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/2000_[0-1]0N_0[5-7]0W.tif
+done 
 
+for VAR in Forest_height_2020 Forest_extent_2020
+do 
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/2020_[0-1]0N_0[5-7]0W.tif
+done 
+
+
+for VAR in Built-up_change_2000_2020
+do 
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/Change_[0-1]0N_0[5-7]0W.tif
+done 
+
+
+for SFX in loss gain 
+do 
+    VAR=Forest_height_${SFX}_2000_2020
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/net${SFX}_[0-1]0N_0[5-7]0W.tif
+done 
+
+mkdir -p $GISDATA/antroposphere/global/GLAD-GLCLUC/Croplands
+cd $GISDATA/antroposphere/global/GLAD-GLCLUC/Croplands
+
+for YEAR in 2003 2007 2011 2015 2019
+do 
+    wget -b --continue https://glad.geog.umd.edu/Potapov/Global_Crop/Data/Global_cropland_NW_${YEAR}.tif
+done
 ```
