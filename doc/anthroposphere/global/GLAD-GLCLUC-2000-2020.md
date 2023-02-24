@@ -18,24 +18,23 @@ cd $GISDATA/antroposphere/global/GLAD-GLCLUC
 
 wget -b --continue https://glad.umd.edu/users/Potapov/GLCLUC2020/10d_tiles.zip
 
-https://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_height_gain_2000_2020/
-http://glad.umd.edu/users/Potapov/GLCLUC2020/Forest_height_loss_2000_2020/
-
 SRV=https://glad.umd.edu/users/Potapov/GLCLUC2020/
-for VAR in Forest_height_2000 Forest_extent_2000
+for YEAR in 2000 2020 
 do 
-    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/2000_[0-1]0N_0[5-7]0W.tif
+    VAR=Forest_height_${YEAR}
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/${YEAR}_[0-1]0N_0[5-7]0W.tif
 done 
 
-for VAR in Forest_height_2020 Forest_extent_2020
+for YEAR in 2000 2020 
 do 
-    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/2020_[0-1]0N_0[5-7]0W.tif
+    VAR=Forest_extent_${YEAR}
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/[0-1]0N_0[5-7]0W.tif
 done 
 
 
 for VAR in Built-up_change_2000_2020
 do 
-    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/Change_[0-1]0N_0[5-7]0W.tif
+    curl --create-dirs --output-dir $VAR -C - -O $SRV/$VAR/Change_[0-2]0N_0[5-8]0W.tif
 done 
 
 
