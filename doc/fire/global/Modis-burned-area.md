@@ -23,15 +23,26 @@ SRV=fuoco.geog.umd.edu
 VRS=C61
 PRD=MCD64A1
 
-sftp fire@fuoco.geog.umd.edu
-cd data/MODIS/C61/MCD64A1/HDF/h30v12/
-get MCD64A1*
+mkdir -p $GISDATA/fire/global/MCD64A1/HDF/
+cd $GISDATA/fire/global/MCD64A1/HDF/
 
-for ss in h30v12 #h29v12 h29v13  h28v13
-do
-   wget ftp://$SRV/data/MODIS/$VRS/$PRD/HDF/${ss}/
-   wget -i index.html --force-html --continue
-done
+sftp fire@fuoco.geog.umd.edu
+cd data/MODIS/C61/MCD64A1/HDF/
+lmkdir h30v12 
+lmkdir h29v12 
+lmkdir h29v13  
+lmkdir h28v13
+
+lcd ../h30v12
+get h30v12/MCD64A1.A2014*
+lcd ../h29v12
+get h29v12/MCD64A1.A2014*
+lcd ../h29v13
+get h29v13/MCD64A1.A2014*
+lcd ../h28v13
+get h28v13/MCD64A1.A2014*
+bye
+
 rm ~/.wgetrc
 
 ```
