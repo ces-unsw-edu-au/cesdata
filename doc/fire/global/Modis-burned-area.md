@@ -1,4 +1,6 @@
 Burned Area Products (MCD64A1)
+Global fire location product (MCD14ML)
+
 
 The latest version (Collection 6.1) of the MODIS Global Burned Area Product was released in 2017.
 
@@ -7,6 +9,9 @@ http://modis-fire.umd.edu/ba.html
 MODIS Burned Area Product User's Guide at 
 http://modis-fire.umd.edu/files/MODIS_C6_Fire_User_Guide_B.pdf
 https://modis-fire.umd.edu/files/MODIS_C61_BA_User_Guide_1.1.pdf
+
+MODIS Collection 6 and Collection 6.1 Active Fire Product User's Guide v1.0 (May 2021): 
+https://modis-fire.umd.edu/files/MODIS_C6_C6.1_Fire_User_Guide_1.0.pdf
 
 
 ```sh
@@ -46,3 +51,22 @@ bye
 rm ~/.wgetrc
 
 ```
+
+
+
+```sh
+mkdir -p $GISDATA/fire/global/MCD14ML/
+cd $GISDATA/fire/global/MCD14ML/
+sftp fire@fuoco.geog.umd.edu
+cd data/MODIS/C6/MCD14ML
+ls MCD14ML.200*
+progress
+get -p MCD14ML.200*
+get -p MCD14ML.202*
+get -p MCD14ML.201*
+
+
+
+
+```
+
