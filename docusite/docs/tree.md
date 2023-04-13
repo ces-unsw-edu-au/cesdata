@@ -1,9 +1,15 @@
-# cesdata
-GIS data for analysis at the Centre for Ecosystem Science
+---
+sidebar_position: 3
+---
+# Folder structure
 
-Maintained by [@jrfep](https://github.com/jrfep)
+We have explored so many datasets that our folder tree keeps growing and growing. I have made my best effort to add documentation for each dataset, sometimes a very thin placeholder, sometimes a more meticulous guide, sometimes I forget or procrastinate... but they will be there eventually.
 
-## Folder contents
+Expand the menus on the left to navigate the intructions for the datasets. 
+
+### What a tree!
+
+<details><summary>This tree listing gives an overview of the datasets available in `$GISDATA` in Katana </summary>
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -126,119 +132,5 @@ tree -L 3 $GISDATA
 
 ```
 
-
-## Overview of datasets
-
-### Admin
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| World Bank political boundaries | ... | $GISDATA/ | done |
-
-### Anthroposphere
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Climatic datasets
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| Terraclimate | [10.1038/sdata.2017.191](http://dx.doi.org/10.1038/sdata.2017.191) | $GISDATA/climate/Terraclimate | done |
-| CRU TS | [10.1002/joc.3711](http://dx.doi.org/10.1002/joc.3711) | $GISDATA/climate/CRU_TS | done |
-
-
-### Cryosphere
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Ecological classifications
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-
-### Ecoregions
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| FEOW | [10.1641/B580507](https://doi.org/10.1641/B580507) | $GISDATA/ecoregions/global/FEOW/ |done|
-| MEOW |  | $GISDATA/ecoregions/global/MEOW/ |done|
-| TEOW / RESOLVE | [DOI: 10.1093/biosci/bix014](https://doi.org/10.1093/biosci/bix014) | $GISDATA/ecoregions/global/TEOW/ |done|
-| TEOW / TNC |  | $GISDATA/ecoregions/global/TEOW/ |done|
-| TEOW / WWF |  | $GISDATA/ecoregions/global/TEOW/ |done|
-| Canada|  | $GISDATA/ecoregions/regional/Canada |done|
-| IBRA v7|  | $GISDATA/ecoregions/regional/IBRAv7/ |done|
-
-### Ecosystem maps
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Fire
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Forest
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Hydrology
-
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-
-### Landcover
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| GLC 2000 | [10.1080/01431160412331291297](https://doi.org/10.1080/01431160412331291297) | $GISDATA/landcover/global/GLC2000/ |done|
-| Globcover| [GLOBCOVER 2009](http://due.esrin.esa.int/page_globcover.php) |  $GISDATA/landcover/global/GlobCover |done|
-| Modis MCD12Q1.006 | [10.5067/MODIS/MCD12Q1.006](https://doi.org/10.5067/MODIS/MCD12Q1.006) | $GISDATA/landcover/global/Modis/MCD12Q1.006 | done |
-| FROMGLC
-| USGS EROS
-| Geowiki
-| Copernicus
-
-### Other datasets...
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Water datasets
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| Daily surface water |  [10.1029/2018wr023060](http://dx.doi.org/10.1029/2018wr023060) | $GISDATA/water/ModisDailyWater/ |done|
-
-
-## Documentation with docusaurus
-https://docusaurus.io/docs
-
-Install [Node.js](https://nodejs.org/en/download)
-
-Then npx docusaurus
-
-```sh
-npx create-docusaurus@latest ~/sandbox/my-docusite classic
-cd ~/sandbox/my-docusite
-npx docusaurus start
-```
+</details>
 
