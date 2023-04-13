@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'GIS data of the Centre for Ecosystem Science',
   tagline: 'Spatial data for global ecosystem analyses',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.jpg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -66,7 +66,7 @@ const config = {
       navbar: {
         title: 'cesdata/gisdata',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Centre for Ecosystem Science Logo',
           src: 'img/logo_CES.png',
         },
         items: [
@@ -74,7 +74,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Data download scripts',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -91,7 +91,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Scripts',
                 to: '/docs/intro',
               },
             ],
@@ -100,16 +100,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'CES @ unsw',
+                href: 'https://ecosystem.unsw.edu.au',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/CES_UNSW',
               },
             ],
           },

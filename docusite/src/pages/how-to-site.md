@@ -57,6 +57,12 @@ I have done most of this using just markdown, because I just haven't got much ti
 
 I am using the **classic template** because I just don't have time to explore and tweak templates and themes.
 
+### Images
+
+- undraw svgs shipped with docusaurus
+- https://www.svgrepo.com/svg/26855/sloth CC0 license
+- https://www.svgrepo.com/svg/2155/wombat CC0 license
+
 ### Where to locate stuff
 
 The `docusaurus.config.js` file is the place for titles and bottom menus, logos and icons, and other configuration stuff. 
