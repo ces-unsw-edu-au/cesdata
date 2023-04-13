@@ -1,4 +1,6 @@
-# [CRU TS v. 4.03](https://crudata.uea.ac.uk/cru/data/hrg/)
+# CRU TS v. 4.03
+
+[CRU TS v. 4.03](https://crudata.uea.ac.uk/cru/data/hrg/)
 
 High-resolution gridded datasets of the Climatic Research Unit.
 
@@ -10,7 +12,7 @@ High-resolution gridded datasets of the Climatic Research Unit.
 ## Data access
 
 Data is available at:
->
+> https://crudata.uea.ac.uk/cru/data/hrg/
 Documentation:
 
 Metadata:

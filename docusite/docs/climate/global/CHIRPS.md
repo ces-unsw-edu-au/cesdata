@@ -1,5 +1,8 @@
-# The Climate Hazards Group InfraRed Precipitation with Station ([CHIRPS](http:/
-/chg.geog.ucsb.edu/data/chirps))
+# CHIRPS
+
+ 
+
+([The Climate Hazards Group InfraRed Precipitation with Station](http://chg.geog.ucsb.edu/data/chirps))
 
 Quasi-global distribution (50S-50N), gridded 0.05 degree resolution, 1981 to near-real time precipitation time series.
 
