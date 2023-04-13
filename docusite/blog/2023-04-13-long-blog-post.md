@@ -15,7 +15,7 @@ Long time ago I started to use markdown for the documentation of each dataset an
 
 So I think I already had most of the ingredients that I needed. I was just lacking a cool system to bring this all together in an organised way. 
 
-Over the years I have experimented with different approaches to build websites: php, content management systems, flask, hugo, jekyll, quarto, etc. So many options. 
+Over the years I have experimented with different approaches to build websites: php, content management systems, shiny apps, flask, hugo, jekyll, quarto, rblogdown, etc. So many options. 
 
 Since all these documents were already in markdown and the code was not supposed to be re-run constantly I just need a very straightforward, no non-sense system that transforms this collection into a clear structure with easy navigation. Blog post would be nice to add some comments to the growing collection of documents, but they should not distract that much from the main feature. 
 
