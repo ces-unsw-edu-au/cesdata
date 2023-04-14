@@ -3,128 +3,23 @@ GIS data for analysis at the Centre for Ecosystem Science
 
 Maintained by [@jrfep](https://github.com/jrfep)
 
-## Folder contents
+## Documentation with docusaurus
+
+I started to move all documentation to [docusaurus](https://docusaurus.io/docs) in order to generate a friendly website for sharing. 
+
+In a nutshell:
+
+Install [Node.js](https://nodejs.org/en/download)
+
+Then npx docusaurus
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
-tree -L 3 $GISDATA
-
-/srv/scratch/cesdata/gisdata
-├── admin
-│   └── global
-│       └── World-Bank
-├── antroposphere
-│   └── global
-│       └── Earthstats
-├── climate
-│   └── global
-│       ├── CHELSA
-│       ├── CRU_TS
-│       └── Terraclimate
-├── cryosphere
-│   └── global
-│       ├── GLIMS_2019
-│       ├── LIAG_Ice
-│       ├── Modis-MOD10A2-V006
-│       ├── Modis-MOD10C2
-│       ├── RGI_6.0
-│       ├── SeaIceIndex
-│       ├── SMMR_SeaIceTrends
-│       ├── subglacial-lakes
-│       ├── VIIRS-VNP10A1F-V001
-│       └── WGI_2012
-├── ecological
-│   └── global
-│       ├── EcologicalMarineUnits
-│       ├── FAO-GEZ
-│       └── NatureMap
-├── ecoregions
-│   ├── global
-│   │   ├── FEOW
-│   │   ├── LME
-│   │   ├── MEOW
-│   │   └── TEOW
-│   └── regional
-│       ├── Canada
-│       └── IBRAv7
-├── ecosystems
-│   ├── global
-│   │   ├── WCMC-coral-reefs
-│   │   ├── WCMC-mangroves-2000
-│   │   ├── WCMC-mangroves-GMW
-│   │   └── WCMC-mangrove-types
-│   └── regional
-│       ├── MAES
-│       └── worldbank-Central-America
-├── fire
-│   └── regional
-│       └── australia-forest-fire-2011-16
-├── forest
-│   ├── global
-│   │   ├── 3d-forest-JPL
-│   │   └── GFC
-│   └── regional
-│       ├── Boreal-Forest-Monitoring
-│       └── China
-├── hydrology
-│   └── global
-│       ├── GIRES
-│       ├── HydroATLAS
-│       └── HydroLAKES
-├── landcover
-│   └── global
-│       ├── FROM-GLC10
-│       ├── GLC2000
-│       ├── GlobCover
-│       └── Modis
-├── land-surface-temperature
-│   └── global
-│       ├── Modis-.
-│       └── Modis-MOD11A2.006
-├── plant-traits
-│   └── global
-│       └── TRY-leaf-trait-maps
-├── protected
-│   └── global
-│       └── WDPA
-├── radiation
-│   └── global
-│       └── glUV
-├── soil
-│   ├── global
-│   │   └── permafrost
-│   └── regional
-│       ├── circumpolar_permafrost
-│       └── soil-landscape-grid-australia
-├── species-dist
-│   └── global
-│       ├── BOTW
-│       └── IUCN_RLTS
-├── topography
-│   └── global
-│       ├── EarthEnv-topography
-│       ├── GMBA-Mountain-Inventory
-│       ├── GME-Mountain-Inventory
-│       └── SRTM30-plus
-├── vegcover
-│   └── global
-│       └── Modis-MOD44B.006
-├── vegetation
-│   └── regional
-│       ├── IVC-EcoVeg
-│       └── NVIS-Australia
-├── veglayer
-│   ├── global
-│   │   └── WHRC-tropics
-│   └── regional
-│       └── TERN-Vegetation-height
-└── water
-    └── global
-        └── ModisDailyWater
-
-111 directories, 0 files
-
+npx create-docusaurus@latest ~/sandbox/my-docusite classic
+cd ~/sandbox/my-docusite
+npx docusaurus start
 ```
+
+ And start editing!
 
 
 ## Overview of datasets
@@ -227,18 +122,4 @@ tree -L 3 $GISDATA
 |Dataset|source|local|progress|
 |---|---|---|---|
 | Daily surface water |  [10.1029/2018wr023060](http://dx.doi.org/10.1029/2018wr023060) | $GISDATA/water/ModisDailyWater/ |done|
-
-
-## Documentation with docusaurus
-https://docusaurus.io/docs
-
-Install [Node.js](https://nodejs.org/en/download)
-
-Then npx docusaurus
-
-```sh
-npx create-docusaurus@latest ~/sandbox/my-docusite classic
-cd ~/sandbox/my-docusite
-npx docusaurus start
-```
 

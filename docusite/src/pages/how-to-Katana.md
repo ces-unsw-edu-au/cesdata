@@ -2,11 +2,13 @@
 
 Please check [Katana User’s documentation](https://unsw-restech.github.io/index.html).
 
-Here some useful tips
+Here some useful tips:
 
 ## Log-in / authentication
 
-In Linux I set up my bash terminal to recognize my zID (as env variable `$zID`) and set up [SSH Public key authentication](https://www.ssh.com/ssh/public-key-authentication).
+To apply for an account in Katana you can send an email to the [UNSW IT Service Centre](mailto:ITServiceCentre@unsw.edu.au) giving your zID, your role within UNSW and the name of your supervisor or head of your research group.
+
+In Linux and MacOSX I set up my bash terminal to recognize my zID (as env variable `$zID`) and set up [SSH Public key authentication](https://www.ssh.com/ssh/public-key-authentication).
 
 ## Copying files
 
@@ -55,7 +57,6 @@ qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
 Some recomendations from Duncan:
 
 * Use skylake-avx512 by making your interactive job request become something like: `qsub -I -l select=1:ncpus=1:cpuflags=skylake-avx512:mem=120gb -l walltime=12:00:00`. This will take a little longer to start but will mean running on newer hardware.
-
 * Walltime should be 12:00:00 unless you need more. i.e. nothing shorter.
 * When requesting memory you the point at which you have less options is 124gb, 180gb, 248gb, 370gb, 750gb and 1000gb. i.e. requesting 126gb is not a great idea.
 
@@ -82,4 +83,7 @@ qsub -l select=1:ncpus=2:mem=16gb,walltime=4:00:00 -J 3-4 $SCRIPTDIR/bin/pbs/...
 
 qsub -J 5-36 $SCRIPTDIR/bin/pbs/....pbs
 qstat -tu $(whoami)
+# or 
+qstat -tu $USER
+
 ```

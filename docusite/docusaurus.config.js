@@ -117,7 +117,11 @@ const config = {
                 to: 'how-to-site',
               },
               {
-                label: 'Use Katana@UNSW',
+                label: 'Use Katana @ UNSW',
+                href: 'how-to-Katana',
+              },
+              {
+                label: 'Katana @ UNSW documentation',
                 href: 'https://unsw-restech.github.io/index.html',
               },
             ],
