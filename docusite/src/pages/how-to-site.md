@@ -62,6 +62,8 @@ I am using the **classic template** because I just don't have time to explore an
 - undraw svgs shipped with docusaurus
 - https://www.svgrepo.com/svg/26855/sloth CC0 license
 - https://www.svgrepo.com/svg/2155/wombat CC0 license
+- https://www.svgrepo.com/svg/293158/maps-and-flags-global CCO license
+- https://www.svgrepo.com/svg/293157/maps-and-flags-maps-and-flags CCO license
 
 ### Where to locate stuff
 
