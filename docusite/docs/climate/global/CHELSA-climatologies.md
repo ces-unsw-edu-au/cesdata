@@ -1,21 +1,27 @@
-# CHELSA Version 1.2
+---
+tags: [IUCN-GET, IUCN-RLE, wget]
+---
 
-Links to:
-/ [Webpage](http://chelsa-climate.org/)
+# CHELSA 
 
+Climatologies at high resolution for the earth’s land surface areas
+
+## Versions
+
+Version 1.2
+
+## Links 
+
+- [Webpage](http://chelsa-climate.org/)
+- [Technical specification](https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification.pdf)
 
 ## Citation
 > Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P. & Kessler, M. (2017) Climatologies at high resolution for the earth’s land surface areas. Scientific Data 4, 170122.
-
-## Technical specification
-
-Technical specification at https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification.pdf
 
 ## Data access
 
 Originally accessible to download from Dryad:
 > Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P., Kessler, M. (2017) Data from: Climatologies at high resolution for the earth’s land surface areas. Dryad Digital Repository. https://doi.org/10.5061/dryad.kd1d4
-
 
 On February 2021 the recommended method is to use the [download server](https://envicloud.wsl.ch/#/?prefix=chelsa%2Fchelsa_V1).
 

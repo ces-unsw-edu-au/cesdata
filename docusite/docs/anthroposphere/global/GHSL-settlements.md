@@ -1,8 +1,14 @@
-# GHSL - Global Human Settlement Layer
+---
+title: "GHSL"
+description: "Global Human Settlement Layer"
+tags: [IUCN-GET,wget]
+---
 
-https://ghsl.jrc.ec.europa.eu/dataToolsOverview.php
+Global Human Settlement Layer
 
-Documentation: https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1478q532234372
+## Links 
+- https://ghsl.jrc.ec.europa.eu/dataToolsOverview.php
+- [Documentation](https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1478q532234372)
 
 ## Citation
 Dataset:
