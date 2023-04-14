@@ -1,22 +1,35 @@
+---
+tags: [IUCN-GET, R, python, earth engine, gdal]
+---
+
 # Esri 2020 Land Cover
 
 ## About Esri 2020 Land Cover
+
 Variable mapped: 2020 land use/land cover
+
 Data Projection: Universal Transverse Mercator (UTM)
+
 Extent: Global
+
 Source imagery: Sentinel-2
+
 Cell Size: 10m (0.00008983152098239751 degrees)
+
 Type: Thematic
+
 Source: Esri Inc.
+
 Publication date: July 2021
 
-Links:
+## Links
+
 * https://samapriya.github.io/awesome-gee-community-datasets/projects/esrilc2020/?s=09
 * https://caitlin-kontgis.medium.com/mapping-the-world-in-unprecedented-detail-7c0513205b90
 * https://www.arcgis.com/home/item.html?id=d6642f8a4f6d4685a24ae2dc0c73d4ac
 * https://www.arcgis.com/home/item.html?id=fc92d38533d440078f17678ebc20e8e2
 
-## Reference
+## Citation
 > Karra, Kontgis, et al. “Global land use/land cover with Sentinel-2 and deep learning.” IGARSS 2021-2021 IEEE International Geoscience and Remote Sensing Symposium. IEEE, 2021.
 
 This dataset is based on the dataset produced for the Dynamic World Project by National Geographic Society in partnership with Google and the World Resources Institute.
@@ -71,9 +84,6 @@ do
 done
 
 ## download different years for each tile
-
-
-
 ```
 
 Virtual Raster Tileset will not work due to different projections. Even with `-allow_projection_difference` option it will not produce useful resutls. So we will first reproject each tile to Eckert IV projection and then use VRT.
