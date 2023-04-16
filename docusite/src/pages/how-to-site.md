@@ -10,18 +10,15 @@ We built this awesome documentation site using https://docusaurus.io/docs
 
 First we installed [Node.js](https://nodejs.org/en/download/) (recommended version 16.14 or above).
 
-:::warning npx version
+:::caution npx version
 
 Make sure we deactivate conda to use the downloaded npx version:
 
 ```sh
 conda deactivate
 which npx
-npx -v
+npx -v # This sites works with `9.5.1`.
 ```
-
-This sites works with `9.5.1`.
-
 :::
 
 Then we _npx_ docusaurus:
@@ -56,6 +53,12 @@ From there I just trial-ed and error-ed enough to get most of what we needed, a 
 I have done most of this using just markdown, because I just haven't got much time to properly learn react.js, but that's OK, you don't need React to write simple standalone pages.
 
 I am using the **classic template** because I just don't have time to explore and tweak templates and themes.
+
+### Using fontawesome
+
+I will need to read the docs...
+
+https://docusaurus.community/knowledge/design/icons/fontawesome/
 
 ### Images
 
