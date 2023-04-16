@@ -40,5 +40,5 @@ For some computations we use the computational cluster Katana supported by Resea
 
 Please check [Katana User’s documentation](https://unsw-restech.github.io/index.html).
 
-## Footnotes
 [^1]: Ok, just Venezuela for now, but it could be replicated elsewhere...
+

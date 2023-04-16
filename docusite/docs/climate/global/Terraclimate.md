@@ -1,6 +1,10 @@
-# Terraclimate
+---
+title: "Terraclimate"
+description: "Monthly climate and climatic water balance (1958-2019)"
+tags: [deforestation,Venezuela,wget]
+---
 
-TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution.
+> TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution.
 
 ## Citation
 
@@ -59,4 +63,10 @@ do
   done
 done
 ```
+
+## This dataset is used for...
+
+### Deforestation analysis in Venezuela 
+
+[GitHub repo](https://github.com/NeoMapas/datos-deforestacion-venezuela)
 

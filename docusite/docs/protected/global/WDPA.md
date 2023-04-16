@@ -1,19 +1,28 @@
-# World database on Protected Areas
+---
+title: "WDPA"
+description: "World database on Protected Areas"
+tags: [deforestation,Venezuela,wget,IUCN Knowledge products, GDB]
+---
 
-## About
+
 
 The World Database on Protected Areas (WDPA) is the most comprehensive global database of marine and terrestrial protected areas, updated on a monthly basis.
-[Documentation](http://pp-import-production.s3.amazonaws.com/WDPA_Manual_1_5.pdf)
+
+## Links 
+
+- https://www.protectedplanet.net
+- [Documentation](http://pp-import-production.s3.amazonaws.com/WDPA_Manual_1_5.pdf)
 
 
-### Reference
+## Reference
 > UNEP-WCMC and IUCN (2021), Protected Planet: The World Database on Protected Areas (WDPA) [Online], March 2021, Cambridge, UK: UNEP-WCMC and IUCN. Available at: www.protectedplanet.net.
 
-### data:
+> UUNEP-WCMC and IUCN (2023), Protected Planet: The World Database on Protected Areas (WDPA) and World Database on Other Effective Area-based Conservation Measures (WD-OECM) [Online], February 2023, Cambridge, UK: UNEP-WCMC and IUCN. Available at: www.protectedplanet.net.
+## Data access
 
-Data downloaded in gdb format from https://www.protectedplanet.net
+From https://www.protectedplanet.net/ there are several options to download datasets
 
-Regular updates:
+### Global data
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
@@ -28,3 +37,36 @@ wget -b --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_Apr2021_Pu
 ## wget -b --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_Mar2021_Public.zip
 
 ```
+
+### Example for one country
+
+
+Usamos `ogr2ogr` y `ogrmerge.py` para preparar una capa con toda la información de WDPA
+
+```sh
+INPUTDIR=protected/global/WDPA/
+mkdir -p $WORKDIR/WDPA
+unzip -d $WORKDIR/WDPA $GISDATA/$INPUTDIR/WDPA_WDOECM_Feb2023_Public_VEN_shp.zip
+cd $WORKDIR/WDPA
+for k in 0 1 2
+do
+  unzip -u WDPA_WDOECM_Feb2023_Public_VEN_shp_${k}.zip
+  ogr2ogr WDPA_polygons_${k}.gpkg WDPA_WDOECM_Feb2023_Public_VEN_shp-polygons.shp -nlt MULTIPOLYGON
+  rm *WDPA_WDOECM_Feb2023_Public_VEN_shp-polygons*
+done
+
+ogrmerge.py -o $WORKDIR/WDPA-Venezuela.gpkg $WORKDIR/WDPA/WDPA_polygons_0.gpkg $WORKDIR/WDPA/WDPA_polygons_1.gpkg $WORKDIR/WDPA/WDPA_polygons_2.gpkg -single
+
+## update the entry for Caura
+ogrinfo $WORKDIR/WDPA-Venezuela.gpkg -update -sql "UPDATE merged SET STATUS_YR=2015 WHERE IUCN_CAT='II' AND STATUS_YR=1968"
+
+ ```
+
+## This dataset is used for...
+
+### Deforestation analysis in Venezuela 
+
+[GitHub repo](https://github.com/NeoMapas/datos-deforestacion-venezuela)
+
+
+

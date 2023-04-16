@@ -1,6 +1,12 @@
-# Global Forest Change
+---
+title: "GFC"
+description: "Global Forest Change"
+tags: [deforestation,Venezuela,wget,VRT]
+---
 
-## Reference
+High-Resolution Global Maps of 21st-Century Forest Cover Change
+
+## Citation
 > Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. *High-Resolution Global Maps of 21st-Century Forest Cover Change.* **Science** 342 (15 November): 850–53. [Data available on-line](http://earthenginepartners.appspot.com/science-2013-global-forest).
 
 
@@ -103,3 +109,7 @@ export VAR=treecover2000
 gdalwarp -tr 0.001475 0.001475 -srcnodata "0" -dstnodata "0" -tap -r average $GISDATA/sensores/Landsat/index_${VRS}_${VAR}.vrt  ${VRS}.world.${VAR}_500m.tif
 
 ```
+
+## This dataset is used for...
+
+- Deforestation analysis in Venezuela [GitHub repo](https://github.com/NeoMapas/datos-deforestacion-venezuela)
