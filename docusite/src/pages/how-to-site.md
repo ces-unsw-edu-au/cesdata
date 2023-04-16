@@ -46,13 +46,39 @@ The `npx docusaurus start` (apparently you could use `npm run start` also[^1]) c
 
 The I started with opening `docs/intro.md` and editing some lines: the site **reloads automatically** and displays your changes. Feels like magic!
 
+
 ## My experience so far
 
 From there I just trial-ed and error-ed enough to get most of what we needed, a lot of what we wanted and all that I could. 
 
-I have done most of this using just markdown, because I just haven't got much time to properly learn react.js, but that's OK, you don't need React to write simple standalone pages.
+I have done most of this using just markdown, because I just haven't got much time to properly learn react.js, but that's OK, you don't need React to write simple standalone pages.[^2]
 
 I am using the **classic template** because I just don't have time to explore and tweak templates and themes.
+
+### build, serve and deply
+
+```sh
+npx docusaurus build
+npx docusaurus serve
+```
+
+*Should I use Github pages?*
+
+[Seems straightforward](https://docusaurus.io/docs/deployment#deploying-to-github-pages)
+
+- First, modify `docusaurus.config.js` and add: `url`, `baseUrl`, `organizationName`, `projectName` and `deploymentBranch`
+
+- Also there, set `trailingSlash` to `false`
+
+- Add an empty file named .nojekyll to the static directory.
+
+- set up the environment variables: USE_SSH and GIT_USER
+
+```sh
+USE_SSH=TRUE 
+GIT_USER=jrfep 
+npx docusaurus  deploy
+```
 
 ### Using fontawesome
 
@@ -81,4 +107,5 @@ This `how-to-site` file is in the `pages` folder, which is the place for stand-a
 
 
 [^1]: But I have not clue yet what is the difference between npx and npm...
-[^2]: This is kind of a theme here
+[^2]: Well, it seems `mdx` is a thing... 🤔
+[^3]: This is kind of a theme here

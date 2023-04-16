@@ -10,16 +10,18 @@ const config = {
   tagline: 'Spatial data for global ecosystem analyses',
   favicon: 'img/favicon.jpg',
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
 
   // GitHub pages deployment config.
+  // Set the production url of your site here
+  url: 'https://unsw-edu-au.github.io/',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/cesdata/',
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'unsw-edu-au', // Usually your GitHub org/user name.
   projectName: 'cesdata', // Usually your repo name.
+  deploymentBranch: 'alpha-centaury', // home to small furry creatures
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -62,7 +64,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/cesdata-social-card.png',
       navbar: {
         title: 'cesdata/gisdata',
         logo: {
