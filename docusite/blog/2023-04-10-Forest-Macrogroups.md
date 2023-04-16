@@ -2,7 +2,7 @@
 slug: forest-macrogroups-americas
 title: Distribution maps for the Forest macrogroups 
 authors: jrfep
-tags: [Distribution maps, IUCN RLE, OSF cloud storage, QGIS, GPKG, IVC macrogroups]
+tags: [Distribution maps, IUCN RLE, OSF, OSF cloud storage, QGIS, GPKG, IVC macrogroups]
 ---
 
 I have been asked a couple of times to share the maps of the forest macrogroups that we assessed with the IUCN Red List of Ecosystems back in 2019.
@@ -39,3 +39,4 @@ Many people have requested vector data, so I exported this using the Geopackage 
 [^2]: Ferrer-Paris, J. R. (2023, April 5). Lista Roja de Ecosistemas de UICN de los bosques de las Américas. https://doi.org/10.17605/OSF.IO/M6AFP
 
 [^3]: Faber-Langendoen, D., Baldwin, K., Peet, R. K., Meidinger, D., Muldavin, E., Keeler-Wolf, T., & Josse, C. (2018). The EcoVeg approach in the Americas: U.S., Canadian and International Vegetation Classifications. In Phytocoenologia (Vol. 48, Issue 2, pp. 215–237). Schweizerbart. https://doi.org/10.1127/phyto/2017/0165
+
