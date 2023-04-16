@@ -57,14 +57,22 @@ I am using the **classic template** because I just don't have time to explore an
 
 ### build, serve and deply
 
+Build a optimized static site:
 ```sh
 npx docusaurus build
+```
+
+This will serve this site at `localhost:3000/cesdata`
+```sh
 npx docusaurus serve
 ```
+
 
 *Should I use Github pages?*
 
 [Seems straightforward](https://docusaurus.io/docs/deployment#deploying-to-github-pages)
+
+- In GitHub: go to `Settings` / `Pages`, set Source to _Deploy from a branch_ and then the name of the branch.
 
 - First, modify `docusaurus.config.js` and add: `url`, `baseUrl`, `organizationName`, `projectName` and `deploymentBranch`
 
