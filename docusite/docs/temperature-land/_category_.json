@@ -1,0 +1,7 @@
+{
+        "label": "temperature-land",
+        "link": {
+            "type": "generated-index",
+            "description": "./temperature-land."
+        }
+        }

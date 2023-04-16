@@ -1,0 +1,7 @@
+{
+        "label": "landcover",
+        "link": {
+            "type": "generated-index",
+            "description": "./landcover."
+        }
+        }

@@ -86,7 +86,7 @@ My steps:
 
 - set up the environment variables: USE_SSH and GIT_USER and call the docusaurus deploy command:
 
-    USE_SSH=TRUE && GIT_USER=<my user name> && npx docusaurus deploy
+    USE_SSH=TRUE && GIT_USER=`my user name` && npx docusaurus deploy
 
 ### Using fontawesome
 
