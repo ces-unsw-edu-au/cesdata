@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusite=self.webpackChunkdocusite||[]).push([[339],{4321:e=>{e.exports=JSON.parse('{"label":"deforestation","permalink":"/blog/tags/deforestation","allTagsPath":"/blog/tags","count":1}')}}]);

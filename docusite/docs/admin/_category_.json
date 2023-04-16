@@ -1,9 +1,0 @@
-{
-  "label": "admin",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": 
-    "Just in case you are wondering: admin stands for administrative boundaries. We include here country boundaries and borders, lower administrative units like states and territories, municipalities, other international boundaries like exclusive economic zones, etc."
-  }
-}

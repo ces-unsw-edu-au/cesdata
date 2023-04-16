@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusite=self.webpackChunkdocusite||[]).push([[4108],{973:s=>{s.exports=JSON.parse('{"label":"grass GIS","permalink":"/docs/tags/grass-gis","allTagsPath":"/docs/tags","count":1,"items":[{"id":"anthroposphere/global/Anthromes","title":"Anthromes","description":"Anthromes maps and datasets","permalink":"/docs/anthroposphere/global/Anthromes"}]}')}}]);
