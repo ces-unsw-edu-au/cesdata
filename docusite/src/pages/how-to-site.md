@@ -70,23 +70,23 @@ npx docusaurus serve
 
 *Should I use Github pages?*
 
-[Seems straightforward](https://docusaurus.io/docs/deployment#deploying-to-github-pages)
+[Seems straightforward](https://docusaurus.io/docs/deployment#deploying-to-github-pages)...
+
+My steps:
 
 - In GitHub: go to `Settings` / `Pages`, set Source to _Deploy from a branch_ and then the name of the branch.
 
-- First, modify `docusaurus.config.js` and add: `url`, `baseUrl`, `organizationName`, `projectName` and `deploymentBranch`
+- For some reason, this will serve the site at a random url, `https://curly-bassoon-6989k23.pages.github.io/` ??
+
+- Then, modify `docusaurus.config.js` and add: `url`, `baseUrl`, `organizationName`, `projectName` and `deploymentBranch`. 
 
 - Also there, set `trailingSlash` to `false`
 
 - Add an empty file named .nojekyll to the static directory.
 
-- set up the environment variables: USE_SSH and GIT_USER
+- set up the environment variables: USE_SSH and GIT_USER and call the docusaurus deploy command:
 
-```sh
-USE_SSH=TRUE 
-GIT_USER=jrfep 
-npx docusaurus  deploy
-```
+    USE_SSH=TRUE && GIT_USER=<my user name> && npx docusaurus deploy
 
 ### Using fontawesome
 
