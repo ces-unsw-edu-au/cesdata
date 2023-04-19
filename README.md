@@ -21,21 +21,16 @@ npx docusaurus start
 
  And start editing!
 
+## Branches
+
+- Main branch is `dont-panic`.
+- Day to day work is on `mostly-harmless` branch.
+- Deployment of site goes to `alpha-centaury` branch.
+
 
 ## Overview of datasets
 
-### Admin
 
-|Dataset|source|local|progress|
-|---|---|---|---|
-| World Bank political boundaries | ... | $GISDATA/ | done |
-
-### Anthroposphere
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
 
 ### Climatic datasets
 
@@ -44,18 +39,6 @@ npx docusaurus start
 | Terraclimate | [10.1038/sdata.2017.191](http://dx.doi.org/10.1038/sdata.2017.191) | $GISDATA/climate/Terraclimate | done |
 | CRU TS | [10.1002/joc.3711](http://dx.doi.org/10.1002/joc.3711) | $GISDATA/climate/CRU_TS | done |
 
-
-### Cryosphere
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Ecological classifications
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
 
 
 ### Ecoregions
@@ -70,34 +53,6 @@ npx docusaurus start
 | Canada|  | $GISDATA/ecoregions/regional/Canada |done|
 | IBRA v7|  | $GISDATA/ecoregions/regional/IBRAv7/ |done|
 
-### Ecosystem maps
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Fire
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Forest
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
-### Hydrology
-
-
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
-
 
 ### Landcover
 
@@ -111,11 +66,6 @@ npx docusaurus start
 | Geowiki
 | Copernicus
 
-### Other datasets...
-
-|Dataset|source|local|progress|
-|---|---|---|---|
-| ... | ... | $GISDATA/ | ... |
 
 ### Water datasets
 

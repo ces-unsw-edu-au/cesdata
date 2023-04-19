@@ -1,0 +1,7 @@
+{
+        "label": "global",
+        "link": {
+            "type": "generated-index",
+            "description": "./temperature-sea/global."
+        }
+        }

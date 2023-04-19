@@ -1,7 +1,7 @@
 ---
 title: "WDPA"
 description: "World database on Protected Areas"
-tags: [deforestation,Venezuela,wget,IUCN Knowledge products, GDB]
+tags: [deforestation,Venezuela,Australia,Adaptative monitoring,wget,IUCN Knowledge products, GDB]
 ---
 
 
@@ -40,6 +40,21 @@ wget -b --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_Apr2021_Pu
 
 ### Example for one country
 
+#### Australia
+
+> UNEP-WCMC (2023). Protected Area Profile for Australia from the World Database on Protected Areas, April 2023. Available at: www.protectedplanet.net
+
+```{bash}
+wget --continue https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_WDOECM_Apr2023_Public_AUS.zip
+
+INPUTDIR=protected/global/WDPA/
+mkdir -p $WORKDIR/WDPA
+unzip -d $WORKDIR/WDPA -u $GISDATA/$INPUTDIR/WDPA_WDOECM_Apr2023_Public_AUS.zip
+
+ogr2ogr -f GPKG WDPA.gpkg WDPA_WDOECM_Apr2023_Public_AUS.gdb -makevalid
+```
+
+#### Venezuela
 
 Usamos `ogr2ogr` y `ogrmerge.py` para preparar una capa con toda la información de WDPA
 

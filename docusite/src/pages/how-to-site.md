@@ -46,13 +46,47 @@ The `npx docusaurus start` (apparently you could use `npm run start` also[^1]) c
 
 The I started with opening `docs/intro.md` and editing some lines: the site **reloads automatically** and displays your changes. Feels like magic!
 
+
 ## My experience so far
 
 From there I just trial-ed and error-ed enough to get most of what we needed, a lot of what we wanted and all that I could. 
 
-I have done most of this using just markdown, because I just haven't got much time to properly learn react.js, but that's OK, you don't need React to write simple standalone pages.
+I have done most of this using just markdown, because I just haven't got much time to properly learn react.js, but that's OK, you don't need React to write simple standalone pages.[^2]
 
 I am using the **classic template** because I just don't have time to explore and tweak templates and themes.
+
+### build, serve and deply
+
+Build a optimized static site:
+```sh
+npx docusaurus build
+```
+
+This will serve this site at `localhost:3000/cesdata`
+```sh
+npx docusaurus serve
+```
+
+
+*Should I use Github pages?*
+
+[Seems straightforward](https://docusaurus.io/docs/deployment#deploying-to-github-pages)...
+
+My steps:
+
+- In GitHub: go to `Settings` / `Pages`, set Source to _Deploy from a branch_ and then the name of the branch.
+
+- For some reason, this will serve the site at a random url, `https://curly-bassoon-6989k23.pages.github.io/` ??
+
+- Then, modify `docusaurus.config.js` and add: `url`, `baseUrl`, `organizationName`, `projectName` and `deploymentBranch`. 
+
+- Also there, set `trailingSlash` to `false`
+
+- Add an empty file named .nojekyll to the static directory.
+
+- set up the environment variables: USE_SSH and GIT_USER and call the docusaurus deploy command:
+
+    USE_SSH=TRUE && GIT_USER=`my user name` && npx docusaurus deploy
 
 ### Using fontawesome
 
@@ -78,7 +112,15 @@ The `pages/index.js` looks scary, I only edited a couple of lines with the main 
 
 This `how-to-site` file is in the `pages` folder, which is the place for stand-alone pages. All other stuff is neatly organised in the `docs` folder. The documents in the `docs` folder appear automatically in the left hand side menu, but we have to create explicit links for the ones in the `pages` folder, for example in the `docusaurus.config.js` if we want these to appear in the bottom bar.
 
+### update packages
 
+After manual edits in `package-lock.json`, do:
+
+```sh
+npm update
+npm audit fix
+```
 
 [^1]: But I have not clue yet what is the difference between npx and npm...
-[^2]: This is kind of a theme here
+[^2]: Well, it seems `mdx` is a thing... 🤔
+[^3]: This is kind of a theme here

@@ -1,0 +1,7 @@
+{
+        "label": "temperature-sea",
+        "link": {
+            "type": "generated-index",
+            "description": "./temperature-sea."
+        }
+        }
