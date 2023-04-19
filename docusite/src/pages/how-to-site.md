@@ -112,7 +112,14 @@ The `pages/index.js` looks scary, I only edited a couple of lines with the main 
 
 This `how-to-site` file is in the `pages` folder, which is the place for stand-alone pages. All other stuff is neatly organised in the `docs` folder. The documents in the `docs` folder appear automatically in the left hand side menu, but we have to create explicit links for the ones in the `pages` folder, for example in the `docusaurus.config.js` if we want these to appear in the bottom bar.
 
+### update packages
 
+After manual edits in `package-lock.json`, do:
+
+```sh
+npm update
+npm audit fix
+```
 
 [^1]: But I have not clue yet what is the difference between npx and npm...
 [^2]: Well, it seems `mdx` is a thing... 🤔
