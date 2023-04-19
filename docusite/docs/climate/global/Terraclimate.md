@@ -1,7 +1,7 @@
 ---
 title: "Terraclimate"
 description: "Monthly climate and climatic water balance (1958-2019)"
-tags: [deforestation,Venezuela,wget]
+tags: [deforestation,Venezuela,wget,Adaptative monitoring,ramsar-monitoring.org,Earth engine]
 ---
 
 > TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution.
@@ -62,6 +62,27 @@ do
     wget -c -nd https://climate.northwestknowledge.net/TERRACLIMATE-DATA/TerraClimate_${VAR}_${YEAR}.nc
   done
 done
+```
+
+### Earth Engine Data Catalog
+
+https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE
+
+```{js}
+var dataset = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE')
+                  .filter(ee.Filter.date('2017-07-01', '2017-08-01'));
+var maximumTemperature = dataset.select('tmmx');
+var maximumTemperatureVis = {
+  min: -300.0,
+  max: 300.0,
+  palette: [
+    '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
+    'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
+    'ab0000'
+  ],
+};
+Map.setCenter(71.72, 52.48, 3);
+Map.addLayer(maximumTemperature, maximumTemperatureVis, 'Maximum Temperature');
 ```
 
 ## This dataset is used for...

@@ -1,3 +1,25 @@
+---
+title: "RAMSAR RSIS"
+description: "Ramsar Sites Information Service"
+tags: [wetlands,Adaptative monitoring,wget,ramsar-monitoring.org]
+---
+
+## Links
+
+https://rsis.ramsar.org/
+
+## Data access
+
+All data in a xml file:
+```{sh}
+wget --continue https://rsis.ramsar.org/rss/ris.xml
+```
+
+Also, read or download boundaries:
+```{sh}
+https://rsis.ramsar.org/geoserver/wfs?request=GetFeature&service=wfs&version=1.0.0&typename=ramsar_sdi:features_published&outputformat=SHAPE-ZIP
+```
+
 
 You requested an export of Ramsar sites (CSV file) through the "Ramsar Sites
 Information Service" web site at https://rsis.ramsar.org/. Please find below
