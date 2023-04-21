@@ -32,6 +32,7 @@ cd $GISDATA/geology/global/SI-Volcanos
 wget --continue https://volcano.si.edu/database/list_volcano_holocene_excel.cfm --output-document=GVP_Volcano_List_Holocene.xml
 #Need to open in excel and then save as xlsx
 wget --continue https://volcano.si.edu/database/list_volcano_pleistocene_excel.cfm --output-document=GVP_Volcano_List_Pleistocene.xml
+#Need to open in excel and then save as xlsx
 ```
 
 
