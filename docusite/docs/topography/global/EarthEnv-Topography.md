@@ -1,3 +1,9 @@
+---
+title: "EarthEnv-topography"
+description: "Global 1,5,10,100-km Topography - EarthEnv"
+tags: [tropical glaciers, IUCN-GET, IUCN-RLE, wget]
+---
+
 # Global 1,5,10,100-km Topography - EarthEnv
 
 ## Reference
@@ -31,3 +37,12 @@ wget -nH -x --cut-dirs=1 --continue -i enlaces
 ```
 
 This will download approximatedly 74G of data...
+
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+- [OSF project component](https://osf.io/432sb/)
+
