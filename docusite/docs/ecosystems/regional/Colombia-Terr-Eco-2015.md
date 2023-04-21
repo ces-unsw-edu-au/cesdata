@@ -1,4 +1,10 @@
-## Ecosistemas terrestres de Colombia
+---
+title: "Colombia"
+description: "Ecosistemas terrestres de Colombia"
+tags: [tropical glaciers, IUCN RLE, IUCN GET]
+---
+
+## Citation
 
 > Etter A., Andrade A., Saavedra K., Amaya P. y P. Arévalo 2017. Risk assessment of Colombian continental ecosystems: An application of the Red List of Ecosystems methodology (v. 2.0). Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. [Report](https://www.researchgate.net/publication/325498072_Risk_assessment_of_Colombian_continental_ecosystems_An_application_of_the_Red_List_of_Ecosystems_methodology_v_20). [Summary](https://iucnrle.org/static/media/uploads/references/published-assessments/Brochures/brochure_lre_colombia_v_2.0.pdf)
 
@@ -32,7 +38,7 @@ ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PRO
 
 ```
 
-#### Crosswalk
+## Crosswalk
 
 We checked the file `GETcrosswalk_Colombia_AEtter.xlsx`
 
@@ -74,3 +80,11 @@ select cod,evfinal,ST_Centroid(wkb_geometry) from ecocolombia.ecoori_12052015_20
 select fullcode,cod,EFG from ecocolombia.ecoori_12052015_2014_todoscriterios m left join ecocolombia.iucnget_xwalk x on m.cod=x.code where "EFG" IN ('T6.5');
 
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+- [OSF project component](https://osf.io/432sb/)
+

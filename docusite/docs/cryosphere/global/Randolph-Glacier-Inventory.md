@@ -1,11 +1,20 @@
-# Randolph Glacier Inventory, version 6.0
+---
+title: "RGI v6.0"
+description: "Randolph Glacier Inventory, version 6.0"
+tags: [tropical glaciers, IUCN RLE]
+---
 
+## Description
+
+Randolph Glacier Inventory, version 6.0
 
 > The Randolph Glacier Inventory (RGI 6.0) is a global inventory of glacier outlines. It is supplemental to the Global Land Ice Measurements from Space initiative (GLIMS). Production of the RGI was motivated by the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC AR5). Future updates will be made to the RGI and the GLIMS Glacier Database in parallel during a transition period. As all these data are incorporated into the GLIMS Glacier Database and as download tools are developed to obtain GLIMS data in the RGI data format, the RGI will evolve into a downloadable subset of GLIMS, offering complete one-time coverage, version control, and a standard set of attributes.
 
 > For more details, and for a complete list of contributors, please see the RGI 6.0 Technical Report (PDF format). For the glacier regions used see the GTN-G Glacier Regions.
 
 > Global inventory of glacier outlines. It is supplemental to the Global Land Ice Measurements from Space initiative (GLIMS). RGI Version 6.0: released July 28, 2017.
+
+## Links
 
 [Website](https://www.glims.org/RGI/) /
 [user guidelines](http://www.glims.org/RGI/00_rgi60_TechnicalNote.pdf)
@@ -115,3 +124,11 @@ select rgiid,glimsid,bgndate,enddate,o2region,area,status,linkages,name from rgi
   group by o1region,o2region;
 
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+- [OSF project component](https://osf.io/432sb/)
+
