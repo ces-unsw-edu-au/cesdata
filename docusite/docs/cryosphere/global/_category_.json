@@ -1,7 +1,8 @@
 {
-        "label": "global",
-        "link": {
-            "type": "generated-index",
-            "description": "./cryosphere/global."
-        }
-        }
+    "label": "global",
+    "link": {
+        "type": "generated-index",
+        "description": "./cryosphere/global.",
+        "image": "/img/docusaurus.png"
+    }
+}

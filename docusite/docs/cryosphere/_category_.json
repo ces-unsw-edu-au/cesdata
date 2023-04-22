@@ -1,7 +1,7 @@
 {
-        "label": "cryosphere",
-        "link": {
-            "type": "generated-index",
-            "description": "./cryosphere."
-        }
-        }
+    "label": "cryosphere",
+    "link": {
+        "type": "generated-index",
+        "description": "Variables related to ice and freezing temperatures."
+    }
+}

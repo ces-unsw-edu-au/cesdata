@@ -1,20 +1,33 @@
-# CHIRPS
+---
+title: "CHIRPS"
+description: "Climate Hazards Group InfraRed Precipitation with Station"
+tags: [wget, gdal, netcdf]
+---
 
- 
-
-([The Climate Hazards Group InfraRed Precipitation with Station](http://chg.geog.ucsb.edu/data/chirps))
+## Description
 
 Quasi-global distribution (50S-50N), gridded 0.05 degree resolution, 1981 to near-real time precipitation time series.
 
+
+## Links 
+
+[The Climate Hazards Group InfraRed Precipitation with Station](http://chg.geog.ucsb.edu/data/chirps)
+
 https://www.chc.ucsb.edu/data/chirps
 
-old links:
-[README](ftp://ftp.chg.ucsb.edu/pub/org/chg/products/CHIRPS-2.0/README-CHIRPS.txt), [FAQ](http://chg-wiki.geog.ucsb.edu/wiki/CHIRPS_FAQ), [Publication](http://pubs.usgs.gov/ds/832/)
+Old links:
+
+- [README](ftp://ftp.chg.ucsb.edu/pub/org/chg/products/CHIRPS-2.0/README-CHIRPS.txt) 
+- [FAQ](http://chg-wiki.geog.ucsb.edu/wiki/CHIRPS_FAQ) 
+- [Publication](http://pubs.usgs.gov/ds/832/)
 
 Publication: https://www.nature.com/articles/sdata201566
 
-https://data.chc.ucsb.edu/products/CHIRPS-2.0/
-https://data.chc.ucsb.edu/products/CHIRPS-2.0/README-CHIRPS.txt
+- https://data.chc.ucsb.edu/products/CHIRPS-2.0/
+- https://data.chc.ucsb.edu/products/CHIRPS-2.0/
+- README-CHIRPS.txt
+
+## Data access and preparation
 
 ```sh
 source proyectos/UNSW/cesdata/env/project-env.sh

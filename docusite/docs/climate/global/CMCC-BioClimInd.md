@@ -1,10 +1,17 @@
-# CMCC-BioClimInd
-The complete CMCC-BioClimInd dataset is available through PANGAEA (https://doi.org/10.1594/PANGAEA.904278). It consists in 805 files in NetCDF4 format with a 0.5° by 0.5° grid resolution and global coverage (except Antarctica). Files represent 35 bioclimatic indicators calculated for a 40-years historical interval (1960–1999) under climate reanalysis and for two future 40-years time intervals (2040–2079 and 2060–2099) under 6 ESMs’ projections and 2 RCPs (except RCP4.5 for CMCC-CESM).
+---
+title: "CMCC-BioClimInd"
+description: "CMCC-BioClimInd"
+tags: [PANGAEA, wget]
+---
 
- The individual file names follow this structure: “BIOx institute-model rcp yyyy zz.nc”
- where x identifies the code of the bioclimatic indicator, institute-model (see Table 3, first column) identifies the source of data (short name for historical observation or for the producing Center and/or ESMs), rcp is the Representative Concentration Pathway (RCP 4.5 or RCP 8.5), yyyy is the starting year of time interval and zz the last two digits of the ending year of the time interval.
+## Description
 
- ## Citation
+
+> The complete CMCC-BioClimInd dataset is available through PANGAEA (https://doi.org/10.1594/PANGAEA.904278). It consists in 805 files in NetCDF4 format with a 0.5° by 0.5° grid resolution and global coverage (except Antarctica). Files represent 35 bioclimatic indicators calculated for a 40-years historical interval (1960–1999) under climate reanalysis and for two future 40-years time intervals (2040–2079 and 2060–2099) under 6 ESMs’ projections and 2 RCPs (except RCP4.5 for CMCC-CESM).
+
+> The individual file names follow this structure: “BIOx institute-model rcp yyyy zz.nc” where x identifies the code of the bioclimatic indicator, institute-model (see Table 3, first column) identifies the source of data (short name for historical observation or for the producing Center and/or ESMs), rcp is the Representative Concentration Pathway (RCP 4.5 or RCP 8.5), yyyy is the starting year of time interval and zz the last two digits of the ending year of the time interval.
+
+## Citation
 
  ```sh
  @misc{noce2019cang,

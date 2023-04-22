@@ -1,17 +1,24 @@
-# WorldClim-2.1
+---
+title: "WorldClim"
+description: "Interpolated monthly climate data"
+tags: [wget]
+---
+
+## Description WorldClim-2.1
 
 Interpolated monthly climate data for minimum, mean, and maximum temperature, precipitation, solar radiation, wind speed, water vapor pressure, and for total precipitation. There are also 19 bioclimatic variables.
 urls:
 
-version 2.1
-https://worldclim.org/data/index.html
+## Versions
 
-version	1.4
-https://worldclim.org/data/v1.4/worldclim14.html
+- version 2.1: https://worldclim.org/data/index.html
+
+- version 1.4: https://worldclim.org/data/v1.4/worldclim14.html
 
 
-## Reference
-> Fick, S.E. and R.J. Hijmans, 2017. WorldClim 2: new 1km spatial resolution climate surfaces for global land areas. International Journal of Climatology 37 (12): 4302-4315 [show]
+## Citation
+
+> Fick, S.E. and R.J. Hijmans, 2017. WorldClim 2: new 1km spatial resolution climate surfaces for global land areas. International Journal of Climatology 37 (12): 4302-4315 
 
 ## Data access and download
 
