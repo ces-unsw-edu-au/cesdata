@@ -32,5 +32,7 @@ cd  $GISDATA/vegetation/regional/Bolivia-vegetacion
 
 ### IUCN RLE assessment of tropical glaciers 
 
+![](/img/osf-logo.png) 
+
 - [OSF project component](https://osf.io/432sb/)
 

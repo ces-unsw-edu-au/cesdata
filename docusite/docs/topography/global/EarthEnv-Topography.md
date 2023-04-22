@@ -44,5 +44,7 @@ This will download approximatedly 74G of data...
 
 ### IUCN RLE assessment of tropical glaciers 
 
+![](/img/osf-logo.png) 
+
 - [OSF project component](https://osf.io/432sb/)
 

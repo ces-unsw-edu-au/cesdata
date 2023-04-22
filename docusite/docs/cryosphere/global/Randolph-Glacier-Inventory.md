@@ -130,5 +130,7 @@ select rgiid,glimsid,bgndate,enddate,o2region,area,status,linkages,name from rgi
 
 ### IUCN RLE assessment of tropical glaciers 
 
+![](/img/osf-logo.png) 
+
 - [OSF project component](https://osf.io/432sb/)
 

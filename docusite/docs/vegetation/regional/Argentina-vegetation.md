@@ -30,5 +30,7 @@ wget --continue 'http://geoportal.idesa.gob.ar/geoserver/wfs?format_options=char
 
 ### IUCN RLE assessment of tropical glaciers 
 
+![](/img/osf-logo.png) 
+
 - [OSF project component](https://osf.io/432sb/)
 

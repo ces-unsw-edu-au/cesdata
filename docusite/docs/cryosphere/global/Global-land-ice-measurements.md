@@ -166,5 +166,7 @@ save(file='Glaciers-Northern-South-America.rda',T6.1,T6.2,T6.1.ss,T6.2.ss)
 
 ### IUCN RLE assessment of tropical glaciers 
 
+![](/img/osf-logo.png) 
+
 - [OSF project component](https://osf.io/432sb/)
 
