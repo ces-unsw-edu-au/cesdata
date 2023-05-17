@@ -22,8 +22,8 @@ Tang, Liang, & Werner, Tim T. (2023). Global mining footprint mapped from high-r
 
 ```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
-mkdir -p $GISDATA/anthroposphere/global/mining-footprint
-cd $GISDATA/anthroposphere/global/mining-footprint
+mkdir -p $GISDATA/antroposphere/global/mining-footprint
+cd $GISDATA/antroposphere/global/mining-footprint
 ```
 
 ### Download from Zenodo
@@ -32,7 +32,13 @@ We use the [zenodo_get](https://gitlab.com/dvolgyes/zenodo_get) python tool to d
 
 ```sh
 source $HOME/.venvs/GIS-python/bin/activate
-python -m zenodo_get 10.5281/zenodo.5879022 -m -e -k
+python -m zenodo_get 10.5281/zenodo.7894216 -m -e -k
+```
+
+Check downloaded file
+
+```sh
+ogrinfo 74548_projected\ polygons.shp -al -geom=no | less
 ```
 
 ## This dataset is used for...
