@@ -7,4 +7,4 @@ tags: [Camera-trap monitoring,Venezuela]
 
 Something about the Gran Sabana
 
-https://github.com/NeoMapas/datos-deforestacion-venezuelas
+https://github.com/NeoMapas/datos-deforestacion-venezuela

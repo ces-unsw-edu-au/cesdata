@@ -1,7 +1,9 @@
 {
-        "label": "global",
+        "label": "global climate layers",
         "link": {
             "type": "generated-index",
-            "description": "./climate/global."
+            "title": "global",
+            "description": "Global climate layers",
+            "image": "/img/docusaurus.png"
         }
-        }
+}

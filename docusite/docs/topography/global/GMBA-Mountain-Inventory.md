@@ -1,4 +1,9 @@
-# GMBA Mountain Inventory
+---
+title: "GMBA"
+description: "GMBA Mountain Inventory"
+tags: [tropical glaciers, IUCN RLE]
+---
+ 
 
 Links to:
 / [Map visualization](http://www.mountainbiodiversity.org/explore)
@@ -70,3 +75,13 @@ For the Thermal belts the map values refer to Tvzcode Labels and the belts are d
 |5|Lower montane |GS >=94 days; 10.0 < SMT < 15.0 °C|T6.5,T6.4|
 |6|Warm, freezing|warm, possible freezing; GS >=94 days; SMT > 15 °C||
 |7|Warm, no freezing|perpetual warm conditions; GS >=94 days; SMT > 15 °C||
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

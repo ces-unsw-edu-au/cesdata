@@ -1,13 +1,22 @@
-# EarthEnv Tropical Cloud Forests
+---
+title: "EarthEnv-TCF-2021"
+description: "EarthEnv Tropical Cloud Forests"
+tags: [tropical glaciers, IUCN-GET, IUCN-RLE, wget]
+---
+
+## Description
+
+EarthEnv Tropical Cloud Forests
 
 ## citation
 
 > Karger, D.N., Kessler, M., Lehnert, M. et al. Limited protection and ongoing loss of tropical cloud forest biodiversity and ecosystems worldwide. Nat Ecol Evol (2021). https://doi.org/10.1038/s41559-021-01450-y
 > Wilson AM, Jetz W (2016) *Remotely Sensed High-Resolution Global Cloud Dynamics for Predicting Ecosystem and Biodiversity Distributions*. **PLoS Biol** 14(3): e1002415. doi:[10.1371/journal.pbio.1002415](http://doi.org/10.1371/journal.pbio.1002415). [Dataset available on-line](http://www.earthenv.org/)
 
-## data access
+## Links
 - older version: https://earthenv.org//cloud
 - newer version: https://www.earthenv.org/cloudforest
+- Description of data here: https://www.earthenv.org/metadata/Cloud_DataDescription.pdf
 
 ## data preparation
 
@@ -33,6 +42,14 @@ scp Tropical_Montane_Cloud_Forest_Sites_1997.zip $zID@kdm.restech.unsw.edu.au:/s
 
 ```
 
-Description of data here:
 
-https://www.earthenv.org/metadata/Cloud_DataDescription.pdf
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

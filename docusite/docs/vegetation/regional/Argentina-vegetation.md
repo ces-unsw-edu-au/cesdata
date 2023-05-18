@@ -1,4 +1,12 @@
-# Unidades de vegetación de la Argentina
+---
+title: "Argentina-vegetacion"
+description: "Unidades de vegetación de la Argentina"
+tags: [tropical glaciers, IUCN RLE]
+---
+
+## Description
+
+ Unidades de vegetación de la Argentina
 
 Found at:
 http://geoportal.idesa.gob.ar/layers/geonode%3Aunidades_vegetacion
@@ -16,3 +24,13 @@ cd  $GISDATA/vegetation/regional/Argentina-vegetacion
 
 wget --continue 'http://geoportal.idesa.gob.ar/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Aunidades_vegetacion&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature' --output-document=Unidades-vegetacion-Argentina.zip
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

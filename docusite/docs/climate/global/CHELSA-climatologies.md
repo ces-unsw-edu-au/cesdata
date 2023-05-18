@@ -1,5 +1,7 @@
 ---
-tags: [IUCN-GET, IUCN-RLE, wget]
+title: "CHELSA"
+description: "Climatologies at high resolution for the earth’s land surface areas"
+tags: [tropical glaciers, IUCN-GET, IUCN-RLE, wget]
 ---
 
 # CHELSA 
@@ -42,3 +44,13 @@ grep -h swe envidatS3paths* > links
 wget -b -nH -x --cut-dirs=3 --continue -i links
 
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

@@ -1,4 +1,13 @@
-# Pisos de Vegetación de Chile (Terrestrial Ecosystems of Chile)
+---
+title: "Chile-pisos"
+description: "Pisos de Vegetación de Chile"
+tags: [tropical glaciers, IUCN RLE]
+---
+
+## Description
+
+Pisos de Vegetación de Chile (Terrestrial Ecosystems of Chile)
+
 > Clasificación de Pisos de Vegetación para Chile continental presentada en el libro "Sinopsis Bioclimatica y Vegetacional de Chile" de Federico Luebert y Patricio Pliscoff, Editorial Universitaria, 2006. El concepto de piso de vegetación es defindo aquí como "espacios caracterizados por un conjunto de comunidades vegetales zonales con estructura y fisionomía uniforme, situadas bajo condiciones mesoclimáticamente homogéneas, que ocupan una posición determinada a lo largo de un gradiente de elevación, a una escala espacio-temporal específica".
 
 > Un piso de vegetación se caracteriza típicamente por una formación vegetal con especies dominantes específicas y un piso bioclimático bajo el cual tales formaciones pueden ser encontradas. El espacio que se identifica con un piso de vegetación puede ser caracterizado, a posteriori, por su composición florística, su dinámica y su heterogeneidad interna.
@@ -116,3 +125,13 @@ Other non-forest macrogroups (not evaluated)
 36	Coastal mediterranean sclerophyll arborescent scrub of Peumus boldus and Schinus latifolius
 37	Interior mediterranean sclerophyll arborescent scrub of Quillaja saponaria and Porlieria chilesis
 111	Coastal Mediterranean short scrub of Chuquiraga oppositifolia and Mulinum spinosum
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

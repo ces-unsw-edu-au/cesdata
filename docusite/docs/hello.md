@@ -29,7 +29,7 @@ These datasets have been used for:
 We run these steps prior to analysis in different environments:
 
 - on the Katana HPC at UNSW, 
-- on a Desktop using Linux Solus,
+- on a Desktop using [Linux Solus](https://getsol.us/solus/about/),
 - on a laptop running MacOS. 
 
 Thus we have tried to adapt the code for both Linux and MacOS. We run a bash script to detect the host and set up programing environment variables for the other steps. 

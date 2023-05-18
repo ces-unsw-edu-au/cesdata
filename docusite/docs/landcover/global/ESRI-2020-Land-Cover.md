@@ -1,8 +1,8 @@
 ---
-tags: [IUCN-GET, IUCN-RLE, R, python, earth engine, gdal]
+title: "ESRI-2020-LC"
+description: "Esri 2020 Land Cover"
+tags: [tropical glaciers, IUCN-GET, IUCN-RLE, R, python, earth engine, gdal]
 ---
-
-# Esri 2020 Land Cover
 
 ## About Esri 2020 Land Cover
 
@@ -192,3 +192,13 @@ Sample Code: https://code.earthengine.google.com/514a294747ee5e7a136372b7e947d7b
 * 8 _Bare_: ground Areas of rock or soil with very sparse to no vegetation for the entire year; large areas of sand and deserts with no to little vegetation; examples: exposed rock or soil, desert and sand dunes, dry salt flats/pans, dried lake beds, mines.
 * 9 _Snow/Ice_: Large homogenous areas of permanent snow or ice, typically only in mountain areas or highest latitudes; examples: glaciers, permanent snowpack, snow fields.
 * 10 _Clouds_: No land cover information due to persistent cloud cover.
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

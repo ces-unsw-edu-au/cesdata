@@ -1,6 +1,14 @@
-# Glacier Thickness Database (GlaThiDa) 3.1.0
+---
+title: "GlaThiDa"
+description: "Glacier Thickness Database 3.1.0"
+tags: [tropical glaciers, IUCN RLE]
+---
 
+
+## Links
 https://www.gtn-g.ch/glathida/
+
+## Description
 
 > Internationally collected, standardized dataset on glacier thickness from in-situ and remotely sensed observations, based on data submissions, literature review and airborne data from NASA’s Operation IceBridge.
 
@@ -23,10 +31,19 @@ https://www.gtn-g.ch/glathida/
 
 ## Data access
 
-````sh
+```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 mkdir -p $GISDATA/cryosphere/global/GlaThiDa
 cd $GISDATA/cryosphere/global/GlaThiDa
 wget --continue http://www.gtn-g.ch/database/glathida-3.1.0.zip
-
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

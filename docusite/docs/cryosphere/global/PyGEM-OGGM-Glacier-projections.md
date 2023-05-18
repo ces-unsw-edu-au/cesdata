@@ -1,10 +1,18 @@
-# Global PyGEM-OGGM Glacier Projections with RCP and SSP Scenarios, Version 1 (HMA2_GGP)
+---
+title: "PyGEM-OGGM"
+description: "Global PyGEM-OGGM Glacier Projections"
+tags: [tropical glaciers, IUCN RLE]
+---
 
-https://nsidc.org/data/hma2_ggp/versions/1
+## Description
+
+Global PyGEM-OGGM Glacier Projections with RCP and SSP Scenarios, Version 1 (HMA2_GGP)
 
 > This data set comprises results from a hybrid glacier evolution model that uses the mass balance module of the Python Glacier Evolution Model (PyGEM) and the glacier dynamics module of the Open Global Glacier Model (OGGM). Output parameters include projections of glacier mass change, fixed runoff, and various mass balance components at regionally aggregated and glacier scales.
 
+## Links 
 
+https://nsidc.org/data/hma2_ggp/versions/1
 
 ## Citation
 
@@ -32,7 +40,7 @@ https://nsidc.org/sites/default/files/documents/user-guide/hma2_ggp-v001-usergui
 
 Instructions for Programmatic Data Access are here: https://nsidc.org/data/user-resources/help-center/programmatic-data-access-guide
 
-````sh
+```sh
 source ~/proyectos/UNSW/cesdata/env/project-env.sh
 mkdir -p $GISDATA/cryosphere/global/PyGEM-OGGM
 cd $GISDATA/cryosphere/global/PyGEM-OGGM
@@ -49,3 +57,13 @@ done
 gdalwarp NETCDF:$GISDATA/climate/global/CHIRPS/chirps-v2.0.monthly.nc:precip -t_srs EPSG:4326 -te -74 0 -58 13 -of 'GTiff' Test1.tif
 
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

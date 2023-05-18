@@ -1,9 +1,19 @@
-# GLIMS Glacier database
+---
+title: "GLIMS_2019"
+description: "GLIMS Glacier database"
+tags: [tropical glaciers, IUCN RLE]
+---
+
+## Description
+
+GLIMS Glacier database
 Global Land Ice Measurements from Space initiative (GLIMS)
+
+## Links
 
 [Webpage](http://glims.colorado.edu/glacierdata/)
 
-#### Citation
+## Citation
 
 > GLIMS and NSIDC (2005, updated 2018): Global Land Ice Measurements
 from Space glacier database.  Compiled and made available by the
@@ -15,11 +25,11 @@ Boulder CO, U.S.A.  DOI:10.7265/N5V98602
    Studying Glacier Change".  Global and Planetary Change 56:101--110.
    (doi:10.1016/j.gloplacha.2006.07.018)
 
-#### Data access
+## Data access
 
 http://www.glims.org/download/
 
-#### Data download and preparation
+### Data download and preparation
 
 ```sh
 DPATH=cryosphere/global
@@ -150,3 +160,13 @@ dbDisconnect(con)
 save(file='Glaciers-Northern-South-America.rda',T6.1,T6.2,T6.1.ss,T6.2.ss)
 
 ```
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+

@@ -1,14 +1,22 @@
-# World Glacier Inventory, Version 1
+---
+title: "WGI 2012"
+description: "World Glacier Inventory, Version 1"
+tags: [tropical glaciers, IUCN RLE]
+---
+
+## Description
+
+ World Glacier Inventory, Version 1
 
 The World Glacier Inventory ([WGI](https://nsidc.org/data/g01130)) represents a a snapshot of the glacier distribution in the second half of the 20th century. It contains information for over 130,000 glaciers, based primarily on aerial photographs and maps, most glaciers have a single data entry. It is based on the World Glacier Monitoring Service (WGMS 1989).
 
-#### Citation
+## Citation
 > WGMS, and National Snow and Ice Data Center (comps.). 1999, updated 2012. World Glacier Inventory, Version 1. [Indicate subset used]. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N5/NSIDC-WGI-2012-02. [Date Accessed].
 
-#### Data access
+## Data access
 Available at: ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G01130/
 
-#### Data download and preparation
+## Data download and preparation
 
 
 ```sh
@@ -54,3 +62,13 @@ En el que ''prim_class'' es una de las siguientes:
 |7 | Glacieret and Snowfield | Small ice masses of indefinite shape in hollows, river beds, or on protected slopes that have developed from snow drift, avalanches, and/or particularly heavy accumulation in certain years. Usually no marked flow pattern is visible; and it has been in existence for at least two consecutive years. |
 |8 | Ice Shelf | Floating ice sheet of considerable thickness attached to a coast nourished by a glacier or glaciers; snow accumulation on its surface or bottom freezing. |
 |9 | Rock Glacier | Lava-stream-like debris mass containing ice in several possible forms and moving slowly downslope. |
+
+
+## This dataset is used for...
+
+### IUCN RLE assessment of tropical glaciers 
+
+![](/img/osf-logo.png) 
+
+- [OSF project component](https://osf.io/432sb/)
+
