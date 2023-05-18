@@ -1,7 +1,7 @@
 ---
 title: "Mining-footprint"
 description: "Global mining footprint"
-tags: [Venezuela,deforestation]
+tags: [Venezuela,deforestation,zenodo]
 ---
 
 ## Description
@@ -32,7 +32,7 @@ We use the [zenodo_get](https://gitlab.com/dvolgyes/zenodo_get) python tool to d
 
 ```sh
 source $HOME/.venvs/GIS-python/bin/activate
-python -m zenodo_get 10.5281/zenodo.5879022 -m -e -k
+python -m zenodo_get 10.5281/zenodo.7894216 -m -e -k
 ```
 
 ## This dataset is used for...
