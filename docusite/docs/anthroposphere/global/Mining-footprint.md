@@ -1,7 +1,7 @@
 ---
 title: "Mining-footprint"
 description: "Global mining footprint"
-tags: [Venezuela,deforestation]
+tags: [Venezuela,deforestation,zenodo]
 ---
 
 ## Description
