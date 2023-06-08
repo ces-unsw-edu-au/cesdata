@@ -18,7 +18,7 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'unsw-edu-au', // Usually your GitHub org/user name.
+  organizationName: 'ces-unsw-edu-au', // Usually your GitHub org/user name.
   projectName: 'cesdata', // Usually your repo name.
   deploymentBranch: 'alpha-centaury', // home to small furry creatures
   trailingSlash: false,
