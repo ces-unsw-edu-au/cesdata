@@ -13,10 +13,10 @@ const config = {
 
   // GitHub pages deployment config.
   // Set the production url of your site here
-  url: 'https://curly-bassoon-6989k23.pages.github.io/',
+  url: 'https://ces-unsw-edu-au.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/cesdata/',
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'ces-unsw-edu-au', // Usually your GitHub org/user name.
   projectName: 'cesdata', // Usually your repo name.
