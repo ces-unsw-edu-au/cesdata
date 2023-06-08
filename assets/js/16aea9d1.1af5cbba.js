@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocusite=self.webpackChunkdocusite||[]).push([[2656],{551:s=>{s.exports=JSON.parse('{"label":"VRT","permalink":"/docs/tags/vrt","allTagsPath":"/docs/tags","count":1,"items":[{"id":"forest/global/GFC","title":"GFC","description":"Global Forest Change","permalink":"/docs/forest/global/GFC"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusite=self.webpackChunkdocusite||[]).push([[9639],{8647:a=>{a.exports=JSON.parse('{"label":"github","permalink":"/cesdata/blog/tags/github","allTagsPath":"/cesdata/blog/tags","count":1}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocusite=self.webpackChunkdocusite||[]).push([[7476],{3143:e=>{e.exports=JSON.parse('{"label":"GDB","permalink":"/docs/tags/gdb","allTagsPath":"/docs/tags","count":1,"items":[{"id":"protected/global/WDPA","title":"WDPA","description":"World database on Protected Areas","permalink":"/docs/protected/global/WDPA"}]}')}}]);
