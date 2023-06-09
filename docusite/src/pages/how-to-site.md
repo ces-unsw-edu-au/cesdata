@@ -10,6 +10,20 @@ We built this awesome documentation site using https://docusaurus.io/docs
 
 First we installed [Node.js](https://nodejs.org/en/download/) (recommended version 16.14 or above).
 
+Install docusaurus with:
+
+```sh
+npm install docusaurus
+```
+
+Then we updated packages and run an audit
+```sh
+sudo npm install -g npm@9.7.1
+npm i @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest
+npm audit fix
+```
+
+
 :::caution npx version
 
 Make sure we deactivate conda to use the downloaded npx version:
@@ -17,11 +31,11 @@ Make sure we deactivate conda to use the downloaded npx version:
 ```sh
 conda deactivate
 which npx
-npx -v # This sites works with `9.5.1`.
+npx -v # This sites works with `9.5.1`, updated in June to `9.7.1`
 ```
 :::
 
-Then we _npx_ docusaurus:
+The first time we _npx_ docusaurus (skip this if docusite is already created and configured):
 
 ```sh
 npx create-docusaurus@latest $REPO_PATH/docusite classic
@@ -76,7 +90,7 @@ My steps:
 
 - In GitHub: go to `Settings` / `Pages`, set Source to _Deploy from a branch_ and then the name of the branch.
 
-- For some reason, this will serve the site at a random url, `https://curly-bassoon-6989k23.pages.github.io/` ??
+- If the repository is private, this will serve the site at a random url, something like `https://curly-bassoon-6989k23.pages.github.io/`, once the repository is public it will work with the `https://ces-unsw-edu-au.github.io/`
 
 - Then, modify `docusaurus.config.js` and add: `url`, `baseUrl`, `organizationName`, `projectName` and `deploymentBranch`. 
 
