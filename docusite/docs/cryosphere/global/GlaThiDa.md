@@ -42,8 +42,5 @@ wget --continue http://www.gtn-g.ch/database/glathida-3.1.0.zip
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 

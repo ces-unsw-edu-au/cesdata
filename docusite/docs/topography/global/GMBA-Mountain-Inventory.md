@@ -80,8 +80,5 @@ For the Thermal belts the map values refer to Tvzcode Labels and the belts are d
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 

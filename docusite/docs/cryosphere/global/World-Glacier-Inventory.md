@@ -67,8 +67,5 @@ En el que ''prim_class'' es una de las siguientes:
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 

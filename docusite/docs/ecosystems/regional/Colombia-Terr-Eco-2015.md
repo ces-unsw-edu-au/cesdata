@@ -85,8 +85,5 @@ select fullcode,cod,EFG from ecocolombia.ecoori_12052015_2014_todoscriterios m l
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 

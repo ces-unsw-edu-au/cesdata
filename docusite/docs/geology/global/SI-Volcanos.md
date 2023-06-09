@@ -40,8 +40,5 @@ wget --continue https://volcano.si.edu/database/list_volcano_pleistocene_excel.c
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 

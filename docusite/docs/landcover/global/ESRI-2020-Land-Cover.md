@@ -197,8 +197,5 @@ Sample Code: https://code.earthengine.google.com/514a294747ee5e7a136372b7e947d7b
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 

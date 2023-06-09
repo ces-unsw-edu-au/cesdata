@@ -1,7 +1,7 @@
 ---
 title: "Myanmar"
 description: "Terrestrial ecosystems of Myanmar, Version 1.0"
-tags: [Myanmar,IUCN RLE,wget,OGR,figshare]
+tags: [Myanmar,IUCN RLE,wget,OGR,figshare,RLE spatial data]
 ---
 
 Map of the terrestrial ecosystems of Myanmar, Version 1.0

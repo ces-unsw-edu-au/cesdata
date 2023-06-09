@@ -1,8 +1,14 @@
-# CRU TS v. 4.03
-
-[CRU TS v. 4.03](https://crudata.uea.ac.uk/cru/data/hrg/)
+---
+title: "CRU TS v. 4.03"
+description: "High-resolution gridded datasets of the Climatic Research Unit."
+tags: [NETCDF, wget, gdalinfo]
+---
 
 High-resolution gridded datasets of the Climatic Research Unit.
+
+## Links
+
+[CRU TS v. 4.03](https://crudata.uea.ac.uk/cru/data/hrg/)
 
 ## Citation
 

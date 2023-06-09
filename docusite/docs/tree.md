@@ -134,3 +134,8 @@ tree -L 3 $GISDATA
 
 </details>
 
+### Tags
+
+Alternatively you can use the tags to navigate the content. I use the tags to identify common formats and tools, projects, countries, repositories etc.
+
+Start here: [All tags](tags)

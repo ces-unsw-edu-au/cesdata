@@ -48,8 +48,5 @@ scp Tropical_Montane_Cloud_Forest_Sites_1997.zip $zID@kdm.restech.unsw.edu.au:/s
 ## This dataset is used for...
 
 ### IUCN RLE assessment of tropical glaciers 
-
-![](/img/osf-logo.png) 
-
 - [OSF project component](https://osf.io/432sb/)
 
