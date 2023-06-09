@@ -14,7 +14,7 @@
 
 The containing folder for all gbif data is this:
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/species-dist/global/GBIF
 ```
 

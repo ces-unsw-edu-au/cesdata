@@ -16,7 +16,7 @@ FTP: ftp://sidads.colorado.edu/pub/DATASETS/fgdc/ggd318_map_circumarctic/
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/soil/regional/circumpolar_permafrost

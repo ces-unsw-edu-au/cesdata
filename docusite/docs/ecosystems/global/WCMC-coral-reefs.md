@@ -12,7 +12,7 @@
 
 #### data access
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-coral-reefs

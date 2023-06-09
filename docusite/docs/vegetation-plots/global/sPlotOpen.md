@@ -12,7 +12,7 @@ https://doi.org/10.25829/idiv.3474-40-3292
 ## Data download
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/vegetation-plots/global/sPlotOpen/

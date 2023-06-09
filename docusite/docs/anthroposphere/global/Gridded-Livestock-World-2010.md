@@ -14,7 +14,7 @@ From the original publication
 > Two versions of each species distribution are produced. In the first version, livestock numbers are disaggregated within census polygons according to weights established by statistical models using high resolution spatial covariates (dasymetric weighting). In the second version, animal numbers are distributed homogeneously with equal densities within their census polygons (areal weighting) to provide spatial data layers free of any assumptions linking them to other spatial variables.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/antroposphere/global/GLW3
 cd $GISDATA/antroposphere/global/GLW3

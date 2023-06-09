@@ -13,7 +13,7 @@ https://data.unep-wcmc.org/datasets/48
 ## Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-mangrove-types
@@ -25,7 +25,7 @@ wget --continue https://wcmc.io/TNC-006 --output-document=WCMC-mangrove-types.zi
 
 Check download
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 cd $GISDATA/ecosystems/global/WCMC-mangrove-types
 
@@ -40,7 +40,7 @@ tree TNC-006_BiophysicalTypologyMangroves/
 ```sh
 qsub -I -l select=1:ncpus=4:mem=120gb,walltime=8:00:00
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 

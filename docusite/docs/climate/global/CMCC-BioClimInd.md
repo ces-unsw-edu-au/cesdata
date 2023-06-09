@@ -31,7 +31,7 @@ tags: [PANGAEA, wget]
  ## Data download and preparation
 
  ```sh
- source proyectos/UNSW/cesdata/env/project-env.sh
+ source proyectos/CES/cesdata/env/project-env.sh
  mkdir -p $GISDATA/climate/global/CMCC-BioClimInd
  cd $GISDATA/climate/global/CMCC-BioClimInd
 

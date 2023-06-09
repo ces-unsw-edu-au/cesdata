@@ -13,7 +13,7 @@ https://open.canada.ca/data/en/dataset/98fa7335-fbfe-4289-9a0e-d6bf3874b424
 > Marshall, I.B., Schut, P.H., and Ballard, M. 1999. A National Ecological Framework for Canada: Attribute Data. Agriculture and Agri-Food Canada, Research Branch, Centre for Land and Biological Resources Research and Environment Canada, State of the Environment Directorate, Ecozone Analysis Branch. Ottawa/Hull. http://sis.agr.gc.ca/cansis/nsdb/ecostrat/1999report/index.html (accessed July 4, 2017).
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecoregions/regional/Canada
 cd $GISDATA/ecoregions/regional/Canada

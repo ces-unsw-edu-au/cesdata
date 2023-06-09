@@ -8,7 +8,7 @@ https://www.ccamlr.org/
 https://github.com/ccamlr/data
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/cryosphere/regional/CCAMLR
 cd $GISDATA/cryosphere/regional/CCAMLR
 git clone git@github.com:ccamlr/data.git

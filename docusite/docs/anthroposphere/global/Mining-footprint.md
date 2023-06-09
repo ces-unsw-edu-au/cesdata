@@ -21,7 +21,7 @@ Tang, Liang, & Werner, Tim T. (2023). Global mining footprint mapped from high-r
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/antroposphere/global/mining-footprint
 cd $GISDATA/antroposphere/global/mining-footprint
 ```

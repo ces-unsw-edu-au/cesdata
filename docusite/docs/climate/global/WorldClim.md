@@ -23,7 +23,7 @@ urls:
 ## Data access and download
 
 ```bash
-source proyectos/UNSW/cesdata/env/project-env.sh
+source proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/climate/global/WorldClim
 cd $GISDATA/climate/global/WorldClim
 

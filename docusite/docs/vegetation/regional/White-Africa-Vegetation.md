@@ -10,7 +10,7 @@ http://www.landscapesportal.org/layers/geonode:white_shp
 http://landscapeportal.org/layers/geonode%3Aafrica_white
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/vegetation/regional/Africa
 cd $GISDATA/vegetation/regional/Africa

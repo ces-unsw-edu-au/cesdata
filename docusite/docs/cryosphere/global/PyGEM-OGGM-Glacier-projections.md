@@ -41,7 +41,7 @@ https://nsidc.org/sites/default/files/documents/user-guide/hma2_ggp-v001-usergui
 Instructions for Programmatic Data Access are here: https://nsidc.org/data/user-resources/help-center/programmatic-data-access-guide
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/cryosphere/global/PyGEM-OGGM
 cd $GISDATA/cryosphere/global/PyGEM-OGGM
 

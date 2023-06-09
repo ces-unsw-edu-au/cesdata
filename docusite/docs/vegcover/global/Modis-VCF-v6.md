@@ -8,7 +8,7 @@ https://lpdaac.usgs.gov/products/mod44bv006/
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 

@@ -1,6 +1,6 @@
 #!R --vanilla
 projectname <- "cesdata"
-projectfolder <- "proyectos/UNSW"
+projectfolder <- "proyectos/CES"
 
 if (Sys.getenv("GISDATA") != "") {
    gis.data <- Sys.getenv("GISDATA")

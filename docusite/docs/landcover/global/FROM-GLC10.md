@@ -14,7 +14,7 @@ Global land cover data are key sources of information for understanding the comp
 FROM GLC 2017 V0.1.3 with minor improvements.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/landcover/global/FROM-GLC10/2017-V0.1.3

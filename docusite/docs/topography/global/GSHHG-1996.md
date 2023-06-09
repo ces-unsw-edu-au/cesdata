@@ -8,7 +8,7 @@ https://www.ngdc.noaa.gov/mgg/shorelines/
 > Wessel, P., and W. H. F. Smith (1996), A global, self-consistent, hierarchical, high-resolution shoreline database, J. Geophys. Res., 101(B4), 8741–8743, doi:10.1029/96JB00104.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/topography/global/GSHHG
 cd $GISDATA/topography/global/GSHHG

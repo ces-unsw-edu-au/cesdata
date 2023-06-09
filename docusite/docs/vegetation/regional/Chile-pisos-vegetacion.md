@@ -33,7 +33,7 @@ http://datos.cedeus.cl/layers/geonode:pisos_vegetacionales_pliscoff
 ## Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/vegetation/regional/Chile-pisos
 cd  $GISDATA/vegetation/regional/Chile-pisos

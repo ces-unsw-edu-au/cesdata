@@ -29,7 +29,7 @@ The zipfiles were provided directly by D. Keith (pers. comm.).
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 DPATH=cryosphere/global

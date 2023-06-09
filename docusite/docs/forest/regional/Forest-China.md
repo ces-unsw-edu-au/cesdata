@@ -10,7 +10,7 @@ Clas Codes: 211 evergreen broadleaf; 212 deciduous broadleaf; 214 bamboo; 221 ev
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/forest/regional/China

@@ -20,7 +20,7 @@ Direct download from https://rmgsc.cr.usgs.gov/outgoing/ecosystems/Global
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 DPATH=topography/global

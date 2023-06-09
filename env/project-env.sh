@@ -1,7 +1,7 @@
 export MIHOST=$(hostname -s)
 
 export PROJECTNAME=cesdata
-export SCRIPTDIR=$HOME/proyectos/UNSW/$PROJECTNAME
+export SCRIPTDIR=$HOME/proyectos/CES/$PROJECTNAME
 # store the zenodo API token in a file in home directory
 export ZENODOTOKEN=$(cat $HOME/.ZenodoToken)
 
@@ -16,6 +16,11 @@ roraima)
   export GISDB=$HOME/gisdb
   export WORKDIR=$HOME/tmp/$PROJECTNAME
   ;;
+Auyantepui)
+  export GISDATA=$HOME/gisdata
+  export GISDB=$HOME/gisdb
+  export WORKDIR=$HOME/tmp/$PROJECTNAME
+;;
 *)
    if [ -e /srv/scratch/cesdata ]
    then

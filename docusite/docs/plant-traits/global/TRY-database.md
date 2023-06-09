@@ -4,7 +4,7 @@ Kattge, J, Boenisch, G, Diaz, S, et al. TRY plant trait database - enhanced cove
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/plant-traits/global/TRY-Plant-traits
 cd $GISDATA/plant-traits/global/TRY-Plant-traits

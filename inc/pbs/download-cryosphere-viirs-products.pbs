@@ -10,8 +10,8 @@
 #PBS -J 2012-2021
 
 ## set up bash environment variables
-source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
-source $HOME/proyectos/UNSW/cesdata/env/katana-env.sh
+source $HOME/proyectos/CES/cesdata/env/project-env.sh
+source $HOME/proyectos/CES/cesdata/env/katana-env.sh
 
 ## load modules for gdal functions
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1

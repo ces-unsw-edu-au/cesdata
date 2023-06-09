@@ -16,7 +16,7 @@ tags: [tropical glaciers, IUCN-GET, IUCN-RLE, wget]
 http://www.earthenv.org//topography
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 DPATH=topography/global

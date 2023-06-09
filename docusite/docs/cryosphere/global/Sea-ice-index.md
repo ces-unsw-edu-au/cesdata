@@ -15,7 +15,7 @@ Use Earth-data login details
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/cryosphere/global/SeaIceIndex

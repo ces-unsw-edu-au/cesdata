@@ -16,7 +16,7 @@ The *World Bank Official Boundaries* can be downloaded directly from a public am
 There are many files with different formats and content, I download them all using a `for` loop.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/admin/global/World-Bank/
 cd $GISDATA/admin/global/World-Bank/
 

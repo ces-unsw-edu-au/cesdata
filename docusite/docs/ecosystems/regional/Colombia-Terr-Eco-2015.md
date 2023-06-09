@@ -12,7 +12,7 @@ Files provided by Andrés Etter -()- Alaska to Patagonia project
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecosystems/regional/Colombia
 cd $GISDATA/ecosystems/regional/Colombia
@@ -43,7 +43,7 @@ ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PRO
 We checked the file `GETcrosswalk_Colombia_AEtter.xlsx`
 
 ```sh
-cp ~/proyectos/UNSW/ecosphere-db/input/xwalks/GETcrosswalk_Colombia_AEtter.xlsx $GISDATA/ecosistemas/RLEDB/Colombia
+cp ~/proyectos/CES/ecosphere-db/input/xwalks/GETcrosswalk_Colombia_AEtter.xlsx $GISDATA/ecosistemas/RLEDB/Colombia
 ```
 
 Run `R --vanilla`:

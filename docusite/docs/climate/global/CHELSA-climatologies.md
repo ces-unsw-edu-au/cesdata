@@ -32,7 +32,7 @@ Once in the server, is easy to select the files needed, and download a list of f
 ## Data download and preparation
 
 ```bash
-source proyectos/UNSW/cesdata/env/project-env.sh
+source proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/climate/global/CHELSA
 cd $GISDATA/climate/global/CHELSA
 

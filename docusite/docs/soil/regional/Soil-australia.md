@@ -9,7 +9,7 @@ https://www.clw.csiro.au/aclep/soilandlandscapegrid/GetData-DAP.html
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/soil/regional/soil-landscape-grid-australia
@@ -30,7 +30,7 @@ File name conventions: https://www.clw.csiro.au/aclep/soilandlandscapegrid/MetaD
 Can we compress these files?
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/soil/regional/soil-landscape-grid-australia

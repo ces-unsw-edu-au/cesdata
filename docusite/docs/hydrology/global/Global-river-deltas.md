@@ -19,7 +19,7 @@ Code for recreating dataset using matlab: https://scholarworks.iu.edu/dspace/han
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/hydrology/global/River-Deltas
 cd $GISDATA/hydrology/global/River-Deltas

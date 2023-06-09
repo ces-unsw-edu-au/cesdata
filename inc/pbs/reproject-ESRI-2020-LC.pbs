@@ -8,7 +8,7 @@
 #PBS -J 1-50
 
 ## set up bash environment variables
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 ## load modules for gdal functions
 module add python/intel-3.6.8 perl/5.28.0 gdal/3.2.1 geos/3.8.1

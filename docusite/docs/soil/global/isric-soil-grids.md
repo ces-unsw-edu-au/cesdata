@@ -23,7 +23,7 @@ https://git.wur.nl/isric/soilgrids/soilgrids.notebooks/activity
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/soil/global/ISRIC-SoilGrids
 cd $GISDATA/soil/global/ISRIC-SoilGrids
 
@@ -68,7 +68,7 @@ stats: mean uncertainty Q0.05 Q0.5 Q0.95
 We prepared a PBS script to download and reproject several layers:
 
 ```{bash}
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 cd $WORKDIR
 echo "bdod
 cec

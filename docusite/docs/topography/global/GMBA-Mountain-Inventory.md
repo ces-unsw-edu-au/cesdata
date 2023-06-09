@@ -34,7 +34,7 @@ To download all the available files at once, please chose the zipped folder enti
 Download data from ilias and then:
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 DPATH=topography/global

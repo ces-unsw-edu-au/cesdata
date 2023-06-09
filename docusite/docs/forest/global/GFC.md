@@ -20,7 +20,7 @@ http://www.earthenginepartners.appspot.com/science-2013-global-forest/download.h
 For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script to download the whole set:
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/forest/global/GFC/
 
 

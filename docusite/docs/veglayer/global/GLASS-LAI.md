@@ -13,7 +13,7 @@ https://catalogue.ceh.ac.uk/documents/6d07d60a-4cb9-44e4-be39-89ea40365236
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/veglayer/global/GLASS-LAI
 cd $GISDATA/veglayer/global/GLASS-LAI

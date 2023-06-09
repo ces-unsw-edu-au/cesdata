@@ -17,7 +17,7 @@ https://doi.org/10.25260/EA.18.28.1.0.399
 Author: Oyarzabal, M; Clavijo, J; Oakley, L; Bignazoli, F; Tognetti, P; Barberis, I; Maturo, H; Aragón, R; Campanello, P; Prado, D; Oesterheld; M; León, R....
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/vegetation/regional/Argentina-vegetacion
 cd  $GISDATA/vegetation/regional/Argentina-vegetacion

@@ -16,7 +16,7 @@ tags: [tropical glaciers, IUCN RLE]
 ## Data access and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 DPATH=cryosphere/regional
 DNAME=IPG-Chile

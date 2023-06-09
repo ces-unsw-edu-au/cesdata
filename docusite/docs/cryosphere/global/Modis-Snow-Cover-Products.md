@@ -14,7 +14,7 @@ Download script (python) available, add login details for earthdata in ~/.netrc 
 machine urs.earthdata.nasa.gov login ***** password *****
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/cryosphere/global/Modis-MOD10C2/
@@ -32,7 +32,7 @@ Data Set ID: MOD10A2
 
 We repeat the same procedure, this will download 590880 files!
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/cryosphere/global/Modis-MOD10A2/
@@ -71,7 +71,7 @@ Bounding box tropical glaciers
 -100,-25,138,20
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 cd $WORKDIR
@@ -88,7 +88,7 @@ qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
 
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 cd $GISDATA/cryosphere/global/Modis-MOD10A2/
 export VAR=MOD10A2

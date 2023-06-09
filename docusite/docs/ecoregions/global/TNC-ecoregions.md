@@ -11,7 +11,7 @@ http://maps.tnc.org/files/metadata/TerrEcos.xml
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecoregions/global/TEOW/
 cd $GISDATA/ecoregions/global/TEOW/

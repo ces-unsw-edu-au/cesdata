@@ -20,7 +20,7 @@ https://www.ncei.noaa.gov/pub/data/ghcn/v4/readme.txt
 
 ```sh
 
-source proyectos/UNSW/cesdata/env/project-env.sh
+source proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/climate/global/GHCN-M
 cd $GISDATA/climate/global/GHCN-M
 

@@ -18,7 +18,7 @@ https://www.glaciaresargentinos.gob.ar/
 Register and download from https://www.glaciaresargentinos.gob.ar/?page_id=2571
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 DPATH=cryosphere/regional
 DNAME=NGI-Argentina

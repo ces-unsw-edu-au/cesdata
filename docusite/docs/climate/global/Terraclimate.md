@@ -19,7 +19,7 @@ Data and documentation is available at:
 ## Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/climate/global/Terraclimate
 cd $GISDATA/climate/global/Terraclimate
 ```

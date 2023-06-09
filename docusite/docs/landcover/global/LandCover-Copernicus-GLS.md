@@ -22,7 +22,7 @@ Through Zenodo at DOI 10.5281/zenodo.3243509
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/landcover/global/CGLS
 cd $GISDATA/landcover/global/CGLS

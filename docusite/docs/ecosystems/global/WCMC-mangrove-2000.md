@@ -21,7 +21,7 @@ https://sedac.ciesin.columbia.edu/data/set/lulc-global-mangrove-forests-distribu
 ## Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-mangroves-2000
@@ -39,7 +39,7 @@ tree WCMC010_MangrovesUSGS2011_v1_4/
 
 # qsub -I -l select=1:ncpus=12:mem=120gb,walltime=24:00:00
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 

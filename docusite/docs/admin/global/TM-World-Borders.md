@@ -16,7 +16,7 @@ The *Thematic Mapping World Borders* can be downloaded directly from the website
 Current version is 0.3, is nice for display, but is an unofficial version of the borders.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/admin/global/TMWB/
 cd $GISDATA/admin/global/TMWB/
 

@@ -18,7 +18,7 @@ https://www.marineregions.org/eez.php
 This dataset is available after registration, I have not found a method for direct download from the commandline.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/admin/global/EEZ/
 cd $GISDATA/admin/global/EEZ/
 

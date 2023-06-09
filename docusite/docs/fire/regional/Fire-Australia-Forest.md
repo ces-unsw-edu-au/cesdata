@@ -13,7 +13,7 @@ Continental spatial dataset of the extent and frequency of planned and unplanned
 https://www.agriculture.gov.au/abares/forestsaustralia/sofr/sofr-2018
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 

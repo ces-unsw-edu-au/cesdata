@@ -14,7 +14,7 @@ Download data
 https://rmgsc.cr.usgs.gov/outgoing/ecosystems/AfricaData/
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/Africa
 cd $GISDATA/vegetation/regional/IVC-EcoVeg/Africa
@@ -46,7 +46,7 @@ http://hub.arcgis.com/datasets/Natureserve::southamerica-ivc-macrogroups-potenti
  The original files of the potential distribution of the Macrogroups in geotiff format were delivered by NatureServe, files were encoded in .lpk format, I extracted them using the 7z extraction command.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/SAM
 mkdir -p $GISDATA/vegetation/regional/IVC-EcoVeg/NAC
@@ -68,7 +68,7 @@ Reprojection: In order to combine both layers in one file with a common projecti
 ```sh
 qsub -I -l select=1:ncpus=1:mem=120gb,walltime=12:00:00
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1

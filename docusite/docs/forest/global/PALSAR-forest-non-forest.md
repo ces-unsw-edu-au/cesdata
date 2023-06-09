@@ -20,7 +20,7 @@ The dataset download site is:
 https://www.eorc.jaxa.jp/ALOS/en/palsar_fnf/data/index.htm
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/forest/global/PALSAR-forest-non-forest
 cd $GISDATA/forest/global/PALSAR-forest-non-forest

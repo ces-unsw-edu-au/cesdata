@@ -18,7 +18,7 @@ http://datazone.birdlife.org/species/spcdistPOS
 Spatial data must be requested at  http://datazone.birdlife.org/species/requestdis
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 

@@ -23,7 +23,7 @@ Running the original script `python nsidc-download_VNP10A1.001_2019-11-26.py` re
 So we do a manual edit to add bounding box, start and end dates, filename match, etc...
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/cryosphere/global/VIIRS-VNP10A1F/

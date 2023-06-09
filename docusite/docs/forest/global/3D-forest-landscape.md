@@ -17,7 +17,7 @@ Simard, M., Pinto, N., Fisher, J., Baccini, A., (2011), "Mapping forest canopy h
 
 ```sh
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/forest/global/3d-forest-JPL/

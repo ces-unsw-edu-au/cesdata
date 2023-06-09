@@ -19,7 +19,7 @@ Map of the terrestrial ecosystems of Myanmar, Version 1.0
 
 ## Data access and download
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecosystems/regional/Myanmar
 cd $GISDATA/ecosystems/regional/Myanmar

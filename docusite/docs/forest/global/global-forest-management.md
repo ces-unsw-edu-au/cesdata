@@ -12,7 +12,7 @@ Global forest management data at a 100m resolution for the year 2015
 > Myroslava Lesiv, Dmitry Schepaschenko, Marcel Buchhorn, Linda See, Martina Dürauer, Ivelina Georgieva, Martin Jung, Florian Hofhansl, Katharina Schulze, Andrii Bilous, Volodymyr Blyshchyk, Liudmila Mukhortova, Carlos Luis Muñoz Brenes, Leonid Krivobokov, Stephan Ntie, Khongor Tsogt, Stephan Alexander Pietsch, Elena Tikhonova, Moonil Kim, … Steffen Fritz. (2021). Global forest management data at a 100m resolution for the year 2015 [Data set]. In Nature Scientific Data (Version 3). Zenodo. https://doi.org/10.5281/zenodo.5879022
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/forest/global/forest-management
 cd $GISDATA/forest/global/forest-management
 

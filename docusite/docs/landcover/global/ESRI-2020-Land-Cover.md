@@ -42,7 +42,7 @@ Sentinel-2 10m Land Use/Land Cover Timeseries Downloader https://www.arcgis.com/
 It allows downloading all scenes for each year as a zip file (approx 60 GB each).
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 ## download all year for selection of tiles:
 
@@ -59,7 +59,7 @@ done
 ```
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 ## download zipped composite
 mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/composite
@@ -89,7 +89,7 @@ done
 Virtual Raster Tileset will not work due to different projections. Even with `-allow_projection_difference` option it will not produce useful resutls. So we will first reproject each tile to Eckert IV projection and then use VRT.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 cd $WORKDIR
 qsub $SCRIPTDIR/inc/pbs/reproject-ESRI-2020-LC.pbs
 
@@ -106,7 +106,7 @@ gdalbuildvrt index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/eck4/*_${VR
 ### R
 
 ```{r}
-source("~/proyectos/UNSW/cesdata/env/project-env.R")
+source("~/proyectos/CES/cesdata/env/project-env.R")
 data.dir <- sprintf("%s/landcover/global/ESRI-2020-LC/",gis.data)
 dir(data.dir)
 require(raster)

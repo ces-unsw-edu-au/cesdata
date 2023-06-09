@@ -25,7 +25,7 @@ From https://www.protectedplanet.net/ there are several options to download data
 ### Global data
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/protected/global/WDPA

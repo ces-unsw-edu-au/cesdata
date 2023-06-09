@@ -9,7 +9,7 @@ http://www.scielo.org.za/pdf/babc/v47n1/06.pdf
 http://bgis.sanbi.org/SpatialDataset/Detail/670
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/vegetation/regional/SouthAfrica
 cd $GISDATA/vegetation/regional/SouthAfrica

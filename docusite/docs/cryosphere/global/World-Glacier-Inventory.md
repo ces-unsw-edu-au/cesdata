@@ -20,7 +20,7 @@ Available at: ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G01130/
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 DPATH=cryosphere/global

@@ -10,7 +10,7 @@ Global Human Appropriation of Net Primary Production
 > Haberl, H., K.-H. Erb, F. Krausmann, V. Gaube, A. Bondeau, C. Plutzar, S. Gingrich, W. Lucht and M. Fischer-Kowalski, (2007). Quantifying and mapping the global human appropriation of net primary production in Earth's terrestrial ecosystems. Proceedings of the National Acadademy of Sciences of the United States of America 104, 12942-12947.
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/antroposphere/global/HANPP-2000
 cd $GISDATA/antroposphere/global/HANPP-2000

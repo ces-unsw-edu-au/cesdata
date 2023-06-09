@@ -15,7 +15,7 @@ https://www.abs.gov.au/statistics/standards/australian-statistical-geography-sta
 ## Data access and download
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 export INPUTDIR=admin/regional/ASGS
 mkdir -p $GISDATA/$INPUTDIR/
 cd $GISDATA/$INPUTDIR/

@@ -4,7 +4,7 @@ Available from the [Copernicus Global Land Service](https://land.copernicus.eu/g
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/soil/global/COPERNICUS-SWI
 cd $GISDATA/soil/global/COPERNICUS-SWI
 

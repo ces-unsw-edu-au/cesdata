@@ -15,7 +15,7 @@ tags: [IUCN-GET,wget]
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/antroposphere/global/Earthstats
 cd $GISDATA/antroposphere/global/Earthstats

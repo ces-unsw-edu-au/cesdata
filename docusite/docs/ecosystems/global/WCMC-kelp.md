@@ -18,7 +18,7 @@ https://doi.org/10.17608/k6.auckland.12272033.v1
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecosystems/global/WCMC-kelp
 cd $GISDATA/ecosystems/global/WCMC-kelp

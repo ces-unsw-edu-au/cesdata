@@ -22,7 +22,7 @@ http://www.fao.org/aquastat/en/geospatial-information/global-maps-irrigated-area
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/antroposphere/global/Aquastat-v5
 cd $GISDATA/antroposphere/global/Aquastat-v5

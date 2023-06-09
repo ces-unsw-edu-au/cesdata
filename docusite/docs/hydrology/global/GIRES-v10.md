@@ -14,7 +14,7 @@ These datasets have been generated with source code located at http://messamat.g
 ## Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/hydrology/global/GIRES
 cd $GISDATA/hydrology/global/GIRES

@@ -8,7 +8,7 @@ https://www.awe.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/spatia
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 https://www.awe.gov.au/sites/default/files/abares/forestsaustralia/documents/datasets/AustraliasPlantations_2016.zip
 ```

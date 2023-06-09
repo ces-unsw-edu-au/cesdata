@@ -4,7 +4,7 @@ https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-land-cover
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/landcover/global/Copernicus-Gridded-Landcover
 cd $GISDATA/landcover/global/Copernicus-Gridded-Landcover
 

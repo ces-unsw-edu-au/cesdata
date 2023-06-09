@@ -13,7 +13,7 @@ https://geospatial.tnc.org/datasets/38da4656e8074e1c820c42cc21cd76cd_0
 ## Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecoregions/global/FEOW/
 cd $GISDATA/ecoregions/global/FEOW/

@@ -25,7 +25,7 @@ http://environment.gov.au/fed/catalog/search/resource/details.page?uuid=%7B991C3
 http://www.environment.gov.au/fed/catalog/search/resource/details.page?uuid=%7B382D536D-FA34-474F-89F2-305BB45E6F2B%7D
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/vegetation/regional/NVIS-Australia/
 cd $GISDATA/vegetation/regional/NVIS-Australia/
 ## manual download from webpage, then use scp or rsync to copy to server

@@ -12,7 +12,7 @@ The MOD17A3HGF will be generated at the end of each year when the entire yearly 
 > Running, S., Zhao, M. (2021). MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500m SIN Grid V061 [Data set]. NASA EOSDIS Land Processes DAAC. Accessed 2022-06-04 from https://doi.org/10.5067/MODIS/MOD17A3HGF.061
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 export MFTP=https://e4ftl01.cr.usgs.gov/
 export VAR=MOD17A3HGF
@@ -54,7 +54,7 @@ For Subdataset 1: LC type 1 (IGBP)
 
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 export MFTP=https://e4ftl01.cr.usgs.gov/
 export VAR=MOD17A3HGF

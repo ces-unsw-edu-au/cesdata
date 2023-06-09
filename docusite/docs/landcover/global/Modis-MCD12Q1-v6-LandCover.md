@@ -19,7 +19,7 @@ For version 6:
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/landcover/global/Modis/MCD12Q1.006
@@ -55,7 +55,7 @@ For Subdataset 1: LC type 1 (IGBP)
 
 module add python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 cd  $GISDATA/landcover/global/Modis/MCD12Q1.006
 export VAR=MCD12Q1

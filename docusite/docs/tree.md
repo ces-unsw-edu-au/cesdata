@@ -12,7 +12,7 @@ Expand the menus on the left to navigate the intructions for the datasets.
 <details><summary>This tree listing gives an overview of the datasets available in `$GISDATA` in Katana </summary>
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 tree -L 3 $GISDATA
 
 /srv/scratch/cesdata/gisdata

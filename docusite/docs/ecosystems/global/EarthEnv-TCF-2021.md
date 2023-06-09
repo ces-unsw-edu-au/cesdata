@@ -21,7 +21,7 @@ EarthEnv Tropical Cloud Forests
 ## data preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/ecosystems/global/EarthEnv-TCF-2021
 cd $GISDATA/ecosystems/global/EarthEnv-TCF-2021
 

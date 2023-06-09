@@ -12,7 +12,7 @@ https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/sea-surface-temperature/global/AVHRR-SST
 cd  $GISDATA/sea-surface-temperature/global/AVHRR-SST

@@ -32,7 +32,7 @@ https://www.gtn-g.ch/glathida/
 ## Data access
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/cryosphere/global/GlaThiDa
 cd $GISDATA/cryosphere/global/GlaThiDa
 wget --continue http://www.gtn-g.ch/database/glathida-3.1.0.zip

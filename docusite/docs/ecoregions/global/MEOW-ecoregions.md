@@ -19,7 +19,7 @@ We download the versions available at:
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecoregions/global/MEOW/
 cd $GISDATA/ecoregions/global/MEOW/
@@ -33,7 +33,7 @@ wget --continue 'https://datadownload-production.s3.amazonaws.com/WCMC036_MEOW_P
 ```sh
 qsub -I -l select=1:ncpus=2:mem=120gb,walltime=12:00:00
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 

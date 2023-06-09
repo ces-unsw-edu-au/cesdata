@@ -6,7 +6,7 @@ http://www.geo.uzh.ch/microsite/cryodata/pf_global/
 > Gruber, S. 2012: *Derivation and analysis of a high-resolution estimate of global permafrost zonation*, **The Cryosphere**, 6, 221-233. doi:[10.5194/tc-6-221-2012](http://www.the-cryosphere.net/6/221/)
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/soil/global/permafrost

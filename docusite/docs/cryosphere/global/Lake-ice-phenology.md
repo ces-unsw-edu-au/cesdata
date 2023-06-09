@@ -15,7 +15,7 @@ There are at least two alternative pages for data access
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 DPATH=cryosphere/global

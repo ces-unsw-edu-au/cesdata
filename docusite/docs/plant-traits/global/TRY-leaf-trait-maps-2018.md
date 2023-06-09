@@ -8,7 +8,7 @@ Reference to data package:	Moreno-Martínez, Á., Camps-Valls, G., Kattge, J., R
 DOI:	10.17871/TRY.60
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/plant-traits/global/TRY-leaf-trait-maps/

@@ -9,7 +9,7 @@ Global 5 min resolution land-use for the year 2000 consistent with national cens
 > Karl-Heinz Erb , Veronika Gaube , Fridolin Krausmann , Christoph Plutzar , Alberte Bondeau & Helmut Haberl (2007) A comprehensive global 5 min resolution land-use data set for the year 2000 consistent with national census data, Journal of Land Use Science, 2:3, 191-224, DOI: 10.1080/17474230701622981
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/antroposphere/global/Consistent-Land-Use-2000
 cd $GISDATA/antroposphere/global/Consistent-Land-Use-2000
 

@@ -22,7 +22,7 @@ Global Land Cover and Land Use Change, 2000-2020
 ## Data access and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/antroposphere/global/GLAD-GLCLUC
 cd $GISDATA/antroposphere/global/GLAD-GLCLUC
 

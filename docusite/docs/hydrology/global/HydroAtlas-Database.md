@@ -13,7 +13,7 @@ Figshare data repository at https://doi.org/10.6084/m9.figshare.9890531
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/hydrology/global/HydroATLAS
 cd $GISDATA/hydrology/global/HydroATLAS

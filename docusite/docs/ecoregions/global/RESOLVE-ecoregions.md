@@ -9,7 +9,7 @@
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecoregions/global/TEOW/
 cd $GISDATA/ecoregions/global/TEOW/
@@ -24,7 +24,7 @@ wget -b --continue https://storage.googleapis.com/teow2016/Ecoregions2017.zip
 ```sh
 qsub -I -l select=1:ncpus=12:mem=120gb,walltime=24:00:00
 
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 module add sqlite/3.31.1 spatialite/5.0.0b0 python/3.8.3 perl/5.28.0 gdal/3.2.1 geos/3.8.1
 

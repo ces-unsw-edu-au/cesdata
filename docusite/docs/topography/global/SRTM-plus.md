@@ -21,7 +21,7 @@ Data in: ftp://topex.ucsd.edu/pub/srtm30_plus/
 ## Data access
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 DPATH=topography/global
 DNAME=SRTM30-plus
 mkdir -p $GISDATA/$DPATH/$DNAME/

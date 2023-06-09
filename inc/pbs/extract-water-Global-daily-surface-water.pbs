@@ -10,8 +10,8 @@
 #PBS -J 2001-2016
 
 ## set up bash environment variables
-source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
-source $HOME/proyectos/UNSW/cesdata/env/katana-env.sh
+source $HOME/proyectos/CES/cesdata/env/project-env.sh
+source $HOME/proyectos/CES/cesdata/env/katana-env.sh
 cd $GISDATA/water/ModisDailyWater/
 
 unar ${PBS_ARRAY_INDEX}.rar

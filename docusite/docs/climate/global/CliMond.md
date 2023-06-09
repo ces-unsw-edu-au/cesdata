@@ -22,7 +22,7 @@ released	2014
 ## Data access and download
 
 ```bash
-source proyectos/UNSW/cesdata/env/project-env.sh
+source proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/climate/global/CliMond
 cd $GISDATA/climate/global/CliMond
 ```

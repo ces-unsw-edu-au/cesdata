@@ -25,7 +25,7 @@ The Volcanoes of the World database is a catalog of Holocene and Pleistocene vol
 ## Data access
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/geology/global/SI-Volcanos
 cd $GISDATA/geology/global/SI-Volcanos
 

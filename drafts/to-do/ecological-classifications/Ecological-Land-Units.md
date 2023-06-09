@@ -65,7 +65,7 @@ head(table(colormap$ELU))
 (table(colormap$ELU_GLC_De))
 
 require(readxl)
-xwalk <- read_excel("~/proyectos/UNSW/ecosphere-db/input/xwalks/GETcrosswalk-Sayre-2020.xlsx")
+xwalk <- read_excel("~/proyectos/CES/ecosphere-db/input/xwalks/GETcrosswalk-Sayre-2020.xlsx")
 
 require(raster)
 r0 <- raster("globalelus_query/World_Ecological_2015.tif")
@@ -108,7 +108,7 @@ r1 <- r0 %in% slc
 (table(colormap$ELU_Bio_De))
 (table(colormap$ELU_GLC_De))
 
-xwalk <- read_excel("~/proyectos/UNSW/ecosphere-db/input/xwalks/GETcrosswalk-Sayre-2020.xlsx")
+xwalk <- read_excel("~/proyectos/CES/ecosphere-db/input/xwalks/GETcrosswalk-Sayre-2020.xlsx")
 
 r1 <- r0
  colormap %>% filter(EF_Lit_Des %in% "Unconsolidated Sediment" ) %>% pull(Value) -> slc

@@ -22,7 +22,7 @@ https://www.awe.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/spatia
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 
 mkdir -p $GISDATA/forest/regional/Australia

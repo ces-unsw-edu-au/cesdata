@@ -21,7 +21,7 @@ Pixel values:
 - 103 No data
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/veglayer/global/GEDI-forest-canopy-height
 cd $GISDATA/veglayer/global/GEDI-forest-canopy-height
 for rgn in AUS SASIA NAFR SAFR NASIA NAM SAM

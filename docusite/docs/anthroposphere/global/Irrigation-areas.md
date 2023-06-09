@@ -15,7 +15,7 @@ https://zenodo.org/record/4659476
 
 ## Data access
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/antroposphere/global/Irrigation-Areas
 cd $GISDATA/antroposphere/global/Irrigation-Areas
 

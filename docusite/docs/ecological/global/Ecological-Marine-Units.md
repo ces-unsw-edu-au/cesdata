@@ -12,7 +12,7 @@ Data is available at https://rmgsc.cr.usgs.gov/outgoing/ecosystems/Global/ and h
 #### Data download and preparation
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/ecological/global/EcologicalMarineUnits
 cd  $GISDATA/ecological/global/EcologicalMarineUnits

@@ -13,7 +13,7 @@ https://datasets.seed.nsw.gov.au/dataset/nsw-state-vegetation-type-map
 
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/vegetation/regional/NSW-SVTM/
 cd $GISDATA/vegetation/regional/NSW-SVTM/
 

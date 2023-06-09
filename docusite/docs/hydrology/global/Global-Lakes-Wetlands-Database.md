@@ -15,7 +15,7 @@ https://www.worldwildlife.org/pages/global-lakes-and-wetlands-database
 
 
 ```sh
-source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
+source $HOME/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/hydrology/global/GLWD
 cd $GISDATA/hydrology/global/GLWD

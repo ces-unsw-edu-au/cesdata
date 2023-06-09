@@ -26,7 +26,7 @@ Register and download
 Download from webpage into downloads folder, then move to gisdata folder:
 
 ```sh
-source ~/proyectos/UNSW/cesdata/env/project-env.sh
+source ~/proyectos/CES/cesdata/env/project-env.sh
 mkdir -p $GISDATA/species-dist/global/IUCN_RLTS
 cd $GISDATA/species-dist/global/IUCN_RLTS
 #mv ~/Downloads/TERRESTRIAL_MAMMALS.zip $GISDATA/species-dist/global/IUCN_RLTS

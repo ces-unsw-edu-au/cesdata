@@ -12,7 +12,7 @@ Figshare collection at: https://springernature.figshare.com/collections/GOODD_a_
 
 
 ```sh
-source $HOME/proyectos/UNSW/cesdata/env/project-env.sh
+source $HOME/proyectos/CES/cesdata/env/project-env.sh
 
 mkdir -p $GISDATA/hydrology/global/GOODD-2020
 cd $GISDATA/hydrology/global/GOODD-2020
