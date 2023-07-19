@@ -32,6 +32,9 @@ Make sure we deactivate conda to use the downloaded npx version:
 conda deactivate
 which npx
 npx -v # This sites works with `9.5.1`, updated in June to `9.7.1`
+# New minor version of npm available! 9.7.1 -> 9.8.1
+sudo npm install -g npm@9.8.1 
+
 ```
 :::
 
@@ -100,7 +103,9 @@ My steps:
 
 - set up the environment variables: USE_SSH and GIT_USER and call the docusaurus deploy command:
 
+    cd $REPO_PATH/docusite
     USE_SSH=TRUE && GIT_USER=`my user name` && npx docusaurus deploy
+
 
 ### Using fontawesome
 
