@@ -133,9 +133,10 @@ This `how-to-site` file is in the `pages` folder, which is the place for stand-a
 
 ### update packages
 
-After manual edits in `package-lock.json`, do:
+After manual edits in `package-lock.json`, or problems with `ERR! could not determine executable to run` do:
 
 ```sh
+# npm install
 npm update
 npm audit fix
 ```

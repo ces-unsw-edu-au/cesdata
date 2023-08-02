@@ -1,3 +1,9 @@
+---
+title: "Vegetation map Africa"
+description: "White's vegetation map of Africa"
+tags: [IUCN GET]
+---
+
 # White's vegetation map of Africa
 
 > White, F. (1983) The Vegetation of Africa, a Descriptive Memoir to Accompany the UNESCO/AETFAT/UNSO Vegetation Map of Africa (3 Plates, Northwestern Africa, Northeastern Africa, and Southern Africa, 1:5,000,000. UNESCO, Paris.

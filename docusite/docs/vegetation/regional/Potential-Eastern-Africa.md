@@ -1,3 +1,8 @@
+---
+title: "Vegetation map for Africa"
+description: "Potential natural vegetation of eastern Africa"
+tags: [IUCN GET]
+---
 # Potential natural vegetation of eastern Africa
 
 https://vegetationmap4africa.org/Home.html

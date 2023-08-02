@@ -1,3 +1,9 @@
+---
+title: "Vegetation Formations and Classes of NSW"
+description: "Vegetation Formations and Classes of NSW"
+tags: [IUCN GET]
+---
+
 # Vegetation Formations and Classes of NSW
 
 > This vegetation map shows the extant distributions of vegetation formations and classes throughout NSW, and provides users with information about the resolution, currency and uncertainties in the underlying data that were used to assemble the map. Data represents NSW native vegetation extent, compiled from various vegetation maps using methods outlined in Simpson et al. (2011) and in Keith and Simpson (2010). The NSW vegetation map (version 2.2, Keith and Simpson 2006) was revised by interpreting additional candidate maps as vector layers and synthesising these into a single raster-based data set. 

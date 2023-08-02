@@ -1,4 +1,8 @@
-# South African vegetation map
+---
+title: "Vegetation Map of South Africa, Lesotho and Swaziland"
+description: "South African vegetation map"
+tags: [IUCN GET]
+---
 
 ## Citation for this map
 South African National Biodiversity Institute (2006-2018). The Vegetation Map of South Africa, Lesotho and Swaziland, Mucina, L., Rutherford, M.C. and Powrie, L.W. (Editors), Online, http://bgis.sanbi.org/Projects/Detail/186, Version 2018.

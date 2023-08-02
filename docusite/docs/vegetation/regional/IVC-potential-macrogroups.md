@@ -1,3 +1,9 @@
+---
+title: "IVC/EcoVeg classification"
+description: "International Vegetation Classification"
+tags: [IUCN GET]
+---
+
 # International Vegetation Classification (IVC or EcoVeg)
 https://www.natureserve.org/conservation-tools/projects/international-vegetation-classification
 

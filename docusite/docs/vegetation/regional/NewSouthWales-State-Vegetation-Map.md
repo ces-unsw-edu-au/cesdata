@@ -1,4 +1,8 @@
-# NSW State Vegetation Type Map 
+---
+title: "NSW State Vegetation Type Map"
+description: "NSW State Vegetation Type Map"
+tags: [IUCN GET]
+---
 
 Technical notes: https://www.environment.nsw.gov.au/research-and-publications/publications-search/nsw-state-vegetation-type-map-technical-notes
 
