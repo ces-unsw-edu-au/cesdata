@@ -9,7 +9,7 @@ case $MIHOST in
 terra)
   export GISDATA=/opt/gisdata
   export GISDB=/opt/gisdb
-  export WORKDIR=$HOME/tmp/$PROJECTNAME
+  export WORKDIR=$HOME/workdir/tmp/$PROJECTNAME
   ;;
 roraima)
   export GISDATA=$HOME/gisdata
