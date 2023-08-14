@@ -16,6 +16,11 @@ roraima)
   export GISDB=$HOME/gisdb
   export WORKDIR=$HOME/tmp/$PROJECTNAME
   ;;
+L-T14N5WR66Q)
+  export GISDATA=$HOME/gisdata
+  export GISDB=$HOME/gisdb
+  export WORKDIR=$HOME/tmp/$PROJECTNAME
+;;
 Auyantepui)
   export GISDATA=$HOME/gisdata
   export GISDB=$HOME/gisdb
