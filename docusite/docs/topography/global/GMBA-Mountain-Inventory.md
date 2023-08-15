@@ -40,6 +40,7 @@ mkdir -p $GISDATA/$DPATH/$DNAME/
 cd $GISDATA/$DPATH/$DNAME/
 
 wget --continue https://data.earthenv.org/mountains/standard/GMBA_Inventory_v2.0_standard.zip
+wget --continue https://data.earthenv.org/mountains/standard/GMBA_Inventory_v2.0_standard_basic.zip
 ```
 
 ### Older versions

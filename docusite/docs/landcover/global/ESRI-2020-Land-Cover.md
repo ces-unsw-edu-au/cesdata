@@ -56,19 +56,19 @@ source ~/proyectos/CES/cesdata/env/project-env.sh
 
 ## download all year for selection of tiles:
 
-mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/byyear
-cd $GISDATA/landcover/global/ESRI-2020-LC/byyear
 
 SRV=https://lulctimeseries.blob.core.windows.net
 VRS=lulctimeseriespublic
 VRS=lulctimeseriesv003
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/$VRS
+cd $GISDATA/landcover/global/ESRI-2020-LC/$VRS
 
-for tile in  19P 18P 19N 18N 20N 21N
+for year in $(seq 2017 2022)
 do
-   for year in $(seq 2017 2021)
-   do
-      wget --continue $SRV/$VRS/lc${year}/${tile}_${year}0101-$((year+1))0101.tif
-   done
+  for tile in  19P 18P 19N 18N 20N 21N
+  do
+    wget --continue $SRV/$VRS/lc${year}/${tile}_${year}0101-$((year+1))0101.tif
+  done
 done
 
 
@@ -120,6 +120,8 @@ gdalbuildvrt index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/eck4/*_${VR
 ```
 
 ## Examples
+
+These are for older version of this product, need update
 
 ### R
 
