@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'GIS data of the Centre for Ecosystem Science',
+  title: 'JR\'s collection of GIS data for the Centre for Ecosystem Science',
   tagline: 'Spatial data for global ecosystem analyses',
   favicon: 'img/favicon.jpg',
 
@@ -66,7 +66,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/cesdata-social-card.png',
       navbar: {
-        title: 'cesdata/gisdata',
+        title: 'JR\'s GIS data',
         logo: {
           alt: 'Centre for Ecosystem Science Logo',
           src: 'img/logo_CES.png',
