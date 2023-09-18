@@ -1,7 +1,5 @@
 # MODIS GPP/NPP Project (MOD17)
 
-
-
 https://lpdaac.usgs.gov/products/mod17a3hgfv061/
 Product ID: MOD17A3HGF v061
 

@@ -1,7 +1,7 @@
 ---
 title: "Vegetation Formations and Classes of NSW"
 description: "Vegetation Formations and Classes of NSW"
-tags: [IUCN GET]
+tags: [IUCN GET, ecosystems NSW]
 ---
 
 # Vegetation Formations and Classes of NSW

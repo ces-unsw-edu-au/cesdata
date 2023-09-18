@@ -1,18 +1,28 @@
+---
+title: "MODIS Global Fire Products"
+description: "MODIS Burned Area Product and Active Fire Product"
+tags: [deforestation, Venezuela, Gran Sabana]
+---
+
+## Codes and versions
+
 Burned Area Products (MCD64A1)
 Global fire location product (MCD14ML)
 
-
 The latest version (Collection 6.1) of the MODIS Global Burned Area Product was released in 2017.
 
-http://modis-fire.umd.edu/ba.html
+## Links
 
-MODIS Burned Area Product User's Guide at 
-http://modis-fire.umd.edu/files/MODIS_C6_Fire_User_Guide_B.pdf
-https://modis-fire.umd.edu/files/MODIS_C61_BA_User_Guide_1.1.pdf
+- http://modis-fire.umd.edu/ba.html
 
-MODIS Collection 6 and Collection 6.1 Active Fire Product User's Guide v1.0 (May 2021): 
-https://modis-fire.umd.edu/files/MODIS_C6_C6.1_Fire_User_Guide_1.0.pdf
+- MODIS Burned Area Product User's Guide at 
+    - http://modis-fire.umd.edu/files/MODIS_C6_Fire_User_Guide_B.pdf
+    - https://modis-fire.umd.edu/files/MODIS_C61_BA_User_Guide_1.1.pdf
 
+- MODIS Collection 6 and Collection 6.1 Active Fire Product User's Guide v1.0 (May 2021): 
+    - https://modis-fire.umd.edu/files/MODIS_C6_C6.1_Fire_User_Guide_1.0.pdf
+
+## Data access and preparation
 
 ```sh
 
@@ -64,9 +74,10 @@ progress
 get -p MCD14ML.200*
 get -p MCD14ML.202*
 get -p MCD14ML.201*
-
-
-
-
 ```
 
+
+## This dataset is used for...
+
+### Monitoring vertebrates in the Gran Sabana, Venezuela
+- [OSF project component](https://osf.io/hux9f)

@@ -1,12 +1,15 @@
 ---
 title: "ESRI-2020-LC"
-description: "Esri 2020 Land Cover"
-tags: [tropical glaciers, IUCN-GET, IUCN-RLE, R, python, earth engine, gdal]
+description: "SENTINEL-2 10M LAND USE/LAND COVER"
+tags: [tropical glaciers, IUCN-GET, IUCN-RLE, R, python, earth engine, gdal, tropical shrublands, multiple versions]
 ---
 
-## About Esri 2020 Land Cover
+> This layer displays a global map of land use/land cover (LULC) derived from ESA Sentinel-2 imagery at 10m resolution. Each year is generated with Impact Observatory’s deep learning AI land classification model, trained using billions of human-labeled image pixels from the National Geographic Society. The global maps are produced by applying this model to the Sentinel-2 Level-2A image collection on Microsoft’s Planetary Computer, processing over 400,000 Earth observations per year.
 
-Variable mapped: 2020 land use/land cover
+
+## About 
+
+Variable mapped: Land use/land cover for several years
 
 Data Projection: Universal Transverse Mercator (UTM)
 
@@ -20,24 +23,31 @@ Type: Thematic
 
 Source: Esri Inc.
 
-Publication date: July 2021
+Multiple versions
 
 ## Links
 
-* https://samapriya.github.io/awesome-gee-community-datasets/projects/esrilc2020/?s=09
-* https://caitlin-kontgis.medium.com/mapping-the-world-in-unprecedented-detail-7c0513205b90
-* https://www.arcgis.com/home/item.html?id=d6642f8a4f6d4685a24ae2dc0c73d4ac
-* https://www.arcgis.com/home/item.html?id=fc92d38533d440078f17678ebc20e8e2
+- Current version
+  - [SENTINEL-2 10M LAND USE/LAND COVER DOWNLOAD](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-3.286%2C31.34%2C3&mode=step&timeExtent=2017%2C2021&year=2022&downloadMode=true)
+  - [Sentinel-2 10m land use/land cover time series of the world](https://www.arcgis.com/home/item.html?id=cfcb7609de5f478eb7666240902d4d3d)
+- Previous versions / older links
+  - https://samapriya.github.io/awesome-gee-community-datasets/projects/esrilc2020/?s=09
+  - https://caitlin-kontgis.medium.com/mapping-the-world-in-unprecedented-detail-7c0513205b90
+  - https://www.arcgis.com/home/item.html?id=d6642f8a4f6d4685a24ae2dc0c73d4ac
+  - https://www.arcgis.com/home/item.html?id=fc92d38533d440078f17678ebc20e8e2
+  - [Sentinel-2 10m Land Use/Land Cover Timeseries Downloader](https://www.arcgis.com/apps/instant/media/index.html?appid=fc92d38533d440078f17678ebc20e8e2)
 
 ## Citation
+
+
 > Karra, Kontgis, et al. “Global land use/land cover with Sentinel-2 and deep learning.” IGARSS 2021-2021 IEEE International Geoscience and Remote Sensing Symposium. IEEE, 2021.
 
 This dataset is based on the dataset produced for the Dynamic World Project by National Geographic Society in partnership with Google and the World Resources Institute.
 
 ## Download data
 
-Sentinel-2 10m Land Use/Land Cover Timeseries Downloader https://www.arcgis.com/apps/instant/media/index.html?appid=fc92d38533d440078f17678ebc20e8e2
- provides access to individual 10-meter resolution GeoTIFF scenes for terrestrial regions, for each year from 2017-2021.
+### Version 003
+Use the navigator/downloader for the required version. This provides access to individual 10-meter resolution GeoTIFF scenes for terrestrial regions, for each year from 2017-2021.
 
 It allows downloading all scenes for each year as a zip file (approx 60 GB each).
 
@@ -46,17 +56,25 @@ source ~/proyectos/CES/cesdata/env/project-env.sh
 
 ## download all year for selection of tiles:
 
-mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/byyear
-cd $GISDATA/landcover/global/ESRI-2020-LC/byyear
 
-for tile in  19P 18P 19N 18N
+SRV=https://lulctimeseries.blob.core.windows.net
+VRS=lulctimeseriespublic
+VRS=lulctimeseriesv003
+mkdir -p $GISDATA/landcover/global/ESRI-2020-LC/$VRS
+cd $GISDATA/landcover/global/ESRI-2020-LC/$VRS
+
+for year in $(seq 2017 2022)
 do
-   for year in $(seq 2017 2021)
-   do
-      wget --continue https://lulctimeseries.blob.core.windows.net/lulctimeseriespublic/lc${year}/${tile}_${year}0101-$((year+1))0101.tif
-   done
+  for tile in  19P 18P 19N 18N 20N 21N
+  do
+    wget --continue $SRV/$VRS/lc${year}/${tile}_${year}0101-$((year+1))0101.tif
+  done
 done
+
+
 ```
+
+### Previous versions (older links and code)
 
 ```sh
 source ~/proyectos/CES/cesdata/env/project-env.sh
@@ -102,6 +120,8 @@ gdalbuildvrt index_${VRS}.vrt $GISDATA/landcover/global/ESRI-2020-LC/eck4/*_${VR
 ```
 
 ## Examples
+
+These are for older version of this product, need update
 
 ### R
 
@@ -182,17 +202,20 @@ Sample Code: https://code.earthengine.google.com/514a294747ee5e7a136372b7e947d7b
 
 
 ## Class definitions
+
+Class definitions are different for the different versions:
+
 * 1 _Water_: Areas where water was predominantly present throughout the year; may not cover areas with sporadic or ephemeral water; contains little to no sparse vegetation, no rock outcrop nor built up features like docks; examples: rivers, ponds, lakes, oceans, flooded salt plains.
 * 2 _Trees_: Any significant clustering of tall (~15-m or higher) dense vegetation, typically with a closed or dense canopy; examples: wooded vegetation, clusters of dense tall vegetation within savannas, plantations, swamp or mangroves (dense/tall vegetation with ephemeral water or canopy too thick to detect water underneath).
-* 3 _Grass_: Open areas covered in homogenous grasses with little to no taller vegetation; wild cereals and grasses with no obvious human plotting (i.e., not a plotted field); examples: natural meadows and fields with sparse to no tree cover, open savanna with few to no trees, parks/golf courses/lawns, pastures.
+* 3 _Grass_: Open areas covered in homogenous grasses with little to no taller vegetation; wild cereals and grasses with no obvious human plotting (i.e., not a plotted field); examples: natural meadows and fields with sparse to no tree cover, open savanna with few to no trees, parks/golf courses/lawns, pastures. **MISSING FROM V003***
 * 4 _Flooded vegetation_: Areas of any type of vegetation with obvious intermixing of water throughout a majority of the year; seasonally flooded area that is a mix of grass/shrub/trees/bare ground; examples: flooded mangroves, emergent vegetation, rice paddies and other heavily irrigated and inundated agriculture.
 * 5 _Crops_: Human planted/plotted cereals, grasses, and crops not at tree height; examples: corn, wheat, soy, fallow plots of structured land.
-* 6 _Scrub/shrub_: Mix of small clusters of plants or single plants dispersed on a landscape that shows exposed soil or rock; scrub-filled clearings within dense forests that are clearly not taller than trees; examples: moderate to sparse cover of bushes, shrubs and tufts of grass, savannas with very sparse grasses, trees or other plants
+* 6 _Scrub/shrub_: Mix of small clusters of plants or single plants dispersed on a landscape that shows exposed soil or rock; scrub-filled clearings within dense forests that are clearly not taller than trees; examples: moderate to sparse cover of bushes, shrubs and tufts of grass, savannas with very sparse grasses, trees or other plants **MISSING FROM V003***
 * 7 _Built Area_: Human made structures; major road and rail networks; large homogenous impervious surfaces including parking structures, office buildings and residential housing; examples: houses, dense villages / towns / cities, paved roads, asphalt.
 * 8 _Bare_: ground Areas of rock or soil with very sparse to no vegetation for the entire year; large areas of sand and deserts with no to little vegetation; examples: exposed rock or soil, desert and sand dunes, dry salt flats/pans, dried lake beds, mines.
 * 9 _Snow/Ice_: Large homogenous areas of permanent snow or ice, typically only in mountain areas or highest latitudes; examples: glaciers, permanent snowpack, snow fields.
 * 10 _Clouds_: No land cover information due to persistent cloud cover.
-
+* 11 _Rangeland_: Open areas covered in homogenous grasses with little to no taller vegetation; wild cereals and grasses with no obvious human plotting (i.e., not a plotted field); examples: natural meadows and fields with sparse to no tree cover, open savanna with few to no trees, parks/golf courses/lawns, pastures. Mix of small clusters of plants or single plants dispersed on a landscape that shows exposed soil or rock; scrub-filled clearings within dense forests that are clearly not taller than trees; examples: moderate to sparse cover of bushes, shrubs and tufts of grass, savannas with very sparse grasses, trees or other plants **MISSING from previous versions**
 
 ## This dataset is used for...
 
