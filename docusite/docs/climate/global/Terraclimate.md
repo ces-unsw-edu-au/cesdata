@@ -1,7 +1,7 @@
 ---
 title: "Terraclimate"
 description: "Monthly climate and climatic water balance (1958-2019)"
-tags: [deforestation,Venezuela,wget,Adaptative monitoring,ramsar-monitoring.org,Earth engine]
+tags: [tropical alpine,deforestation,Venezuela,wget,Adaptative monitoring,ramsar-monitoring.org,Earth engine]
 ---
 
 > TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution.
@@ -91,3 +91,6 @@ Map.addLayer(maximumTemperature, maximumTemperatureVis, 'Maximum Temperature');
 
 [GitHub repo](https://github.com/NeoMapas/datos-deforestacion-venezuela)
 
+
+### Global suitability map of tropical alpine ecosystems
+- [OSF project component](https://osf.io/vaund/)

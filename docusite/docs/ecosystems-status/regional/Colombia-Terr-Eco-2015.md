@@ -37,8 +37,6 @@ ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PRO
 
 ### Reformat and make valid
 
-
-
 ```sh
 cd $GISDATA/ecosystems-status/regional/Colombia
 ogr2ogr Colombia-Ecosystems.gpkg EcoOri_12052015_2014_TodosCriterios.shp -nlt PROMOTE_TO_MULTI -makevalid
@@ -46,7 +44,27 @@ ogr2ogr Colombia-Ecosystems.gpkg EcoOri_12052015_2014_TodosCriterios.shp -nlt PR
 
 ## Crosswalk
 
-We checked the file `GETcrosswalk_Colombia_AEtter.xlsx`
+### Using SQLite
+
+Add a column using CASE WHEN statements and a set of simple rules. 
+
+In this example we assign EFG following an updated cross walk provided by Emily in file `SI_data_Colombia.xlsx`.
+
+```sh
+ogr2ogr Colombia-Ecos-simple.gpkg Colombia-Ecosystems.gpkg  -dialect SQLite \
+    -nln efg_xwalk\
+    -sql "SELECT *, CASE 
+    WHEN COD = 'N' THEN 'T6.1' 
+    WHEN COD IN ('S13','S14','S15') THEN 'T6.5'
+    WHEN COD IN ('B16','B17', 'B18', 'B19a','B19b','B20a','B20b','B21a','B21b','B21c','B21d','B22' ) THEN 'T1.3' 
+     ELSE 'others' END EFG FROM EcoOri_12052015_2014_TodosCriterios;" \
+     -simplify 500 -makevalid
+
+```
+
+### Within R
+
+In a previous version, I used the file `GETcrosswalk_Colombia_AEtter.xlsx` provided by David Keith and Andres Etter.
 
 ```sh
 cp ~/proyectos/CES/ecosphere-db/input/xwalks/GETcrosswalk_Colombia_AEtter.xlsx $GISDATA/ecosistemas/RLEDB/Colombia
@@ -94,4 +112,4 @@ select fullcode,cod,EFG from ecocolombia.ecoori_12052015_2014_todoscriterios m l
 - [OSF project component](https://osf.io/432sb/)
 
 ### Global suitability map of tropical alpine ecosystems
-
+- [OSF project component](https://osf.io/vaund/)
