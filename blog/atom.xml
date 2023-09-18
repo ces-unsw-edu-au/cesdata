@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ces-unsw-edu-au.github.io/cesdata/blog</id>
-    <title>GIS data of the Centre for Ecosystem Science Blog</title>
+    <title>JR's collection of GIS data for the Centre for Ecosystem Science Blog</title>
     <updated>2023-04-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ces-unsw-edu-au.github.io/cesdata/blog"/>
-    <subtitle>GIS data of the Centre for Ecosystem Science Blog</subtitle>
+    <subtitle>JR's collection of GIS data for the Centre for Ecosystem Science Blog</subtitle>
     <icon>https://ces-unsw-edu-au.github.io/cesdata/img/favicon.jpg</icon>
     <entry>
         <title type="html"><![CDATA[Start of a journey]]></title>
