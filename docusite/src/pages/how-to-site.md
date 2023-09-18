@@ -72,18 +72,22 @@ I have done most of this using just markdown, because I just haven't got much ti
 
 I am using the **classic template** because I just don't have time to explore and tweak templates and themes.
 
-### build, serve and deply
+### build, serve and deploy
 
 Build a optimized static site:
 ```sh
 npx docusaurus build
 ```
 
-This will serve this site at `localhost:3000/cesdata`
+This will serve a static site at `localhost:3000/cesdata`
 ```sh
 npx docusaurus serve
 ```
 
+Or use this to keep a site that updates after each edit:
+```sh
+npx docusaurus start
+```
 
 *Should I use Github pages?*
 

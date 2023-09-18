@@ -1,7 +1,7 @@
 ---
-title: "GFC"
-description: "Global Forest Change"
-tags: [deforestation,Venezuela,wget,VRT]
+title: "Global Forest Change"
+description: "High-Resolution Global Maps of 21st-Century Forest Cover Change"
+tags: [deforestation,Venezuela,wget,VRT,Gran Sabana]
 ---
 
 High-Resolution Global Maps of 21st-Century Forest Cover Change
@@ -10,12 +10,12 @@ High-Resolution Global Maps of 21st-Century Forest Cover Change
 > Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. *High-Resolution Global Maps of 21st-Century Forest Cover Change.* **Science** 342 (15 November): 850–53. [Data available on-line](http://earthenginepartners.appspot.com/science-2013-global-forest).
 
 
-## Available data
+## Data access
 
 http://www.earthenginepartners.appspot.com/science-2013-global-forest/download.html
 
 
-## Data download:
+## Data download
 
 For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script to download the whole set:
 

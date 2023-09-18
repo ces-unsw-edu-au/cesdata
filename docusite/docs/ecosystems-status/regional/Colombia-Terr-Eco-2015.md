@@ -1,41 +1,47 @@
 ---
 title: "Colombia"
 description: "Ecosistemas terrestres de Colombia"
-tags: [tropical glaciers, IUCN RLE, IUCN GET]
+tags: [tropical glaciers, tropical alpine, IUCN RLE, IUCN GET]
 ---
 
 ## Citation
 
 > Etter A., Andrade A., Saavedra K., Amaya P. y P. Arévalo 2017. Risk assessment of Colombian continental ecosystems: An application of the Red List of Ecosystems methodology (v. 2.0). Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. [Report](https://www.researchgate.net/publication/325498072_Risk_assessment_of_Colombian_continental_ecosystems_An_application_of_the_Red_List_of_Ecosystems_methodology_v_20). [Summary](https://iucnrle.org/static/media/uploads/references/published-assessments/Brochures/brochure_lre_colombia_v_2.0.pdf)
 
+## Data access
 Files provided by Andrés Etter -()- Alaska to Patagonia project
 
+## Data preparation
 
 ```sh
 source ~/proyectos/CES/cesdata/env/project-env.sh
-
-mkdir -p $GISDATA/ecosystems/regional/Colombia
-cd $GISDATA/ecosystems/regional/Colombia
-
-##
+mkdir -p $GISDATA/ecosystems-status/regional/Colombia
+cd $GISDATA/ecosystems-status/regional/Colombia
+## cp .. $GISDATA/ecosystems-status/regional/Colombia
 ```
 
 Original projection in WGS_1984_UTM_Zone_18N, o EPSG 32618
 
 ```sh
 ogrinfo -al -geom=NO EcoOri_12052015_2014_TodosCriterios.shp | less
-
-
 ```
+
+### Import into postGIS
 This gets the data in the original projection and promoted to multi-geometry
 
 ```sh
-
  psql gisdata  jferrer -c "CREATE SCHEMA colombia_rle"
  ## exclude shape_area column to avoid column precision error
-ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PROMOTE_TO_MULTI -lco SCHEMA=ecocolombia $GISDATA/ecosistemas/RLEDB/Colombia/EcoOri_12052015_2014_TodosCriterios.shp -sql "SELECT COD, A1P, A1E, A2aP, A2aE, A2bP, A2bE, A3P, A3E, C2,  D2, B1ai, B1aiiV1, B1aiiV2, B1aiii, B2ai, B2aiiV1, B2aiiV2, B2aiii, C2Precp, EvFinal FROM EcoOri_12052015_2014_TodosCriterios"
+ogr2ogr -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdata" -nlt PROMOTE_TO_MULTI -lco SCHEMA=ecocolombia $GISDATA/ecosystems-status/regional/EcoOri_12052015_2014_TodosCriterios.shp -sql "SELECT COD, A1P, A1E, A2aP, A2aE, A2bP, A2bE, A3P, A3E, C2,  D2, B1ai, B1aiiV1, B1aiiV2, B1aiii, B2ai, B2aiiV1, B2aiiV2, B2aiii, C2Precp, EvFinal FROM EcoOri_12052015_2014_TodosCriterios"
+```
+
+### Reformat and make valid
 
 
+
+```sh
+cd $GISDATA/ecosystems-status/regional/Colombia
+ogr2ogr Colombia-Ecosystems.gpkg EcoOri_12052015_2014_TodosCriterios.shp -nlt PROMOTE_TO_MULTI -makevalid
 ```
 
 ## Crosswalk
@@ -86,4 +92,6 @@ select fullcode,cod,EFG from ecocolombia.ecoori_12052015_2014_todoscriterios m l
 
 ### IUCN RLE assessment of tropical glaciers 
 - [OSF project component](https://osf.io/432sb/)
+
+### Global suitability map of tropical alpine ecosystems
 
