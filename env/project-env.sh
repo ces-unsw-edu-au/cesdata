@@ -6,7 +6,7 @@ export SCRIPTDIR=$HOME/proyectos/CES/$PROJECTNAME
 export ZENODOTOKEN=$(cat $HOME/.ZenodoToken)
 
 case $MIHOST in
-terra)
+gaia)
   export GISDATA=/opt/gisdata
   export GISDB=/opt/gisdb
   export WORKDIR=$HOME/workdir/tmp/$PROJECTNAME

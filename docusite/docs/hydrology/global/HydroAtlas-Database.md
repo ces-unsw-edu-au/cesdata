@@ -39,6 +39,8 @@ ogr2ogr -overwrite -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=gisdat
 
 `BasinATLAS_Catalog_v10.pdf`
 for xoo:
+```sh
+
 Spatial extent {x}: {s} in sub-basin | {u} in total watershed upstream of sub-basin pour point
 Dimension {oo}: {yr} annual average | {mx} annual maximum | {01-12} monthly average
 
@@ -51,5 +53,7 @@ ID-C09 Snow Cover Extent snw_pc_{xoo} syr | smx | s01-s12 | uyr
 ID-L12 Permafrost Extent prm_pc_{xoo} sse | use
 
 ID-L10 Irrigated Area Extent (Equipped) ire_pc_{xoo} sse | use
+```
+
 #### Notes
 *

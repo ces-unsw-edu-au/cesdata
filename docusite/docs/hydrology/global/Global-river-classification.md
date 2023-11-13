@@ -31,6 +31,7 @@ nohup ogr2ogr -overwrite -f "PostgreSQL" PG:"host=localhost user=jferrer dbname=
 
 #### Interpretation in terms of the Global Ecosystem Typology
 
+```sh
 Discharge: very low (VL Q; 0.1–10 m3 s−1), low (L Q; 10–100 m3 s−1), medium (M Q; 100–1000 m3 s−1), high (H Q; 1000–10000 m3 s−1), and very high (VH Q; >10000 m3 s−1)
 
 Flow variability: low (L Var; <2), medium (M Var; 2–3), and high (H Var; >3)
@@ -87,7 +88,7 @@ Flow variability: low (L Var; <2), medium (M Var; 2–3), and high (H Var; >3)
  | 422 | VH | M | H | F1.4 |
  | 431 | VH | H | L | F1.5 |
  | 432 | VH | H | H | F1.4 |
-
+```
 
 Based on this information we can try a reclassification:
 
@@ -115,7 +116,7 @@ SELECT F1_1,count(*) FROM hydrosheds.gloric group by F1_1;
 
 ```
 
-**F1.2** These rivers are distinguished by shallow gradients (typically <2°), with low turbulence, low to moderate flow velocity and high to very high flow volumes which are continuous, but may vary seasonally, depending on catchment area and precipitation. Permanent lowland rivers are distributed throughout tropical and temperate lowlands, very uncommon in arid subtropical –warm temperate zones and absent from boreal zones.
+**F1.2** These rivers are distinguished by shallow gradients (typically &lt;2°), with low turbulence, low to moderate flow velocity and high to very high flow volumes which are continuous, but may vary seasonally, depending on catchment area and precipitation. Permanent lowland rivers are distributed throughout tropical and temperate lowlands, very uncommon in arid subtropical –warm temperate zones and absent from boreal zones.
 
 ```sql
 EXPLAIN ANALYZE

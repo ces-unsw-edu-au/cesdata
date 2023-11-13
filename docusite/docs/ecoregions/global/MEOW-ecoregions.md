@@ -11,8 +11,8 @@
 #### Data download and preparation
 
 We download the versions available at:
-* <https://www.worldwildlife.org/publications/marine-ecoregions-of-the-world-a-bioregionalization-of-coastal-and-shelf-areas>
-* <https://data.unep-wcmc.org/datasets/38>
+* https://www.worldwildlife.org/publications/marine-ecoregions-of-the-world-a-bioregionalization-of-coastal-and-shelf-areas
+* https://data.unep-wcmc.org/datasets/38
 
 
 

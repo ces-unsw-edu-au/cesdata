@@ -23,6 +23,7 @@ gdal_calc.py -A GLOBCOVER_L4_200901_200912_V2.3.tif --outfile=result.tif --calc=
 gdal_calc.py -A GLOBCOVER_L4_200901_200912_V2.3.tif --outfile=result.tif --calc="logical_and(A==50,A==100)"
 ```
 
+```sh
 11	Post-flooding or irrigated croplands (or aquatic)
 14	Rainfed croplands
 20	Mosaic cropland (50-70%) / vegetation (grassland/shrubland/forest) (20-50%)
@@ -46,3 +47,4 @@ gdal_calc.py -A GLOBCOVER_L4_200901_200912_V2.3.tif --outfile=result.tif --calc=
 210	Water bodies
 220	Permanent snow and ice
 230	No data (burnt areas, clouds,…)
+```

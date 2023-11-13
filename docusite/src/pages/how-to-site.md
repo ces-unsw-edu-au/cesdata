@@ -10,43 +10,58 @@ We built this awesome documentation site using https://docusaurus.io/docs
 
 First we installed [Node.js](https://nodejs.org/en/download/) (recommended version 16.14 or above).
 
-Install docusaurus with:
-
-```sh
-npm install docusaurus
-```
-
-Then we updated packages and run an audit
-```sh
-sudo npm install -g npm@9.7.1
-npm i @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest
-npm audit fix
-```
-
-
-:::caution npx version
+:::caution npx and conda
 
 Make sure we deactivate conda to use the downloaded npx version:
 
 ```sh
 conda deactivate
 which npx
-npx -v # This sites works with `9.5.1`, updated in June to `9.7.1`
-# New minor version of npm available! 9.7.1 -> 9.8.1
-sudo npm install -g npm@9.8.1 
-
+npx -v 
 ```
 :::
+Install docusaurus with:
 
-The first time we _npx_ docusaurus (skip this if docusite is already created and configured):
+```sh
+npm install docusaurus
+```
+
+The first time we _npx_ docusaurus :
 
 ```sh
 npx create-docusaurus@latest $REPO_PATH/docusite classic
 ```
+
+We can skip this if docusite is already created and configured, but beware that differences between versions can cause problems, and will require modifying config files.
+
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
 The command also installs all necessary dependencies you need to run Docusaurus.
 
+
+:::caution version number
+
+We have used several versions, we started with `9.5.1`, updated in June to `9.7.1`, then a new minor update from 9.7.1 -> 9.8.1:
+```sh
+sudo npm install -g npm@9.8.1 
+```
+
+In gaia we are using version `10.2.3`
+
+Then we update the packages and run an audit
+```sh
+sudo npm install -g npm@10.2.3
+npm i @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest
+npm audit fix # or # npm audit fix --force
+```
+Problems with different versions, might require 
+
+```sh
+ rm -r node_modules  package.json   package-lock.json
+```
+before rerunning the previous steps... and then manually fixing the `docusaurus.config.js` file (compare it with a fresh install to locate the differences).
+
+:::
 
 ## Start your site
 

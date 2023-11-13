@@ -85,7 +85,7 @@ done
 
 ### Legend
 
-
+```sh
 | Value | Label | Description |
 |---|---|---|
 | 1	| Evergreen Needleleaf forest | Dominated by evergreen conifer trees (canopy>2m). Tree cover >60%. |
@@ -106,3 +106,4 @@ done
 | 16 |	Barren or sparsely vegetated | At least 60% of area is non-vegetated barren (sand, rock, soil) areas with less than 10% vegetation. |
 | 17 |	Water bodies | At least 60% of area is covered by permanent water bodies. |
 | 255 |	Unclassified | Has not received a map label because of missing inputs |
+```

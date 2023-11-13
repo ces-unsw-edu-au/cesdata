@@ -9,7 +9,10 @@ Expand the menus on the left to navigate the intructions for the datasets.
 
 ### What a tree!
 
-<details><summary>This tree listing gives an overview of the datasets available in `$GISDATA` in Katana </summary>
+<details>
+    <summary>
+        This tree listing gives an overview of the datasets available in `$GISDATA` in Katana 
+    </summary>
 
 ```sh
 source ~/proyectos/CES/cesdata/env/project-env.sh
@@ -131,7 +134,6 @@ tree -L 3 $GISDATA
 111 directories, 0 files
 
 ```
-
 </details>
 
 ### Tags

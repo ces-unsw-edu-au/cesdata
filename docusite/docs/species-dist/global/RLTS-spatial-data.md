@@ -10,9 +10,9 @@ The IUCN Red List of Threatened Species™ contains global assessments for almos
 
 > Users MUST provide the appropriate credit(s)for this spatial data if it is used in any product
 produced in any media. For individual species maps, credit information is provided in the citation field of the attribute data for that species. This information should be used in conjunction with the credit information for the spatial dataset as a whole using the following format:
-
-> {citation field information} {year}. The IUCN Red List of Threatened Species. Version {Red List version}.
-https://www.iucnredlist.org. Downloaded on {insert appropriate date}.
+>
+Author year. The IUCN Red List of Threatened Species. Version (Red List version). https://www.iucnredlist.org. Downloaded on (insert appropriate date).
+>
 
 ## Documentation
 
