@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[5352],{6273:a=>{a.exports=JSON.parse('{"label":"OSF cloud storage","permalink":"/cesdata/blog/tags/osf-cloud-storage","allTagsPath":"/cesdata/blog/tags","count":1,"unlisted":false}')}}]);

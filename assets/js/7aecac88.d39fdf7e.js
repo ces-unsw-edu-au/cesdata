@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[5682],{2168:a=>{a.exports=JSON.parse('{"label":"IVC macrogroups","permalink":"/cesdata/blog/tags/ivc-macrogroups","allTagsPath":"/cesdata/blog/tags","count":1,"unlisted":false}')}}]);

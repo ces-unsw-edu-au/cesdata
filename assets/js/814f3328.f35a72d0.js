@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocusite=self.webpackChunkdocusite||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Start of a journey","permalink":"/cesdata/blog/very-first-blog-post"},{"title":"Distribution maps for the Forest macrogroups","permalink":"/cesdata/blog/forest-macrogroups-americas"}]}')}}]);

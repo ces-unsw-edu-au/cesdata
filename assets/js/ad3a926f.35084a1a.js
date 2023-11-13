@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[4861],{751:a=>{a.exports=JSON.parse('{"label":"OSF","permalink":"/cesdata/blog/tags/osf","allTagsPath":"/cesdata/blog/tags","count":1,"unlisted":false}')}}]);
