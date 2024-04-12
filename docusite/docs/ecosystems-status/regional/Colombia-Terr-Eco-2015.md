@@ -9,7 +9,10 @@ tags: [tropical glaciers, tropical alpine, IUCN RLE, IUCN GET]
 > Etter A., Andrade A., Saavedra K., Amaya P. y P. Arévalo 2017. Risk assessment of Colombian continental ecosystems: An application of the Red List of Ecosystems methodology (v. 2.0). Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. Final Report. Pontificia Universidad Javeriana and Conservación Internacional-Colombia. Bogotá. 138 pp. [Report](https://www.researchgate.net/publication/325498072_Risk_assessment_of_Colombian_continental_ecosystems_An_application_of_the_Red_List_of_Ecosystems_methodology_v_20). [Summary](https://iucnrle.org/static/media/uploads/references/published-assessments/Brochures/brochure_lre_colombia_v_2.0.pdf)
 
 ## Data access
-Files provided by Andrés Etter -()- Alaska to Patagonia project
+
+Files provided by Andrés Etter -()- Alaska to Patagonia project.
+
+As far as I know the data is not available in an open access repository.
 
 ## Data preparation
 
