@@ -54,7 +54,7 @@ sudo npm install -g npm@10.2.3
 npm i @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest
 npm audit fix # or # npm audit fix --force
 ```
-Problems with different versions, might require 
+Problems with different versions, might require:
 
 ```sh
  rm -r node_modules  package.json   package-lock.json

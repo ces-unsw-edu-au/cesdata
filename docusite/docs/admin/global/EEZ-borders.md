@@ -6,12 +6,21 @@ tags: [IUCN-GET,Typology web,OGR]
 
 Maritime Boundaries and Exclusive Economic Zones
 
+## Versions
+
+Latest version is: World EEZ v12 (2023-10-25, 122 MB)
+
 ## Links
 
-https://www.marineregions.org/eez.php
+- Info: https://www.marineregions.org/eez.php
+- Downloads: https://www.marineregions.org/downloads.php
+
+## License
+
+This dataset is licensed under a Creative Commons Attribution 4.0 International License.
 
 ## Citation
-> Flanders Marine Institute (2019). Maritime Boundaries Geodatabase: Maritime Boundaries and Exclusive Economic Zones (200NM), version 11. Available online at https://www.marineregions.org/. https://doi.org/10.14284/386
+> Flanders Marine Institute (2023). Maritime Boundaries Geodatabase: Maritime Boundaries and Exclusive Economic Zones (200NM), version 12. Available online at https://www.marineregions.org/. https://doi.org/10.14284/632
 
  ## Data download and preparation
 
@@ -24,6 +33,8 @@ cd $GISDATA/admin/global/EEZ/
 
 # register and download, then move to current folder.
 mv ~/Downloads/World_EEZ_v11_20191118_gpkg.zip $GISDATA/admin/global/EEZ/
+
+mv ~/Downloads/World_EEZ_v12_20231025_gpkg.zip $GISDATA/admin/global/EEZ/
 ```
 
 ## Data preparation
