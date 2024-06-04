@@ -10,15 +10,11 @@ Description from the website:
 
 ## Links
 
-https://www.oneearth.org/bioregions-2020/
-https://www.oneearth.org/bioregions/
+- Updated link: https://www.oneearth.org/bioregions-2023/
+- Older link: https://www.oneearth.org/bioregions-2020/
+- https://www.oneearth.org/bioregions/
+- Navigator: https://www.oneearth.org/navigator/
 
 ## Data access
 
-```sh
-source ~/proyectos/CES/cesdata/env/project-env.sh
-
-mkdir -p $GISDATA/ecoregions/global/
-cd $GISDATA/ecoregions/global/
-
-```
+No GIS data provided, only available for navigation in their own app: https://www.oneearth.org/navigator/
