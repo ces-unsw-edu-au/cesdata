@@ -1,5 +1,5 @@
 ---
-title: "GLIMS_2019"
+title: "GLIMS"
 description: "GLIMS Glacier database"
 tags: [tropical glaciers, IUCN RLE]
 ---
@@ -11,7 +11,8 @@ Global Land Ice Measurements from Space initiative (GLIMS)
 
 ## Links
 
-[Webpage](http://glims.colorado.edu/glacierdata/)
+- [Webpage](http://glims.colorado.edu/glacierdata/)
+- [User guide](https://nsidc.org/sites/default/files/nsidc-0272-v001-userguide_1.pdf)
 
 ## Citation
 
@@ -20,10 +21,7 @@ from Space glacier database.  Compiled and made available by the
 international GLIMS community and the National Snow and Ice Data Center,
 Boulder CO, U.S.A.  DOI:10.7265/N5V98602
 
-> Raup, B.H.; A. Racoviteanu; S.J.S. Khalsa; C. Helm; R. Armstrong; Y.
-   Arnaud (2007).  "The GLIMS Geospatial Glacier Database: a New Tool for
-   Studying Glacier Change".  Global and Planetary Change 56:101--110.
-   (doi:10.1016/j.gloplacha.2006.07.018)
+> Raup, B.H.; A. Racoviteanu; S.J.S. Khalsa; C. Helm; R. Armstrong; Y. Arnaud (2007).  "The GLIMS Geospatial Glacier Database: a New Tool for Studying Glacier Change".  Global and Planetary Change 56:101--110. (doi:10.1016/j.gloplacha.2006.07.018)
 
 ## Data access
 
@@ -31,15 +29,125 @@ http://www.glims.org/download/
 
 ### Data download and preparation
 
+Follow stesp in the Programmatic Data Access Guide:
+
+https://nsidc.org/data/user-resources/help-center/programmatic-data-access-guide
+
+
+#### Step 1
+
+
+Store your Earthdata Login credentials (username <uid> and password <password>) for authentication in a .netrc file in your home directory. 
+
+```sh
+echo 'machine urs.earthdata.nasa.gov login <uid> password <password>' >> ~/.netrc
+chmod 0600 ~/.netrc
+```
+#### Step 2
+
+Now using wget to download files to a target local directory
+
 ```sh
 DPATH=cryosphere/global
-DNAME=GLIMS_2019
+DNAME=GLIMS
 
 mkdir -p $GISDATA/$DPATH/$DNAME/
 cd $GISDATA/$DPATH/$DNAME/
 
-wget --continue http://www.glims.org/download/glims_db_20191217.zip
+## older 2019 version
+## wget --continue http://www.glims.org/download/glims_db_20191217.zip
+
+export HTTPHOST=https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0272_GLIMS_v1/
+
+wget --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --keep-session-cookies --no-check-certificate --auth-no-challenge=on -r --reject "index.html*" -np -e robots=off -nd ${HTTPHOST}/00README_GLIMS.txt
+
+for ARCH in NSIDC-0272_glims_db_north_20240603_v01.0 NSIDC-0272_glims_db_south_20240603_v01.0
+do 
+   for EXT in zip zip.md5
+   do 
+      wget --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --keep-session-cookies --no-check-certificate --auth-no-challenge=on -r --reject "index.html*" -np -e robots=off -nd ${HTTPHOST}/${ARCH}.${EXT}
+   done
+done
+
+## Check downloads:
+
+md5sum -c NSIDC-0272_glims_db_*md5
+
 ```
+### Extract and explore data
+
+```sh
+cd $WORKDIR
+unzip $GISDATA/$DPATH/$DNAME/NSIDC-0272_glims_db_south_20240603_v01.0.zip 
+unzip $GISDATA/$DPATH/$DNAME/NSIDC-0272_glims_db_north_20240603_v01.0.zip 
+```
+
+```{r}
+ library(sf)
+ library(dplyr)
+  tst <- read_sf("glims_download_66118/glims_polygons.shp")
+tst |> st_drop_geometry() |> group_by(line_type) |> summarise(n())
+
+ tstS <- read_sf("glims_download_66118/glims_lines.shp")
+tstS |> st_drop_geometry() |> group_by(line_type) |> summarise(n())
+ tstN <- read_sf("glims_download_29531/glims_polygons.shp")
+tstN |> st_drop_geometry() |> group_by(line_type) |> summarise(n())
+ 
+```
+
+Here my comments on the different classes
+
+GLIMS Map Class
+	
+Dominant EFG
+	
+EFG description
+	
+JR recommendation
+glacier boundary
+	
+T6.1
+	
+Ice sheets, glaciers and perennial snowfields
+	
+value 1 for T6.1, > 700,000 occurrences, good to be included,
+internal rock outcrop, or nunatak
+	
+T6.2
+	
+Polar/alpine cliffs, screes, outcrops and lava flows
+	
+value 1 for T6.2, > 450,000 occurrences, good to be included
+proglacial lake
+	
+F2.4
+	
+Freeze-thaw freshwater lakes
+	
+between T6.1 and F2.4, not perfect overlap, and not exhaustive (less than 300 occurrences in the vector file, but they are probably many more unmapped in mountain areas), I suggest "no data"
+debris cover
+	
+T6.1
+	
+Ice sheets, glaciers and perennial snowfields
+	
+probably between T6.1 and T6.2, but I haven't searched relevant ecological studies for these, poorly represented in the South hemisphere (only 84 occurrences is an understimate, the glacier inventory of Chile suggest a much larger occurrence), I suggest "no data"
+basin boundary
+	
+T6.1
+	
+Ice sheets, glaciers and perennial snowfields
+	
+Not clearly defined and only 9 occurrences, "no data"
+supraglacial lake
+	
+F2.4
+	
+Freeze-thaw freshwater lakes
+	
+Subset of F2.4, not very well known, and clearly under-represented with only 18 occurrences in the vector data. I suggest "no data"
+
+
 
 
 We import this dataset in postgis for further data preparation and selection
