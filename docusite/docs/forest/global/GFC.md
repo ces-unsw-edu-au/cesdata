@@ -7,17 +7,17 @@ tags: [deforestation,Venezuela,wget,VRT,Gran Sabana]
 High-Resolution Global Maps of 21st-Century Forest Cover Change
 
 ## Citation
-> Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. *High-Resolution Global Maps of 21st-Century Forest Cover Change.* **Science** 342 (15 November): 850–53. [Data available on-line](http://earthenginepartners.appspot.com/science-2013-global-forest).
+> Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. *High-Resolution Global Maps of 21st-Century Forest Cover Change.* **Science** 342 (15 November): 850–53. [Data available on-line](https://glad.earthengine.app/view/global-forest-change).
 
 
 ## Data access
 
-http://www.earthenginepartners.appspot.com/science-2013-global-forest/download.html
+https://storage.googleapis.com/earthenginepartners-hansen/GFC-2024-v1.12/download.html
 
 
 ## Data download
 
-For all versions from  v1.0 (2013) to v1.7 we can use a simple bash script to download the whole set:
+For all versions from  v1.0 (2013) to v1.12 (2024) we can use a simple bash script to download the whole set:
 
 ```sh
 source ~/proyectos/CES/cesdata/env/project-env.sh
@@ -26,7 +26,9 @@ mkdir -p $GISDATA/forest/global/GFC/
 
 export SRC="https://storage.googleapis.com/earthenginepartners-hansen"
 
-for VRS in GFC-2019-v1.7 ## GFC-2018-v1.6 GFC-2017-v1.5 GFC-2016-v1.4 GFC-2015-v1.3 GFC2015 GFC2014 GFC2013
+# latest version is GFC-2024-v1.12 
+# GFC-2019-v1.7 ## GFC-2018-v1.6 GFC-2017-v1.5 GFC-2016-v1.4 GFC-2015-v1.3 GFC2015 GFC2014 GFC2013
+for VRS in GFC2015
 do
     for VAR in gain lossyear treecover2000
     do
